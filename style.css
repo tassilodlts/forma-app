@@ -27,6 +27,8 @@ main>section,.band{padding:72px var(--rand);max-width:var(--breit);margin:0 auto
 .menu+.sprachen{margin-left:0}
 .sprachen button{font:inherit;font-size:14px;font-weight:700;letter-spacing:.04em;background:none;border:0;padding:6px 8px;cursor:pointer;color:var(--hell);border-bottom:2px solid transparent}
 .sprachen button.on{color:var(--ink);border-bottom-color:var(--akzent)}
+.kaufen{font-size:14px;font-weight:700;padding:8px 14px;margin-left:10px;background:var(--akzent);color:#fff;text-decoration:none}
+.kaufen:hover{background:var(--akzent-dunkel)}
 
 /* Held */
 .held{padding-top:96px;padding-bottom:40px}
@@ -95,8 +97,9 @@ main>section,.band{padding:72px var(--rand);max-width:var(--breit);margin:0 auto
 .liste p{color:var(--grau);font-size:17px;margin-top:6px}
 
 /* App */
-.app{padding-top:0}
+.app{padding-top:16px;padding-bottom:24px}
 .app img{width:100%;border:1px solid var(--linie)}
+.app figcaption{font-size:17px;color:var(--grau);margin-top:14px;max-width:70ch}
 
 /* Preis */
 .preis{border-top:1px solid var(--linie)}

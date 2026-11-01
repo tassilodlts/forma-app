@@ -1,16 +1,22 @@
 {
  "quelle": "walhalla8.obj",
  "mitte": [
-  5.923,
+  5.936,
   0,
-  -4.994999999999999
+  -5.5
  ],
  "gruppen": {
+  "haus": {
+   "datei": "haus.glb",
+   "mb": 0.06,
+   "dreiecke": 47085,
+   "objekte": 17
+  },
   "bestand": {
    "datei": "bestand.glb",
-   "mb": 0.13,
-   "dreiecke": 97854,
-   "objekte": 46
+   "mb": 0.07,
+   "dreiecke": 50769,
+   "objekte": 29
   },
   "umgebung": {
    "datei": "umgebung.glb",
