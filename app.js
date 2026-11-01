@@ -4,7 +4,7 @@
 const PRODUKT = 'Forma';          // Name, später austauschbar
 const DOWNLOAD_ARM = 'https://github.com/tassilodlts/forma-app/releases/latest/download/Forma-Apple-Silicon.dmg';         // Mac, Apple Silicon (.dmg)
 const DOWNLOAD_X64 = 'https://github.com/tassilodlts/forma-app/releases/latest/download/Forma-Intel.dmg';         // Mac, Intel (.dmg)
-const CHECKOUT = 'mailto:tassilodlts@gmail.com?subject=Forma%20Pro';             // Abo starten (Stripe o. ä.)
+const CHECKOUT = { pro: 'mailto:tassilodlts@gmail.com?subject=Forma%20Pro', studio: 'mailto:tassilodlts@gmail.com?subject=Forma%20Studio' };   // Abo starten je Plan (später Paddle)
 
 const TEXTE = {
   de: {
@@ -13,7 +13,7 @@ const TEXTE = {
     'held.titel1': 'Beschreib dein Haus.', 'held.titel2': 'Forma baut es.',
     'held.text': 'Du schreibst, was du willst. Forma setzt echte Bauteile, rendert auf deinem Mac und schreibt die Pläne als PDF.',
     'held.ladenArm': 'Laden für Mac (Apple Silicon)', 'held.ladenX64': 'Laden für Mac (Intel)',
-    'held.klein': 'macOS 13 oder neuer. 45 € im Monat. Nach drei Monaten nicht zufrieden? Alles zurück.',
+    'held.klein': 'macOS 13 oder neuer. Ab 45 € im Monat. Nach drei Monaten nicht zufrieden? Alles zurück.',
     'bild.app': 'Die App: Chat links, Modell rechts, Einstellungen in der App.',
     'bild.render': 'Rendering mit Blender Cycles, berechnet auf dem eigenen Mac.',
     'bild.tafel': 'Wettbewerbsbild aus Forma, Projekt FIVE CLEARINGS, Vancouver.',
@@ -29,11 +29,15 @@ const TEXTE = {
     'fkt.4t': 'Rendering auf deinem Mac', 'fkt.4': 'Blender Cycles läuft lokal, so oft du willst. Dazu KI-Renderings für Stimmung und Vegetation.',
     'fkt.5t': 'Pläne als PDF', 'fkt.5': 'Grundrisse, Schnitte, Ansichten und Tafeln kommen fertig aus dem Modell.',
     'fkt.6t': 'Vom Handy und aus dem Terminal', 'fkt.6': 'Unterwegs im Browser bedienen. Oder aus Claude Code, Codex und Gemini CLI steuern.',
-    'preis.titel': 'Ein Preis', 'preis.einheit': 'im Monat zzgl. MwSt.',
+    'preis.titel': 'Zwei Pläne', 'preis.einheit': 'im Monat zzgl. MwSt.',
+    'studio.l1': 'Alles aus Pro, ohne Grenzen: KI, KI-Renderings, Websuche',
+    'studio.l2': 'Persönliche Beratung: Architekt am Telefon oder per Video, wenn du sie brauchst',
+    'studio.l3': 'Modellierungshilfe: Wir bauen oder richten dein Projekt mit dir ein',
+    'studio.l4': 'Wünsche an Forma kommen zuerst dran', 'studio.knopf': 'Studio anfragen',
     'preis.l1': 'KI für das Modell, unbegrenzt', 'preis.l2': '60 KI-Renderings im Monat',
     'preis.l3': 'Blender-Rendering unbegrenzt, auf deinem Mac', 'preis.l4': 'Alle Updates',
     'preis.knopf': 'Abo starten',
-    'preis.garantie': 'Nach drei Monaten nicht zufrieden? Du bekommst alles zurück.',
+    'preis.garantie': 'Nach drei Monaten nicht zufrieden? Du bekommst alles zurück. Gilt für beide Pläne.',
     'faq.titel': 'Fragen',
     'faq.1f': 'Was brauche ich?', 'faq.1': 'Einen Mac mit macOS 13 oder neuer und Internet für die KI. Für Renderings installiert Forma Blender von blender.org, ein Klick genügt.',
     'faq.2f': 'Gibt es Forma für Windows?', 'faq.2': 'Noch nicht. Forma läuft auf dem Mac. Schreib uns, wenn du eine Windows-Version willst, wir zählen mit.',
@@ -49,7 +53,7 @@ const TEXTE = {
     'held.titel1': 'Describe your building.', 'held.titel2': 'Forma builds it.',
     'held.text': 'You write what you want. Forma places real building elements, renders on your Mac and writes the drawings as PDF.',
     'held.ladenArm': 'Download for Mac (Apple Silicon)', 'held.ladenX64': 'Download for Mac (Intel)',
-    'held.klein': 'macOS 13 or newer. €45 a month. Not happy after three months? Full refund.',
+    'held.klein': 'macOS 13 or newer. From €45 a month. Not happy after three months? Full refund.',
     'bild.app': 'The app: chat on the left, model on the right, settings inside the app.',
     'bild.render': 'Rendering with Blender Cycles, computed on your own Mac.',
     'bild.tafel': 'Competition image made in Forma, project FIVE CLEARINGS, Vancouver.',
@@ -65,11 +69,15 @@ const TEXTE = {
     'fkt.4t': 'Rendering on your Mac', 'fkt.4': 'Blender Cycles runs locally, as often as you like. Plus AI renderings for mood and vegetation.',
     'fkt.5t': 'Drawings as PDF', 'fkt.5': 'Plans, sections, elevations and boards come straight from the model.',
     'fkt.6t': 'From your phone and the terminal', 'fkt.6': 'Use it in the browser on the go. Or drive it from Claude Code, Codex and Gemini CLI.',
-    'preis.titel': 'One price', 'preis.einheit': 'per month plus VAT',
+    'preis.titel': 'Two plans', 'preis.einheit': 'per month plus VAT',
+    'studio.l1': 'Everything in Pro, no limits: AI, AI renderings, web search',
+    'studio.l2': 'Personal advice: an architect by phone or video whenever you need one',
+    'studio.l3': 'Modelling help: we build or set up your project with you',
+    'studio.l4': 'Your requests for Forma come first', 'studio.knopf': 'Ask for Studio',
     'preis.l1': 'AI for the model, unlimited', 'preis.l2': '60 AI renderings per month',
     'preis.l3': 'Unlimited Blender rendering, on your Mac', 'preis.l4': 'All updates',
     'preis.knopf': 'Start subscription',
-    'preis.garantie': 'Not happy after three months? You get everything back.',
+    'preis.garantie': 'Not happy after three months? You get everything back. Applies to both plans.',
     'faq.titel': 'Questions',
     'faq.1f': 'What do I need?', 'faq.1': 'A Mac with macOS 13 or newer and internet for the AI. For renderings Forma installs Blender from blender.org, one click is enough.',
     'faq.2f': 'Is there a Windows version?', 'faq.2': 'Not yet. Forma runs on the Mac. Let us know if you want a Windows version, we are keeping count.',
@@ -85,7 +93,7 @@ const TEXTE = {
     'held.titel1': 'Describe tu casa.', 'held.titel2': 'Forma la construye.',
     'held.text': 'Escribes lo que quieres. Forma coloca elementos constructivos reales, renderiza en tu Mac y genera los planos en PDF.',
     'held.ladenArm': 'Descargar para Mac (Apple Silicon)', 'held.ladenX64': 'Descargar para Mac (Intel)',
-    'held.klein': 'macOS 13 o posterior. 45 € al mes. ¿No te convence tras tres meses? Te devolvemos todo.',
+    'held.klein': 'macOS 13 o posterior. Desde 45 € al mes. ¿No te convence tras tres meses? Te devolvemos todo.',
     'bild.app': 'La app: chat a la izquierda, modelo a la derecha, ajustes dentro de la app.',
     'bild.render': 'Render con Blender Cycles, calculado en tu propio Mac.',
     'bild.tafel': 'Imagen de concurso hecha en Forma, proyecto FIVE CLEARINGS, Vancouver.',
@@ -101,11 +109,15 @@ const TEXTE = {
     'fkt.4t': 'Render en tu Mac', 'fkt.4': 'Blender Cycles funciona en local, tantas veces como quieras. Además, renders con IA para ambiente y vegetación.',
     'fkt.5t': 'Planos en PDF', 'fkt.5': 'Plantas, secciones, alzados y paneles salen listos del modelo.',
     'fkt.6t': 'Desde el móvil y la terminal', 'fkt.6': 'Úsalo en el navegador donde estés. O contrólalo desde Claude Code, Codex y Gemini CLI.',
-    'preis.titel': 'Un precio', 'preis.einheit': 'al mes más IVA',
+    'preis.titel': 'Dos planes', 'preis.einheit': 'al mes más IVA',
+    'studio.l1': 'Todo lo de Pro, sin límites: IA, renders con IA, búsqueda web',
+    'studio.l2': 'Asesoría personal: un arquitecto por teléfono o vídeo cuando lo necesites',
+    'studio.l3': 'Ayuda de modelado: construimos o preparamos tu proyecto contigo',
+    'studio.l4': 'Tus peticiones para Forma van primero', 'studio.knopf': 'Solicitar Studio',
     'preis.l1': 'IA para el modelo, sin límite', 'preis.l2': '60 renders con IA al mes',
     'preis.l3': 'Render con Blender sin límite, en tu Mac', 'preis.l4': 'Todas las actualizaciones',
     'preis.knopf': 'Empezar suscripción',
-    'preis.garantie': '¿No te convence tras tres meses? Te devolvemos todo.',
+    'preis.garantie': '¿No te convence tras tres meses? Te devolvemos todo. Vale para los dos planes.',
     'faq.titel': 'Preguntas',
     'faq.1f': '¿Qué necesito?', 'faq.1': 'Un Mac con macOS 13 o posterior e internet para la IA. Para renders, Forma instala Blender desde blender.org con un clic.',
     'faq.2f': '¿Hay versión para Windows?', 'faq.2': 'Todavía no. Forma funciona en el Mac. Escríbenos si quieres Windows, llevamos la cuenta.',
@@ -143,7 +155,7 @@ for (const el of document.querySelectorAll('[data-produkt]')) el.textContent = P
 for (const el of document.querySelectorAll('[data-i18n]')) el.textContent = el.textContent.replaceAll('Forma', PRODUKT);
 document.querySelector('[data-download="arm"]').href = DOWNLOAD_ARM;
 document.querySelector('[data-download="x64"]').href = DOWNLOAD_X64;
-document.querySelector('[data-checkout]').href = CHECKOUT;
+for (const el of document.querySelectorAll('[data-checkout]')) el.href = CHECKOUT[el.dataset.checkout] || CHECKOUT.pro;
 document.querySelector('[data-jahr]').textContent = new Date().getFullYear();
 for (const lang of Object.keys(TEXTE)) for (const k of Object.keys(TEXTE[lang])) TEXTE[lang][k] = TEXTE[lang][k].replaceAll('Forma', PRODUKT);
 
