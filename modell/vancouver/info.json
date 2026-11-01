@@ -13,28 +13,34 @@
  "gruppen": {
   "tragwerk": {
    "datei": "tragwerk.glb",
-   "mb": 4.37,
-   "dreiecke": 223040,
-   "objekte": 4375
+   "mb": 2.22,
+   "dreiecke": 1646046,
+   "objekte": 4391
   },
   "gebaeude": {
    "datei": "gebaeude.glb",
-   "mb": 5.19,
-   "dreiecke": 259713,
-   "objekte": 9914
+   "mb": 1.75,
+   "dreiecke": 2359819,
+   "objekte": 10188
   },
   "pflanzen": {
    "datei": "pflanzen.glb",
-   "mb": 4.2,
+   "mb": 0.23,
    "dreiecke": 200612,
    "objekte": 16379
   },
   "stadt": {
    "datei": "stadt.glb",
-   "mb": 8.06,
-   "dreiecke": 288046,
-   "objekte": 189
+   "mb": 4.75,
+   "dreiecke": 1829084,
+   "objekte": 510
   }
  },
- "baeume": 8883
+ "baeume": 35904,
+ "baumvorlagen": {
+  "anzahl": 965,
+  "dreiecke": 98340,
+  "kb": 909.8,
+  "dreieckeGesamt": 3170122
+ }
 }

@@ -15,9 +15,12 @@ const TEXTE = {
     'held.ladenArm': 'Laden für Mac (Apple Silicon)', 'held.ladenX64': 'Laden für Mac (Intel)',
     'held.klein': 'macOS 13 oder neuer. Ab 45 € im Monat. Nach drei Monaten nicht zufrieden? Alles zurück.',
     'bild.band': 'FIVE CLEARINGS, Vancouver. Entwurf, Modell und Bild aus Forma.',
-    'modell.titel': 'Das Modell zum Anfassen', 'modell.text': 'FIVE CLEARINGS, direkt aus Forma. Drehen mit einem Finger oder der Maus, zoomen und verschieben mit zwei Fingern oder dem Rad.',
+    'modell.titel': 'Die Modelle zum Anfassen', 'modell.text': 'Zwei Projekte, direkt aus Forma. Ein Finger dreht, zwei Finger zoomen und verschieben. Grundrisse und Schnitte sind echte Schnitte durch das Modell.',
     'modell.tragwerk': 'Tragwerk', 'modell.gebaeude': 'Gebäude', 'modell.stadt': 'Stadt', 'modell.pflanzen': 'Bäume',
     'modell.a1': 'Block', 'modell.a2': 'Turm', 'modell.a3': 'Sockel', 'modell.a4': 'Von oben',
+    'modell.bestand': 'Bestand 1913', 'modell.umbau': 'Umbau 2026', 'modell.einrichtung': 'Einrichtung', 'modell.umgebung': 'Nachbarn',
+    'modell.strasse': '3D Straße', 'modell.garten': '3D Garten', 'modell.grundriss': 'Grundriss', 'modell.schnitt': 'Schnitt', 'modell.ansicht': 'Ansicht', 'modell.ansichtSued': 'Ansicht Süd',
+    'modell.sued': 'Süd', 'modell.ost': 'Ost', 'modell.nord': 'Nord', 'modell.west': 'West', 'modell.fehler': 'Modell konnte nicht geladen werden.',
     'bild.app': 'Die App: Objekte und Ebenen links, Modell in der Mitte, Chat rechts. Hier FIVE CLEARINGS mit 69 510 Bauteilen.',
     'schritte.titel': 'In drei Schritten',
     'schritte.1t': 'Laden', 'schritte.1': 'App laden, in den Ordner Programme ziehen, mit Rechtsklick öffnen.',
@@ -61,9 +64,12 @@ const TEXTE = {
     'held.ladenArm': 'Download for Mac (Apple Silicon)', 'held.ladenX64': 'Download for Mac (Intel)',
     'held.klein': 'macOS 13 or newer. From €45 a month. Not happy after three months? Full refund.',
     'bild.band': 'FIVE CLEARINGS, Vancouver. Design, model and image from Forma.',
-    'modell.titel': 'Touch the model', 'modell.text': 'FIVE CLEARINGS, straight from Forma. Rotate with one finger or the mouse, zoom and pan with two fingers or the wheel.',
+    'modell.titel': 'Touch the models', 'modell.text': 'Two projects, straight from Forma. One finger rotates, two fingers zoom and pan. Floor plans and sections are real cuts through the model.',
     'modell.tragwerk': 'Structure', 'modell.gebaeude': 'Building', 'modell.stadt': 'City', 'modell.pflanzen': 'Trees',
     'modell.a1': 'Block', 'modell.a2': 'Tower', 'modell.a3': 'Podium', 'modell.a4': 'From above',
+    'modell.bestand': 'As built 1913', 'modell.umbau': 'Proposal 2026', 'modell.einrichtung': 'Furniture', 'modell.umgebung': 'Neighbours',
+    'modell.strasse': '3D street', 'modell.garten': '3D garden', 'modell.grundriss': 'Plan', 'modell.schnitt': 'Section', 'modell.ansicht': 'Elevation', 'modell.ansichtSued': 'South elevation',
+    'modell.sued': 'South', 'modell.ost': 'East', 'modell.nord': 'North', 'modell.west': 'West', 'modell.fehler': 'The model could not be loaded.',
     'bild.app': 'The app: objects and layers on the left, model in the middle, chat on the right. Here FIVE CLEARINGS with 69,510 building elements.',
     'schritte.titel': 'Three steps',
     'schritte.1t': 'Download', 'schritte.1': 'Download the app, drag it to Applications, open it with a right click.',
@@ -107,9 +113,12 @@ const TEXTE = {
     'held.ladenArm': 'Descargar para Mac (Apple Silicon)', 'held.ladenX64': 'Descargar para Mac (Intel)',
     'held.klein': 'macOS 13 o posterior. Desde 45 € al mes. ¿No te convence tras tres meses? Te devolvemos todo.',
     'bild.band': 'FIVE CLEARINGS, Vancouver. Diseño, modelo e imagen hechos en Forma.',
-    'modell.titel': 'Toca el modelo', 'modell.text': 'FIVE CLEARINGS, directo desde Forma. Gira con un dedo o el ratón, acerca y desplaza con dos dedos o la rueda.',
+    'modell.titel': 'Toca los modelos', 'modell.text': 'Dos proyectos, directos desde Forma. Un dedo gira, dos dedos acercan y desplazan. Las plantas y secciones son cortes reales por el modelo.',
     'modell.tragwerk': 'Estructura', 'modell.gebaeude': 'Edificio', 'modell.stadt': 'Ciudad', 'modell.pflanzen': 'Árboles',
     'modell.a1': 'Manzana', 'modell.a2': 'Torre', 'modell.a3': 'Podio', 'modell.a4': 'Desde arriba',
+    'modell.bestand': 'Estado 1913', 'modell.umbau': 'Propuesta 2026', 'modell.einrichtung': 'Mobiliario', 'modell.umgebung': 'Vecinos',
+    'modell.strasse': '3D calle', 'modell.garten': '3D jardín', 'modell.grundriss': 'Planta', 'modell.schnitt': 'Sección', 'modell.ansicht': 'Alzado', 'modell.ansichtSued': 'Alzado sur',
+    'modell.sued': 'Sur', 'modell.ost': 'Este', 'modell.nord': 'Norte', 'modell.west': 'Oeste', 'modell.fehler': 'No se pudo cargar el modelo.',
     'bild.app': 'La app: objetos y capas a la izquierda, modelo en el centro, chat a la derecha. Aquí FIVE CLEARINGS con 69 510 elementos.',
     'schritte.titel': 'En tres pasos',
     'schritte.1t': 'Descargar', 'schritte.1': 'Descarga la app, arrástrala a Aplicaciones, ábrela con clic derecho.',
@@ -147,11 +156,12 @@ const TEXTE = {
   }
 };
 
-// Sprache: ?lang= in der Adresse, sonst die eigene Wahl von früher, sonst die Browsersprachen der Reihe nach, sonst Englisch
+// Sprache: ?lang= in der Adresse, sonst die Wahl aus diesem Besuch, sonst die Sprache des Geräts (Browsersprachen der Reihe nach), sonst Englisch.
+// Die Wahl gilt nur für den Besuch (sessionStorage): beim nächsten Mal zählt wieder die Sprache des Geräts.
 function spracheWaehlen() {
   const url = new URLSearchParams(location.search).get('lang');
   if (url && TEXTE[url]) return url;
-  try { const g = localStorage.getItem('forma.lang'); if (g && TEXTE[g]) return g; } catch {}
+  try { const g = sessionStorage.getItem('forma.lang'); if (g && TEXTE[g]) return g; } catch {}
   for (const l of navigator.languages || [navigator.language || 'en']) { const k = l.slice(0, 2).toLowerCase(); if (TEXTE[k]) return k; }
   return 'en';
 }
@@ -166,7 +176,7 @@ function anwenden(lang, merken) {
   for (const el of document.querySelectorAll('[data-i18n-alt]')) { const s = t[el.dataset.i18nAlt]; if (s) el.alt = s; }
   for (const el of document.querySelectorAll('[data-sprache]')) el.classList.toggle('on', el.dataset.sprache === lang);   // ganze Textblöcke (Impressum, Datenschutz)
   for (const b of document.querySelectorAll('.sprachen button')) b.classList.toggle('on', b.dataset.lang === lang);
-  if (merken) try { localStorage.setItem('forma.lang', lang); } catch {}
+  if (merken) try { sessionStorage.setItem('forma.lang', lang); } catch {}
 }
 
 const alle = (sel, f) => { for (const el of document.querySelectorAll(sel)) f(el); };

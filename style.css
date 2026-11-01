@@ -47,12 +47,19 @@ main>section,.band{padding:72px var(--rand);max-width:var(--breit);margin:0 auto
 .m-kopf{max-width:70ch;margin-bottom:22px}
 .m-kopf h2{margin-bottom:10px;font-size:clamp(24px,3vw,34px)}
 .m-kopf p{color:var(--grau);font-size:17px}
-.m-leiste{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center;margin-bottom:12px}
-.m-gruppen,.m-ansichten{display:flex;flex-wrap:wrap;gap:6px}
-.m-leiste button{font:inherit;font-size:14px;font-weight:700;padding:7px 12px;border:1.5px solid var(--linie);background:var(--bg);color:var(--hell);cursor:pointer}
-.m-gruppen button.on{border-color:var(--akzent);color:var(--akzent)}
-.m-ansichten button{color:var(--ink);border-color:var(--ink)}
-.m-ansichten button:hover{background:var(--ink);color:#fff}
+.m-reiter{display:flex;gap:4px;border-bottom:1px solid var(--linie);margin-bottom:14px}
+.m-reiter button{font:inherit;font-size:16px;font-weight:700;background:none;border:0;border-bottom:3px solid transparent;padding:10px 4px;margin-right:20px;margin-bottom:-1px;color:var(--hell);cursor:pointer;letter-spacing:-.01em}
+.m-reiter button.on{color:var(--ink);border-bottom-color:var(--akzent)}
+.m-leiste{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;margin-bottom:12px}
+.m-leiste[hidden]{display:none}
+.m-satz{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.m-satz span{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--hell);margin-right:4px}
+.m-leiste button{font:inherit;font-size:14px;font-weight:700;padding:7px 12px;border:1.5px solid var(--ink);background:var(--bg);color:var(--ink);cursor:pointer}
+.m-leiste button:hover{background:var(--ink);color:#fff}
+.m-leiste button.on{background:var(--ink);color:#fff}
+.m-gruppen button{border-color:var(--linie);color:var(--hell)}
+.m-gruppen button:hover{background:var(--bg);color:var(--ink);border-color:var(--ink)}
+.m-gruppen button.on{background:var(--bg);border-color:var(--akzent);color:var(--akzent)}
 .m-buehne{position:relative;border:1px solid var(--linie);background:#fff}
 .m-buehne canvas{display:block;width:100%;height:min(72vh,720px);touch-action:none}
 .m-status{position:absolute;left:14px;bottom:12px;font-size:14px;color:var(--hell)}
