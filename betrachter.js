@@ -1,6 +1,7 @@
 // Forma · Website: Modelle zum Anfassen (three.js, Draco-GLB aus tools/web_glb.mjs und tools/web_obj_glb.mjs).
-// Ein Renderer, mehrere Modelle als Reiter. Gruppen ein und aus, Zustände (1913 / 2026), Blickpunkte in 3D, Grundrisse und
-// Schnitte als echte Schnittebenen (Parallelprojektion, Rückseiten dunkel als Schnittfläche). Lädt erst, wenn der Abschnitt sichtbar wird.
+// Ein Renderer, mehrere Modelle als Reiter. Gruppen ein und aus, Zustände (1913 / 2026), Schnitte (Geschoss: alles darüber fällt weg;
+// längs, quer) als Schnittebenen, immer frei drehbar, in Perspektive oder Axonometrie; Blickpunkte stellen nur die Kamera.
+// Rückseiten geschlossener Körper werden dunkel gezeichnet, so wirkt die Schnittfläche gefüllt. Lädt erst, wenn der Abschnitt sichtbar wird.
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
@@ -9,53 +10,43 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 const wrap = document.querySelector('#modell'); if (!wrap) throw new Error('kein #modell');
 const canvas = wrap.querySelector('canvas'), status = wrap.querySelector('.m-status'), fehler = wrap.querySelector('.m-fehler');
 const DRACO = 'https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/libs/draco/';
+const FOV = 38;
 
 // Koordinaten: X nach Osten, Y nach oben, Z nach Süden (Norden ist -Z). Schnittebene [nx, ny, nz, c]: sichtbar bleibt, was n·p + c >= 0 erfüllt.
 const MODELLE = {
   muenchen: {
     basis: 'modell/muenchen/', dateien: { bestand: 'bestand.glb', vorschlag: 'vorschlag.glb', einrichtung: 'einrichtung.glb', umgebung: 'umgebung.glb', baeume: 'baeume.glb' },
     zustaende: { 1913: { bestand: true, vorschlag: false, einrichtung: false }, 2026: { bestand: false, vorschlag: true, einrichtung: true } }, zustand: '2026',
-    nah: 0.5, fern: 600, nahst: 2, fernst: 150, start: 'aussen',
-    blicke: {
-      aussen: { art: '3d', pos: [21, 11, 24], ziel: [1, 3, 0] },
-      garten: { art: '3d', pos: [-16, 9, -23], ziel: [0, 3, 0] },
-      ug: { art: 'oben', schnitt: [0, -1, 0, -1.3], r: 11 }, eg: { art: 'oben', schnitt: [0, -1, 0, 1.3], r: 11 }, og: { art: 'oben', schnitt: [0, -1, 0, 4.5], r: 11 }, dg: { art: 'oben', schnitt: [0, -1, 0, 7.6], r: 11 },
-      schnittA: { art: 'seite', von: [-1, 0, 0], schnitt: [1, 0, 0, 4.32], r: 9, ziel: [0, 4.5, 0] },      // längs durch die Treppe (x = 1,6 m), Blick von Westen
-      schnittB: { art: 'seite', von: [0, 0, 1], schnitt: [0, 0, -1, -0.51], r: 9, ziel: [0, 4.5, 0] },    // quer durch die Mitte (y = 5,5 m), Blick von Süden
-      sued: { art: 'seite', von: [0, 0, 1], r: 10, ziel: [0, 4.5, 0] }, ost: { art: 'seite', von: [1, 0, 0], r: 10, ziel: [0, 4.5, 0] },
-      nord: { art: 'seite', von: [0, 0, -1], r: 10, ziel: [0, 4.5, 0] }, west: { art: 'seite', von: [-1, 0, 0], r: 10, ziel: [0, 4.5, 0] },
-    },
+    nah: 0.5, fern: 600, nahst: 2, fernst: 150, start: 'strasse',
+    blicke: { strasse: { pos: [21, 11, 24], ziel: [1, 3, 0] }, garten: { pos: [-16, 9, -23], ziel: [0, 3, 0] }, oben: { pos: [0.01, 58, 0], ziel: [0, 0, 0] } },
+    schnitte: { ug: [0, -1, 0, -1.3], eg: [0, -1, 0, 1.3], og: [0, -1, 0, 4.5], dg: [0, -1, 0, 7.6], laengs: [1, 0, 0, 4.32], quer: [0, 0, -1, -0.51] },   // längs durch die Treppe (x = 1,6 m), quer durch die Mitte (y = 5,5 m)
   },
   vancouver: {
     basis: 'modell/vancouver/', dateien: { tragwerk: 'tragwerk.glb', gebaeude: 'gebaeude.glb', stadt: 'stadt.glb', pflanzen: 'pflanzen.glb' },
     baeume: { standorte: 'baeume.json', vorlagen: 'baeume_vorlagen.glb', gruppe: 'pflanzen' }, boden: { r: 1400, y: -0.3 },
     nah: 1, fern: 6000, nahst: 30, fernst: 2500, start: 'block',
-    blicke: {
-      block: { art: '3d', pos: [520, 380, 620], ziel: [0, 110, 0] }, turm: { art: '3d', pos: [260, 160, 300], ziel: [0, 150, 0] },
-      sockel: { art: '3d', pos: [150, 70, 190], ziel: [0, 20, 0] }, oben: { art: 'oben', r: 260 },
-      eg: { art: 'oben', schnitt: [0, -1, 0, 6], r: 160 }, og: { art: 'oben', schnitt: [0, -1, 0, 60], r: 160 },
-      schnitt: { art: 'seite', von: [1, 0, 0], schnitt: [-1, 0, 0, 0], r: 190, ziel: [0, 160, 0] },
-      sued: { art: 'seite', von: [0, 0, 1], r: 200, ziel: [0, 160, 0] },
-    },
+    blicke: { block: { pos: [520, 380, 620], ziel: [0, 110, 0] }, turm: { pos: [260, 160, 300], ziel: [0, 150, 0] }, sockel: { pos: [150, 70, 190], ziel: [0, 20, 0] }, oben: { pos: [0.01, 900, 0], ziel: [0, 0, 0] } },
+    schnitte: { eg: [0, -1, 0, 6], og: [0, -1, 0, 60], laengs: [-1, 0, 0, 0] },
   },
 };
 
-let renderer, scene, camera, controls, sichtbar = false, gestartet = false, aktiv = null;
+let renderer, scene, camera, controls, sichtbar = false, gestartet = false, aktiv = null, axo = false;
 const loader = new GLTFLoader(), draco = new DRACOLoader(); draco.setDecoderPath(DRACO); loader.setDRACOLoader(draco);
-const SCHNITT = new THREE.MeshBasicMaterial({ color: 0x1c1c1c, side: THREE.BackSide });   // Rückseiten geschlossener Körper: so wirkt die Schnittfläche gefüllt
+const SCHNITT = new THREE.MeshBasicMaterial({ color: 0x1c1c1c, side: THREE.BackSide });
 const leisten = () => wrap.querySelectorAll('[data-leiste]');
 const leiste = () => wrap.querySelector(`[data-leiste="${aktiv.name}"]`);
+const markiere = (attr, wert) => { for (const b of leiste().querySelectorAll(`[${attr}]`)) b.classList.toggle('on', b.getAttribute(attr) === wert); };
 
 function start() {
   if (gestartet) return; gestartet = true;
   renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.localClippingEnabled = false;
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); renderer.outputColorSpace = THREE.SRGBColorSpace;
   scene = new THREE.Scene(); scene.background = new THREE.Color(0xffffff);
   scene.add(new THREE.HemisphereLight(0xffffff, 0xb8b8b8, 1.15));
   const sonne = new THREE.DirectionalLight(0xffffff, 1.5); sonne.position.set(300, 500, 200); scene.add(sonne);
   const s2 = new THREE.DirectionalLight(0xffffff, 0.5); s2.position.set(-200, 300, -400); scene.add(s2);
   for (const [name, m] of Object.entries(MODELLE)) {
-    m.name = name; m.wurzel = new THREE.Group(); m.wurzel.visible = false; m.gruppen = {}; m.schnittflaechen = []; scene.add(m.wurzel);
+    m.name = name; m.wurzel = new THREE.Group(); m.wurzel.visible = false; m.gruppen = {}; m.schnittflaechen = []; m.schnitt = null; scene.add(m.wurzel);
     if (m.boden) { const b = new THREE.Mesh(new THREE.CircleGeometry(m.boden.r, 96), new THREE.MeshBasicMaterial({ color: 0xf2f2f2 })); b.rotation.x = -Math.PI / 2; b.position.y = m.boden.y; m.wurzel.add(b); }
   }
   addEventListener('resize', groesse);
@@ -71,9 +62,8 @@ function groesse() {
   camera?.updateProjectionMatrix();
 }
 function melde(t) { if (status) status.textContent = t || ''; }
-const an = (sel) => leiste().querySelector(sel)?.classList.contains('on');
 
-// Modell wechseln: Reiter, Leiste, Wurzel, Kamera
+// Modell wechseln: Reiter, Leiste, Wurzel, Kamera, Schnitt
 function aktiviere(name) {
   const m = MODELLE[name]; if (!m) return;
   if (aktiv) aktiv.wurzel.visible = false;
@@ -81,8 +71,8 @@ function aktiviere(name) {
   for (const b of wrap.querySelectorAll('.m-reiter button')) b.classList.toggle('on', b.dataset.modell === name);
   for (const l of leisten()) l.hidden = l.dataset.leiste !== name;
   if (m.zustaende && !m.zustandGesetzt) { m.zustandGesetzt = true; zustand(m.zustand); }
-  blick(m.start);
-  for (const [k] of Object.entries(m.dateien)) if (sollSichtbar(k)) lade(k);
+  blick(m.start); schnitt(m.schnitt || 'kein'); markiere('data-kamera', axo ? 'axo' : 'persp');
+  for (const k of Object.keys(m.dateien)) if (sollSichtbar(k)) lade(k);
   if (m.baeume) ladeBaeume(m);
 }
 // Sichtbar ist eine Gruppe, wenn ihr Schalter an ist; Gruppen des Zustands folgen dem Zustand
@@ -90,11 +80,7 @@ function sollSichtbar(k) {
   const m = aktiv; if (m.zustaende) { const z = m.zustaende[m.zustand]; if (k in z && !z[k]) return false; }
   const b = leiste().querySelector(`[data-gruppe="${k}"]`); return b ? b.classList.contains('on') : true;
 }
-function zustand(z) {
-  const m = aktiv; m.zustand = z;
-  for (const b of leiste().querySelectorAll('[data-zustand]')) b.classList.toggle('on', b.dataset.zustand === z);
-  for (const k of Object.keys(m.dateien)) zeige(k);
-}
+function zustand(z) { const m = aktiv; m.zustand = z; markiere('data-zustand', z); for (const k of Object.keys(m.dateien)) zeige(k); }
 function zeige(k) { const m = aktiv, soll = sollSichtbar(k); if (m.gruppen[k]) m.gruppen[k].visible = soll; else if (soll) lade(k); if (m.baumNetz && m.baeume?.gruppe === k) m.baumNetz.visible = soll; }
 
 async function lade(k) {
@@ -113,7 +99,7 @@ async function lade(k) {
     g.add(d.scene); g.visible = sollSichtbar(k); melde('');
   } catch (e) { melde(fehler?.textContent || 'Fehler'); console.error(e); }
 }
-// Bäume (Vancouver): die Bibliotheksbäume aus Forma als Vorlagen (Rinde, Blattlagen), an jedem Standort mit Maßstab und Drehung instanziert
+// Bäume (Vancouver): die Bibliotheksbäume aus Forma als Vorlagen (Rinde, Kronen), an jedem Standort mit Maßstab und Drehung instanziert
 async function ladeBaeume(m) {
   if (m.baumNetz) return; m.baumNetz = new THREE.Group(); m.wurzel.add(m.baumNetz);
   try {
@@ -132,27 +118,31 @@ async function ladeBaeume(m) {
   } catch (e) { console.error(e); }
 }
 
-// Blick: 3D (Perspektive, frei drehbar), oben (Grundriss, Parallelprojektion, Norden oben) oder seite (Ansicht, Schnitt); mit Schnittebene
-function blick(name) {
-  const m = aktiv, b = m.blicke[name]; if (!b) return;
-  for (const k of leiste().querySelectorAll('[data-blick]')) k.classList.toggle('on', k.dataset.blick === name);
+// Kamera: Perspektive oder Axonometrie (Parallelprojektion), beide frei drehbar; Lage und Ziel bleiben beim Wechsel erhalten
+function kamera(pos, ziel) {
+  const m = aktiv, w = canvas.clientWidth || 1, h = canvas.clientHeight || 1;
   controls?.dispose();
-  const w = canvas.clientWidth || 1, h = canvas.clientHeight || 1;
-  if (b.art === '3d') {
-    camera = new THREE.PerspectiveCamera(38, w / h, m.nah, m.fern); camera.position.set(...b.pos);
-    controls = new OrbitControls(camera, canvas); controls.minDistance = m.nahst; controls.maxDistance = m.fernst; controls.maxPolarAngle = Math.PI / 2 - 0.02; controls.target.set(...b.ziel);
-  } else {
-    const r = b.r, ziel = b.ziel || [0, 0, 0];
-    camera = new THREE.OrthographicCamera(-r * w / h, r * w / h, r, -r, 0.1, m.fern * 2); camera.userData.r = r;
-    if (b.art === 'oben') { camera.position.set(ziel[0], m.fern * 0.5, ziel[2]); camera.up.set(0, 0, -1); }
-    else { camera.position.set(ziel[0] + b.von[0] * m.fern * 0.5, ziel[1], ziel[2] + b.von[2] * m.fern * 0.5); camera.up.set(0, 1, 0); }
-    camera.lookAt(...ziel);
-    controls = new OrbitControls(camera, canvas); controls.enableRotate = false; controls.screenSpacePanning = true; controls.target.set(...ziel); controls.minZoom = 0.3; controls.maxZoom = 12;
-  }
-  controls.enableDamping = true; controls.dampingFactor = 0.08; controls.touches = { ONE: b.art === '3d' ? THREE.TOUCH.ROTATE : THREE.TOUCH.PAN, TWO: THREE.TOUCH.DOLLY_PAN }; controls.update();
-  renderer.clippingPlanes = b.schnitt ? [new THREE.Plane(new THREE.Vector3(b.schnitt[0], b.schnitt[1], b.schnitt[2]), b.schnitt[3])] : [];
-  for (const mm of Object.values(MODELLE)) for (const s of mm.schnittflaechen || []) s.visible = !!b.schnitt;
+  if (axo) {
+    const r = Math.hypot(pos[0] - ziel[0], pos[1] - ziel[1], pos[2] - ziel[2]) * Math.tan(FOV / 2 * Math.PI / 180);   // gleicher Bildausschnitt wie in der Perspektive
+    camera = new THREE.OrthographicCamera(-r * w / h, r * w / h, r, -r, -m.fern, m.fern); camera.userData.r = r;
+  } else camera = new THREE.PerspectiveCamera(FOV, w / h, m.nah, m.fern);
+  camera.position.set(...pos);
+  controls = new OrbitControls(camera, canvas); controls.target.set(...ziel);
+  controls.enableDamping = true; controls.dampingFactor = 0.08; controls.maxPolarAngle = Math.PI / 2 - 0.02; controls.minDistance = m.nahst; controls.maxDistance = m.fernst; controls.minZoom = 0.2; controls.maxZoom = 20;
+  controls.touches = { ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN }; controls.update();
   camera.updateProjectionMatrix();
+}
+function blick(name) { const b = aktiv.blicke[name]; if (!b) return; kamera(b.pos, b.ziel); markiere('data-blick', name); }
+function projektion(art) {
+  axo = art === 'axo'; markiere('data-kamera', art);
+  const pos = camera.position.toArray(), ziel = controls.target.toArray();
+  kamera(pos, ziel);
+}
+// Schnitt: Geschoss (alles darüber fällt weg), längs, quer oder keiner
+function schnitt(name) {
+  const m = aktiv, s = m.schnitte[name]; m.schnitt = s ? name : null; markiere('data-schnitt', s ? name : 'kein');
+  renderer.clippingPlanes = s ? [new THREE.Plane(new THREE.Vector3(s[0], s[1], s[2]), s[3])] : [];
+  for (const mm of Object.values(MODELLE)) for (const f of mm.schnittflaechen || []) f.visible = !!s;
 }
 
 wrap.addEventListener('click', e => {
@@ -161,6 +151,8 @@ wrap.addEventListener('click', e => {
   else if (b.dataset.zustand) zustand(b.dataset.zustand);
   else if (b.dataset.gruppe) { b.classList.toggle('on'); zeige(b.dataset.gruppe); }
   else if (b.dataset.blick) blick(b.dataset.blick);
+  else if (b.dataset.schnitt) schnitt(b.dataset.schnitt);
+  else if (b.dataset.kamera) projektion(b.dataset.kamera);
 });
 
 // Erst laden, wenn der Abschnitt ins Bild kommt; nur rendern, solange er sichtbar ist

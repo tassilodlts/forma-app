@@ -56,18 +56,14 @@
       <button type="button" class="on" data-gruppe="umgebung" data-i18n="modell.umgebung">Nachbarn</button>
       <button type="button" class="on" data-gruppe="baeume" data-i18n="modell.pflanzen">Bäume</button>
     </div>
-    <div class="m-satz">
-      <button type="button" class="on" data-blick="aussen" data-i18n="modell.strasse">3D Straße</button>
-      <button type="button" data-blick="garten" data-i18n="modell.garten">3D Garten</button>
-    </div>
-    <div class="m-satz"><span data-i18n="modell.grundriss">Grundriss</span>
-      <button type="button" data-blick="ug">UG</button><button type="button" data-blick="eg">EG</button><button type="button" data-blick="og">OG</button><button type="button" data-blick="dg">DG</button>
-    </div>
     <div class="m-satz"><span data-i18n="modell.schnitt">Schnitt</span>
-      <button type="button" data-blick="schnittA">A</button><button type="button" data-blick="schnittB">B</button>
+      <button type="button" class="on" data-schnitt="kein" data-i18n="modell.kein">Keiner</button><button type="button" data-schnitt="ug" data-i18n="modell.ug">UG</button><button type="button" data-schnitt="eg" data-i18n="modell.eg">EG</button><button type="button" data-schnitt="og" data-i18n="modell.og">OG</button><button type="button" data-schnitt="dg" data-i18n="modell.dg">DG</button><button type="button" data-schnitt="laengs" data-i18n="modell.laengs">Längs</button><button type="button" data-schnitt="quer" data-i18n="modell.quer">Quer</button>
     </div>
-    <div class="m-satz"><span data-i18n="modell.ansicht">Ansicht</span>
-      <button type="button" data-blick="sued" data-i18n="modell.sued">Süd</button><button type="button" data-blick="ost" data-i18n="modell.ost">Ost</button><button type="button" data-blick="nord" data-i18n="modell.nord">Nord</button><button type="button" data-blick="west" data-i18n="modell.west">West</button>
+    <div class="m-satz">
+      <button type="button" class="on" data-kamera="persp" data-i18n="modell.persp">Perspektive</button><button type="button" data-kamera="axo" data-i18n="modell.axo">Axonometrie</button>
+    </div>
+    <div class="m-satz"><span data-i18n="modell.blick">Blick</span>
+      <button type="button" class="on" data-blick="strasse" data-i18n="modell.strasse">Straße</button><button type="button" data-blick="garten" data-i18n="modell.garten">Garten</button><button type="button" data-blick="oben" data-i18n="modell.a4">Von oben</button>
     </div>
   </div>
   <div class="m-leiste" data-leiste="vancouver" hidden>
@@ -77,18 +73,14 @@
       <button type="button" class="on" data-gruppe="stadt" data-i18n="modell.stadt">Stadt</button>
       <button type="button" class="on" data-gruppe="pflanzen" data-i18n="modell.pflanzen">Bäume</button>
     </div>
-    <div class="m-satz">
-      <button type="button" class="on" data-blick="block" data-i18n="modell.a1">Block</button>
-      <button type="button" data-blick="turm" data-i18n="modell.a2">Turm</button>
-      <button type="button" data-blick="sockel" data-i18n="modell.a3">Sockel</button>
-      <button type="button" data-blick="oben" data-i18n="modell.a4">Von oben</button>
-    </div>
-    <div class="m-satz"><span data-i18n="modell.grundriss">Grundriss</span>
-      <button type="button" data-blick="eg">EG</button><button type="button" data-blick="og">+60 m</button>
+    <div class="m-satz"><span data-i18n="modell.schnitt">Schnitt</span>
+      <button type="button" class="on" data-schnitt="kein" data-i18n="modell.kein">Keiner</button><button type="button" data-schnitt="eg" data-i18n="modell.eg">EG</button><button type="button" data-schnitt="og">+60 m</button><button type="button" data-schnitt="laengs" data-i18n="modell.laengs">Längs</button>
     </div>
     <div class="m-satz">
-      <button type="button" data-blick="schnitt" data-i18n="modell.schnitt">Schnitt</button>
-      <button type="button" data-blick="sued" data-i18n="modell.ansichtSued">Ansicht Süd</button>
+      <button type="button" class="on" data-kamera="persp" data-i18n="modell.persp">Perspektive</button><button type="button" data-kamera="axo" data-i18n="modell.axo">Axonometrie</button>
+    </div>
+    <div class="m-satz"><span data-i18n="modell.blick">Blick</span>
+      <button type="button" class="on" data-blick="block" data-i18n="modell.a1">Block</button><button type="button" data-blick="turm" data-i18n="modell.a2">Turm</button><button type="button" data-blick="sockel" data-i18n="modell.a3">Sockel</button><button type="button" data-blick="oben" data-i18n="modell.a4">Von oben</button>
     </div>
   </div>
   <div class="m-buehne"><canvas></canvas><span class="m-status"></span><span class="m-fehler" hidden data-i18n="modell.fehler">Modell konnte nicht geladen werden.</span></div>
