@@ -10,10 +10,13 @@ Forma modelliert aus Sprache. Du beschreibst ein Haus, Forma baut es aus echten 
 
 ## 2. KI wählen (eine Minute)
 
-Beim ersten Start öffnet sich das Fenster **Einstellungen**. Dort wählst du, welche KI das Modell baut:
+Beim ersten Start öffnet sich das Fenster **Einstellungen**. Der einfachste Weg ist **Forma Cloud**: Du trägst den Lizenzschlüssel aus deinem Abo ein (portantica.net), fertig. Chat, Websuche und KI-Renderings sind enthalten, ohne eigenes KI-Konto.
+
+Wer lieber eine eigene KI anschließt, wählt einen dieser Anbieter:
 
 | Anbieter | Kosten | Wofür |
 |---|---|---|
+| **Forma Cloud** | im Abo enthalten | Lizenzschlüssel eintragen, nichts weiter nötig |
 | **Google Gemini** | kostenlos mit Google-Konto | gut für den Anfang, Schlüssel in Google AI Studio |
 | **Groq** | kostenlos | sehr schnell, offene Modelle |
 | **OpenAI** | wenige Cent je Auftrag | beste Qualität, einziger Weg für KI-Renderings |
