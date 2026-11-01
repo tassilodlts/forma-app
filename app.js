@@ -36,7 +36,7 @@ const TEXTE = {
     'fkt.4t': 'Rendering auf deinem Mac', 'fkt.4': 'Blender Cycles läuft lokal, so oft du willst. Dazu KI-Renderings für Stimmung und Vegetation.',
     'fkt.5t': 'Pläne als PDF', 'fkt.5': 'Grundrisse, Schnitte, Ansichten und Tafeln kommen fertig aus dem Modell.',
     'fkt.6t': 'Vom Handy und aus dem Terminal', 'fkt.6': 'Unterwegs im Browser bedienen. Oder aus Claude Code, Codex und Gemini CLI steuern.',
-    'preis.titel': 'Drei Pläne', 'frei.name': 'Forma Frei', 'frei.einheit': 'für immer, ohne Karte', 'frei.l1': 'Das ganze Programm auf deinem Mac: Modellieren, Pläne, Export', 'frei.l2': '60 KI-Sätze im Monat inklusive, unbegrenzt mit eigenem KI-Schlüssel (Gemini kostenlos, Ollama lokal)', 'frei.l3': 'Forma Render unbegrenzt, auf deinem Mac', 'frei.l4': 'Handy als Fernbedienung im eigenen Netz', 'frei.knopf': 'Forma laden', 'preis.einheit': 'im Monat zzgl. MwSt.',
+    'preis.titel': 'Drei Pläne', 'frei.name': 'Forma Frei', 'frei.einheit': 'für immer, ohne Karte', 'frei.l1': 'Das ganze Programm auf deinem Mac: Modellieren, Pläne, Export', 'frei.l2': 'KI mit eigenem Schlüssel: Gemini und Groq kostenlos, Ollama lokal auf dem Mac', 'frei.l3': 'Forma Render unbegrenzt, auf deinem Mac', 'frei.l4': 'Handy als Fernbedienung im eigenen Netz', 'frei.knopf': 'Forma laden', 'preis.einheit': 'im Monat zzgl. MwSt.',
     'preis.l1': 'KI für das Modell, unbegrenzt', 'preis.l2': '60 KI-Renderings im Monat',
     'preis.l3': 'Blender-Rendering unbegrenzt, auf deinem Mac', 'preis.l4': 'Alle Updates',
     'preis.knopf': 'Abo starten',
@@ -83,7 +83,7 @@ const TEXTE = {
     'fkt.4t': 'Rendering on your Mac', 'fkt.4': 'Blender Cycles runs locally, as often as you like. Plus AI renderings for mood and vegetation.',
     'fkt.5t': 'Drawings as PDF', 'fkt.5': 'Plans, sections, elevations and boards come straight from the model.',
     'fkt.6t': 'From your phone and the terminal', 'fkt.6': 'Use it in the browser on the go. Or drive it from Claude Code, Codex and Gemini CLI.',
-    'preis.titel': 'Three plans', 'frei.name': 'Forma Free', 'frei.einheit': 'forever, no card', 'frei.l1': 'The whole app on your Mac: modelling, drawings, export', 'frei.l2': '60 AI sentences per month included, unlimited with your own AI key (Gemini free, Ollama local)', 'frei.l3': 'Unlimited Forma Render, on your Mac', 'frei.l4': 'Phone as a remote on your own network', 'frei.knopf': 'Download Forma', 'preis.einheit': 'per month plus VAT',
+    'preis.titel': 'Three plans', 'frei.name': 'Forma Free', 'frei.einheit': 'forever, no card', 'frei.l1': 'The whole app on your Mac: modelling, drawings, export', 'frei.l2': 'AI with your own key: Gemini and Groq free, Ollama locally on the Mac', 'frei.l3': 'Unlimited Forma Render, on your Mac', 'frei.l4': 'Phone as a remote on your own network', 'frei.knopf': 'Download Forma', 'preis.einheit': 'per month plus VAT',
     'preis.l1': 'AI for the model, unlimited', 'preis.l2': '60 AI renderings per month',
     'preis.l3': 'Unlimited Blender rendering, on your Mac', 'preis.l4': 'All updates',
     'preis.knopf': 'Start subscription',
@@ -130,7 +130,7 @@ const TEXTE = {
     'fkt.4t': 'Render en tu Mac', 'fkt.4': 'Blender Cycles funciona en local, tantas veces como quieras. Además, renders con IA para ambiente y vegetación.',
     'fkt.5t': 'Planos en PDF', 'fkt.5': 'Plantas, secciones, alzados y paneles salen listos del modelo.',
     'fkt.6t': 'Desde el móvil y la terminal', 'fkt.6': 'Úsalo en el navegador donde estés. O contrólalo desde Claude Code, Codex y Gemini CLI.',
-    'preis.titel': 'Tres planes', 'frei.name': 'Forma Gratis', 'frei.einheit': 'para siempre, sin tarjeta', 'frei.l1': 'Todo el programa en tu Mac: modelar, planos, exportar', 'frei.l2': '60 frases de IA al mes incluidas, sin límite con tu propia clave de IA (Gemini gratis, Ollama local)', 'frei.l3': 'Forma Render sin límite, en tu Mac', 'frei.l4': 'El móvil como mando en tu propia red', 'frei.knopf': 'Descargar Forma', 'preis.einheit': 'al mes más IVA',
+    'preis.titel': 'Tres planes', 'frei.name': 'Forma Gratis', 'frei.einheit': 'para siempre, sin tarjeta', 'frei.l1': 'Todo el programa en tu Mac: modelar, planos, exportar', 'frei.l2': 'IA con tu propia clave: Gemini y Groq gratis, Ollama local en el Mac', 'frei.l3': 'Forma Render sin límite, en tu Mac', 'frei.l4': 'El móvil como mando en tu propia red', 'frei.knopf': 'Descargar Forma', 'preis.einheit': 'al mes más IVA',
     'preis.l1': 'IA para el modelo, sin límite', 'preis.l2': '60 renders con IA al mes',
     'preis.l3': 'Render con Blender sin límite, en tu Mac', 'preis.l4': 'Todas las actualizaciones',
     'preis.knopf': 'Empezar suscripción',
@@ -193,5 +193,14 @@ window.formaZaehl = art => { try { const q = (document.referrer && new URL(docum
   const d = JSON.stringify({ art, seite: location.pathname, sprache: document.documentElement.lang, quelle: q });
   if (!(navigator.sendBeacon && navigator.sendBeacon(STATISTIK, new Blob([d], { type: 'text/plain' })))) fetch(STATISTIK, { method: 'POST', body: d, keepalive: true }).catch(() => {}); } catch {} };
 if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') window.formaZaehl('seite');
+// Film im App-Bild (2.11., Tassilo: soll von selbst laufen): autoplay reicht nicht überall (Stromsparmodus, Datensparen), darum beim Laden, beim Erscheinen
+// im Bild und bei der ersten Berührung noch einmal play() ohne Ton versuchen
+const film = document.querySelector('.app video');
+if (film) {
+  const spielen = () => { film.muted = true; const p = film.play(); if (p) p.catch(() => {}); };
+  spielen(); film.addEventListener('loadeddata', spielen);
+  new IntersectionObserver(es => { if (es.some(e => e.isIntersecting) && film.paused) spielen(); }, { threshold: 0.2 }).observe(film);
+  for (const ev of ['touchstart', 'click', 'scroll', 'keydown']) document.addEventListener(ev, () => { if (film.paused) spielen(); }, { once: true, passive: true });
+}
 document.addEventListener('click', e => { const a = e.target.closest('a[data-download],a[data-checkout]'); if (a) window.formaZaehl(a.dataset.download ? 'laden' : 'kaufen:' + a.dataset.checkout); });
 document.querySelector('.sprachen')?.addEventListener('click', e => { const b = e.target.closest('button[data-lang]'); if (b) anwenden(b.dataset.lang, true); });
