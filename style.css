@@ -98,7 +98,9 @@ main>section,.band{padding:72px var(--rand);max-width:var(--breit);margin:0 auto
 
 /* App */
 .app{padding-top:16px;padding-bottom:24px}
+.app .rahmen{position:relative;line-height:0}
 .app img{width:100%;border:1px solid var(--linie)}
+.app video{position:absolute;left:19.125%;top:4.4%;width:57.625%;height:92.1%;object-fit:cover;display:block;background:#6f8793}
 .app figcaption{font-size:17px;color:var(--grau);margin-top:14px;max-width:70ch}
 
 /* Preis */

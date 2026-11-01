@@ -19,9 +19,9 @@
   },
   "gebaeude": {
    "datei": "gebaeude.glb",
-   "mb": 1.75,
-   "dreiecke": 2359819,
-   "objekte": 10188
+   "mb": 3.19,
+   "dreiecke": 2177291,
+   "objekte": 10226
   },
   "pflanzen": {
    "datei": "pflanzen.glb",
@@ -31,16 +31,16 @@
   },
   "stadt": {
    "datei": "stadt.glb",
-   "mb": 4.75,
-   "dreiecke": 1829084,
-   "objekte": 510
+   "mb": 0.12,
+   "dreiecke": 80342,
+   "objekte": 25
   }
  },
- "baeume": 35904,
+ "baeume": 27873,
  "baumvorlagen": {
-  "anzahl": 965,
-  "dreiecke": 98340,
-  "kb": 909.8,
-  "dreieckeGesamt": 3170122
+  "anzahl": 823,
+  "dreiecke": 85182,
+  "kb": 787.6,
+  "dreieckeGesamt": 2474110
  }
 }
