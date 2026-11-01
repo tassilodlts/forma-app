@@ -2,8 +2,8 @@
 'use strict';
 
 const PRODUKT = 'Forma';          // Name, später austauschbar
-const DOWNLOAD_ARM = 'https://github.com/tassilodlts/forma-app/releases/download/v1.0.0/Forma-1.0.0-Apple-Silicon.dmg';         // Mac, Apple Silicon (.dmg)
-const DOWNLOAD_X64 = 'https://github.com/tassilodlts/forma-app/releases/download/v1.0.0/Forma-1.0.0-Intel.dmg';         // Mac, Intel (.dmg)
+const DOWNLOAD_ARM = 'https://github.com/tassilodlts/forma-app/releases/latest/download/Forma-Apple-Silicon.dmg';         // Mac, Apple Silicon (.dmg)
+const DOWNLOAD_X64 = 'https://github.com/tassilodlts/forma-app/releases/latest/download/Forma-Intel.dmg';         // Mac, Intel (.dmg)
 const CHECKOUT = 'mailto:tassilodlts@gmail.com?subject=Forma%20Pro';             // Abo starten (Stripe o. ä.)
 
 const TEXTE = {
