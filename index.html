@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forma</title>
+<meta name="description" data-i18n="meta" content="Beschreib dein Haus. Forma baut es. Modellieren mit Sprache für Architekten, auf dem Mac.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="kopf">
+  <a class="logo" href="#" data-produkt>Forma</a>
+  <nav class="menu">
+    <a href="#funktionen" data-i18n="nav.funktionen">Funktionen</a>
+    <a href="#preis" data-i18n="nav.preis">Preis</a>
+    <a href="#faq" data-i18n="nav.faq">Fragen</a>
+  </nav>
+  <div class="sprachen" role="group" aria-label="Sprache">
+    <button type="button" data-lang="de" lang="de">DE</button>
+    <button type="button" data-lang="en" lang="en">EN</button>
+    <button type="button" data-lang="es" lang="es">ES</button>
+  </div>
+</header>
+
+<main>
+
+<section class="held">
+  <h1><span data-i18n="held.titel1">Beschreib dein Haus.</span> <span data-i18n="held.titel2">Forma baut es.</span></h1>
+  <p class="held-text" data-i18n="held.text">Du schreibst, was du willst. Forma setzt echte Bauteile, rendert auf deinem Mac und schreibt die Pläne als PDF.</p>
+  <div class="knoepfe">
+    <a class="knopf primaer" data-download="arm" href="#"><span data-i18n="held.ladenArm">Laden für Mac (Apple Silicon)</span></a>
+    <a class="knopf" data-download="x64" href="#"><span data-i18n="held.ladenX64">Laden für Mac (Intel)</span></a>
+  </div>
+  <p class="klein" data-i18n="held.klein">macOS 13 oder neuer. Kostenlos testen, Abo erst wenn du bleibst.</p>
+</section>
+
+<section class="kacheln" aria-label="Bilder">
+  <figure>
+    <img src="bilder/einstellungen.png" alt="" loading="lazy" width="1600" height="1200" data-i18n-alt="bild.app">
+    <figcaption data-i18n="bild.app">Die App: Chat links, Modell rechts, Einstellungen in der App.</figcaption>
+  </figure>
+  <figure>
+    <img src="bilder/rendering.jpg" alt="" loading="lazy" width="1600" height="999" data-i18n-alt="bild.render">
+    <figcaption data-i18n="bild.render">Rendering mit Blender Cycles, berechnet auf dem eigenen Mac.</figcaption>
+  </figure>
+  <figure>
+    <img src="bilder/tafel.jpg" alt="" loading="lazy" width="1600" height="1066" data-i18n-alt="bild.tafel">
+    <figcaption data-i18n="bild.tafel">Wettbewerbsbild aus Forma, Projekt FIVE CLEARINGS, Vancouver.</figcaption>
+  </figure>
+</section>
+
+<section class="schritte" id="sogehts">
+  <h2 data-i18n="schritte.titel">So geht es</h2>
+  <ol>
+    <li><span class="nr">1</span><h3 data-i18n="schritte.1t">Laden</h3><p data-i18n="schritte.1">Die App laden, in den Programme-Ordner ziehen, öffnen.</p></li>
+    <li><span class="nr">2</span><h3 data-i18n="schritte.2t">Lizenz eintragen</h3><p data-i18n="schritte.2">Den Schlüssel aus deiner Bestätigungsmail in die Einstellungen kopieren.</p></li>
+    <li><span class="nr">3</span><h3 data-i18n="schritte.3t">Beschreiben</h3><p data-i18n="schritte.3">Im Chat schreiben: „Zwei Geschosse, Flachdach, Fenster nach Süden.“ Forma baut die Bauteile.</p></li>
+    <li><span class="nr">4</span><h3 data-i18n="schritte.4t">Rendern</h3><p data-i18n="schritte.4">Blick wählen, Stimmung wählen, rendern. Pläne als PDF, Modell als 3dm oder IFC.</p></li>
+  </ol>
+</section>
+
+<section class="funktionen" id="funktionen">
+  <h2 data-i18n="fkt.titel">Was Forma kann</h2>
+  <div class="karten">
+    <article><h3 data-i18n="fkt.1t">Echte Bauteile</h3><p data-i18n="fkt.1">Wände, Decken, Stützen, Fenster, Treppen. Mit Maßen, Schichten und Mengen, nicht nur Flächen.</p></article>
+    <article><h3 data-i18n="fkt.2t">Rhino-Befehle</h3><p data-i18n="fkt.2">Wer Rhino kennt, tippt die bekannten Befehle. Der Chat versteht beides.</p></article>
+    <article><h3 data-i18n="fkt.3t">Export 3dm und IFC</h3><p data-i18n="fkt.3">Das Modell geht weiter nach Rhino, Revit, ArchiCAD oder zum Tragwerksplaner.</p></article>
+    <article><h3 data-i18n="fkt.4t">Rendering auf deinem Mac</h3><p data-i18n="fkt.4">Blender Cycles läuft lokal, so oft du willst. Dazu KI-Renderings für Stimmung und Vegetation.</p></article>
+    <article><h3 data-i18n="fkt.5t">Pläne als PDF</h3><p data-i18n="fkt.5">Grundrisse, Schnitte, Ansichten und Tafeln kommen fertig aus dem Modell.</p></article>
+    <article><h3 data-i18n="fkt.6t">Vom Handy und aus dem Terminal</h3><p data-i18n="fkt.6">Unterwegs im Browser bedienen. Oder aus Claude Code, Codex und Gemini CLI steuern.</p></article>
+  </div>
+</section>
+
+<section class="preis" id="preis">
+  <h2 data-i18n="preis.titel">Ein Preis</h2>
+  <div class="plan">
+    <h3>Forma Pro</h3>
+    <p class="betrag"><span class="zahl">45 €</span> <span class="einheit" data-i18n="preis.einheit">im Monat zzgl. MwSt.</span></p>
+    <ul>
+      <li data-i18n="preis.l1">KI für das Modell, unbegrenzt</li>
+      <li data-i18n="preis.l2">60 KI-Renderings im Monat</li>
+      <li data-i18n="preis.l3">Blender-Rendering unbegrenzt, auf deinem Mac</li>
+      <li data-i18n="preis.l4">Alle Updates</li>
+    </ul>
+    <a class="knopf primaer gross" data-checkout href="#" data-i18n="preis.knopf">Abo starten</a>
+    <p class="garantie" data-i18n="preis.garantie">Nach drei Monaten nicht zufrieden? Du bekommst alles zurück.</p>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <h2 data-i18n="faq.titel">Fragen</h2>
+  <details><summary data-i18n="faq.1f">Was brauche ich?</summary><p data-i18n="faq.1">Einen Mac mit macOS 13 oder neuer und Internet für die KI. Für Renderings installiert Forma Blender von blender.org, ein Klick genügt.</p></details>
+  <details><summary data-i18n="faq.2f">Gibt es Forma für Windows?</summary><p data-i18n="faq.2">Noch nicht. Forma läuft auf dem Mac. Schreib uns, wenn du eine Windows-Version willst, wir zählen mit.</p></details>
+  <details><summary data-i18n="faq.3f">Wo liegen meine Daten?</summary><p data-i18n="faq.3">Auf deinem Mac. Projekte, Modelle und Renderings bleiben lokal. An die KI gehen nur die Texte deines Chats und, wenn du es willst, das Bild für ein KI-Rendering.</p></details>
+  <details><summary data-i18n="faq.4f">Brauche ich einen eigenen KI-Schlüssel?</summary><p data-i18n="faq.4">Nein. Im Abo ist die KI enthalten. Wer eigene Schlüssel hat (OpenAI, Gemini, Groq, OpenRouter, Ollama), kann sie in den Einstellungen eintragen.</p></details>
+  <details><summary data-i18n="faq.5f">Muss ich Blender kennen?</summary><p data-i18n="faq.5">Nein. Forma stellt Kamera, Licht und Materialien selbst ein und startet Blender im Hintergrund. Du siehst nur das Bild.</p></details>
+  <details><summary data-i18n="faq.6f">Wie kündige ich?</summary><p data-i18n="faq.6">Jederzeit mit einem Klick im Kundenkonto. Das Abo läuft bis zum Monatsende, danach ist Schluss. Deine Dateien bleiben bei dir.</p></details>
+</section>
+
+</main>
+
+<footer class="fuss">
+  <span>© <span data-jahr>2026</span> <span data-produkt>Forma</span></span>
+  <a href="#" data-i18n="fuss.impressum">Impressum</a>
+  <a href="#" data-i18n="fuss.datenschutz">Datenschutz</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
