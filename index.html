@@ -39,49 +39,32 @@
 
 <section class="modell" id="modell">
   <div class="m-kopf">
-    <h2 data-i18n="modell.titel">Die Modelle zum Anfassen</h2>
-    <p data-i18n="modell.text">Zwei Projekte, direkt aus Forma. Ein Finger dreht, zwei Finger zoomen und verschieben. Grundrisse und Schnitte sind echte Schnitte durch das Modell.</p>
+    <h2 data-i18n="modell.titel">Sprich mit dem Modell</h2>
+    <p data-i18n="modell.text">So fühlt sich Forma an: Du sagst, was du sehen willst. Zwei echte Projekte, direkt aus dem Programm. Drehen mit einem Finger, zoomen mit zwei. In der App baut die KI auch um.</p>
   </div>
   <div class="m-reiter">
     <button type="button" class="on" data-modell="muenchen">Walhallastraße 8, München</button>
     <button type="button" data-modell="vancouver">FIVE CLEARINGS, Vancouver</button>
   </div>
-  <div class="m-leiste" data-leiste="muenchen">
-    <div class="m-satz">
-      <button type="button" data-zustand="1913" data-i18n="modell.bestand">Bestand 1913</button>
-      <button type="button" class="on" data-zustand="2026" data-i18n="modell.umbau">Umbau 2026</button>
-    </div>
-    <div class="m-satz m-gruppen">
-      <button type="button" class="on" data-gruppe="einrichtung" data-i18n="modell.einrichtung">Einrichtung</button>
-      <button type="button" class="on" data-gruppe="umgebung" data-i18n="modell.umgebung">Nachbarn</button>
-      <button type="button" class="on" data-gruppe="baeume" data-i18n="modell.pflanzen">Bäume</button>
-    </div>
-    <div class="m-satz"><span data-i18n="modell.schnitt">Schnitt</span>
-      <button type="button" class="on" data-schnitt="kein" data-i18n="modell.kein">Keiner</button><button type="button" data-schnitt="ug" data-i18n="modell.ug">UG</button><button type="button" data-schnitt="eg" data-i18n="modell.eg">EG</button><button type="button" data-schnitt="og" data-i18n="modell.og">OG</button><button type="button" data-schnitt="dg" data-i18n="modell.dg">DG</button><button type="button" data-schnitt="laengs" data-i18n="modell.laengs">Längs</button><button type="button" data-schnitt="quer" data-i18n="modell.quer">Quer</button>
-    </div>
-    <div class="m-satz">
-      <button type="button" class="on" data-kamera="persp" data-i18n="modell.persp">Perspektive</button><button type="button" data-kamera="axo" data-i18n="modell.axo">Axonometrie</button>
-    </div>
-    <div class="m-satz"><span data-i18n="modell.blick">Blick</span>
-      <button type="button" class="on" data-blick="strasse" data-i18n="modell.strasse">Straße</button><button type="button" data-blick="garten" data-i18n="modell.garten">Garten</button><button type="button" data-blick="oben" data-i18n="modell.a4">Von oben</button>
-    </div>
+  <form class="m-frage" autocomplete="off">
+    <input type="text" name="text" maxlength="200" data-i18n-ph="modell.frage" placeholder="Sag dem Modell, was du sehen willst …">
+    <button type="submit" aria-label="Senden">→</button>
+  </form>
+  <div class="m-chips" data-leiste="muenchen">
+    <button type="button" data-aktion='{"schnitt":"eg"}' data-i18n="chip.m1">Schneide das Erdgeschoss auf</button>
+    <button type="button" data-aktion='{"zustand":"1913"}' data-i18n="chip.m2">Wie sah es 1913 aus?</button>
+    <button type="button" data-aktion='{"gruppen":{"umgebung":false,"baeume":false}}' data-i18n="chip.m3">Nimm die Nachbarn weg</button>
+    <button type="button" data-aktion='{"kamera":"axo","blick":"oben","schnitt":"og"}' data-i18n="chip.m4">Obergeschoss von oben, axonometrisch</button>
+    <button type="button" data-aktion='{"blick":"garten","schnitt":"kein","kamera":"persp"}' data-i18n="chip.m5">Zeig mir den Garten</button>
+    <button type="button" data-aktion='{"alles":true}' data-i18n="chip.zurueck">Alles zurück</button>
   </div>
-  <div class="m-leiste" data-leiste="vancouver" hidden>
-    <div class="m-satz m-gruppen">
-      <button type="button" class="on" data-gruppe="tragwerk" data-i18n="modell.tragwerk">Tragwerk</button>
-      <button type="button" class="on" data-gruppe="gebaeude" data-i18n="modell.gebaeude">Gebäude</button>
-      <button type="button" class="on" data-gruppe="stadt" data-i18n="modell.stadt">Stadt</button>
-      <button type="button" class="on" data-gruppe="pflanzen" data-i18n="modell.pflanzen">Bäume</button>
-    </div>
-    <div class="m-satz"><span data-i18n="modell.schnitt">Schnitt</span>
-      <button type="button" class="on" data-schnitt="kein" data-i18n="modell.kein">Keiner</button><button type="button" data-schnitt="eg" data-i18n="modell.eg">EG</button><button type="button" data-schnitt="og">+60 m</button><button type="button" data-schnitt="laengs" data-i18n="modell.laengs">Längs</button>
-    </div>
-    <div class="m-satz">
-      <button type="button" class="on" data-kamera="persp" data-i18n="modell.persp">Perspektive</button><button type="button" data-kamera="axo" data-i18n="modell.axo">Axonometrie</button>
-    </div>
-    <div class="m-satz"><span data-i18n="modell.blick">Blick</span>
-      <button type="button" class="on" data-blick="block" data-i18n="modell.a1">Block</button><button type="button" data-blick="turm" data-i18n="modell.a2">Turm</button><button type="button" data-blick="sockel" data-i18n="modell.a3">Sockel</button><button type="button" data-blick="oben" data-i18n="modell.a4">Von oben</button>
-    </div>
+  <div class="m-chips" data-leiste="vancouver" hidden>
+    <button type="button" data-aktion='{"gruppen":{"tragwerk":true,"gebaeude":false,"stadt":false,"pflanzen":false}}' data-i18n="chip.v1">Nur das Tragwerk</button>
+    <button type="button" data-aktion='{"schnitt":"og","blick":"sockel"}' data-i18n="chip.v2">Schneide bei 60 Metern</button>
+    <button type="button" data-aktion='{"gruppen":{"stadt":false}}' data-i18n="chip.v3">Ohne die Stadt</button>
+    <button type="button" data-aktion='{"blick":"sockel"}' data-i18n="chip.v4">Runter auf den Sockel</button>
+    <button type="button" data-aktion='{"blick":"oben","kamera":"axo"}' data-i18n="chip.v5">Von oben, axonometrisch</button>
+    <button type="button" data-aktion='{"alles":true}' data-i18n="chip.zurueck">Alles zurück</button>
   </div>
   <div class="m-buehne"><canvas></canvas><span class="m-status"></span><span class="m-fehler" hidden data-i18n="modell.fehler">Modell konnte nicht geladen werden.</span></div>
 </section>

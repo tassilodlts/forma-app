@@ -50,16 +50,17 @@ main>section,.band{padding:72px var(--rand);max-width:var(--breit);margin:0 auto
 .m-reiter{display:flex;gap:4px;border-bottom:1px solid var(--linie);margin-bottom:14px}
 .m-reiter button{font:inherit;font-size:16px;font-weight:700;background:none;border:0;border-bottom:3px solid transparent;padding:10px 4px;margin-right:20px;margin-bottom:-1px;color:var(--hell);cursor:pointer;letter-spacing:-.01em}
 .m-reiter button.on{color:var(--ink);border-bottom-color:var(--akzent)}
-.m-leiste{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;margin-bottom:12px}
-.m-leiste[hidden]{display:none}
-.m-satz{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
-.m-satz span{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--hell);margin-right:4px}
-.m-leiste button{font:inherit;font-size:14px;font-weight:700;padding:7px 12px;border:1.5px solid var(--ink);background:var(--bg);color:var(--ink);cursor:pointer}
-.m-leiste button:hover{background:var(--ink);color:#fff}
-.m-leiste button.on{background:var(--ink);color:#fff}
-.m-gruppen button{border-color:var(--linie);color:var(--hell)}
-.m-gruppen button:hover{background:var(--bg);color:var(--ink);border-color:var(--ink)}
-.m-gruppen button.on{background:var(--bg);border-color:var(--akzent);color:var(--akzent)}
+.m-frage{display:flex;gap:0;margin-bottom:10px;max-width:720px}
+.m-frage input{flex:1;min-width:0;font:inherit;font-size:17px;padding:13px 16px;border:2px solid var(--ink);border-right:0;background:var(--bg);color:var(--ink);outline:none}
+.m-frage input:focus{border-color:var(--akzent)}
+.m-frage button{font:inherit;font-size:22px;line-height:1;padding:0 20px;border:2px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer}
+.m-frage button:hover{background:var(--akzent);border-color:var(--akzent)}
+.m-frage input:focus+button{border-color:var(--akzent)}
+.m-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.m-chips[hidden]{display:none}
+.m-chips button{font:inherit;font-size:14px;padding:7px 14px;border:1.5px solid var(--linie);border-radius:999px;background:var(--bg);color:var(--grau);cursor:pointer}
+.m-chips button:hover{border-color:var(--akzent);color:var(--akzent)}
+.m-status{font-weight:700;color:var(--ink)}
 .m-buehne{position:relative;border:1px solid var(--linie);background:#fff}
 .m-buehne canvas{display:block;width:100%;height:min(72vh,720px);touch-action:none}
 .m-status{position:absolute;left:14px;bottom:12px;font-size:14px;color:var(--hell)}
