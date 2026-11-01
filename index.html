@@ -60,6 +60,7 @@
   </div>
   <form class="m-frage" autocomplete="off">
     <input type="text" name="text" maxlength="200" data-i18n-ph="modell.frage" placeholder="Sag dem Modell, was du sehen willst …">
+    <button type="button" class="mikro" hidden aria-label="Diktieren" data-i18n-aria="modell.diktat"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 15a4 4 0 0 0 4-4V5a4 4 0 0 0-8 0v6a4 4 0 0 0 4 4zm6-4a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.94V22h2v-3.06A8 8 0 0 0 20 11h-2z"/></svg></button>
     <button type="submit" aria-label="Senden">→</button>
   </form>
   <div class="m-chips" data-leiste="muenchen">
@@ -145,8 +146,19 @@
 
 
 <section class="preis" id="preis">
-  <h2 data-i18n="preis.titel">Zwei Pläne</h2>
+  <h2 data-i18n="preis.titel">Drei Pläne</h2>
   <div class="plaene">
+    <div class="plan">
+      <h3 data-i18n="frei.name">Forma Frei</h3>
+      <p class="betrag"><span class="zahl">0 €</span><span class="einheit" data-i18n="frei.einheit">für immer, ohne Karte</span></p>
+      <ul>
+        <li data-i18n="frei.l1">Das ganze Programm auf deinem Mac: Modellieren, Pläne, Export</li>
+        <li data-i18n="frei.l2">60 KI-Sätze im Monat inklusive, unbegrenzt mit eigenem KI-Schlüssel (Gemini kostenlos, Ollama lokal)</li>
+        <li data-i18n="frei.l3">Forma Render unbegrenzt, auf deinem Mac</li>
+        <li data-i18n="frei.l4">Handy als Fernbedienung im eigenen Netz</li>
+      </ul>
+      <a class="knopf" data-download="arm" href="#" data-i18n="frei.knopf">Forma laden</a>
+    </div>
     <div class="plan">
       <h3>Forma Pro</h3>
       <p class="betrag"><span class="zahl">45 €</span><span class="einheit" data-i18n="preis.einheit">im Monat zzgl. MwSt.</span></p>
@@ -170,7 +182,7 @@
       <a class="knopf akzent" data-checkout="studio" href="#" data-i18n="studio.knopf">Studio anfragen</a>
     </div>
   </div>
-  <p class="garantie" data-i18n="preis.garantie">Nach drei Monaten nicht zufrieden? Du bekommst alles zurück. Gilt für beide Pläne.</p>
+  <p class="garantie" data-i18n="preis.garantie">Nach drei Monaten nicht zufrieden? Du bekommst alles zurück. Gilt für Pro und Studio.</p>
 </section>
 
 <section class="faq" id="faq">

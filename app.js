@@ -16,7 +16,7 @@ const TEXTE = {
     'held.klein': 'Ein Programm für den Mac, macOS 13 oder neuer. Laden ist frei. Beim ersten Start fragt Forma nach dem Schlüssel, den bekommst du mit dem Abo ab 45 € im Monat. Vom Handy aus bedienst du Forma im Browser, solange dein Mac läuft. Nach drei Monaten nicht zufrieden? Alles zurück.', 'held.kaufen': 'Schlüssel kaufen',
     'bild.band': 'FIVE CLEARINGS aus der Luft. Entwurf, Modell und Bild aus Forma.',
     'modell.titel': 'Sprich mit dem Modell', 'modell.text': 'So fühlt sich Forma an: Du sagst, was du sehen willst. Zwei echte Projekte, direkt aus dem Programm. Drehen mit einem Finger, zoomen mit zwei. In der App baut die KI auch um.',
-    'modell.frage': 'Sag dem Modell, was du sehen willst …', 'modell.reiterM': 'Villa von 1913', 'modell.fehler': 'Modell konnte nicht geladen werden.',
+    'modell.frage': 'Sag dem Modell, was du sehen willst …', 'modell.reiterM': 'Villa von 1913', 'modell.diktat': 'Diktieren', 'modell.fehler': 'Modell konnte nicht geladen werden.',
     'chip.m1': 'Schneide das Erdgeschoss auf', 'chip.m2': 'Wie sah es 1913 aus?', 'chip.m3': 'Nimm die Nachbarn weg', 'chip.m4': 'Obergeschoss von oben, axonometrisch', 'chip.m5': 'Zeig mir den Garten', 'chip.zurueck': 'Alles zurück',
     'chip.v1': 'Nur das Tragwerk', 'chip.v2': 'Schneide bei 60 Metern', 'chip.v3': 'Ohne die Stadt', 'chip.v4': 'Runter auf den Sockel', 'chip.v5': 'Von oben, axonometrisch',
     'bild.app': 'So sieht Forma aus: Bauteile und Ebenen links, das Modell in der Mitte, der Chat rechts. Hier FIVE CLEARINGS mit 69 510 Bauteilen.',
@@ -36,7 +36,7 @@ const TEXTE = {
     'fkt.4t': 'Rendering auf deinem Mac', 'fkt.4': 'Blender Cycles läuft lokal, so oft du willst. Dazu KI-Renderings für Stimmung und Vegetation.',
     'fkt.5t': 'Pläne als PDF', 'fkt.5': 'Grundrisse, Schnitte, Ansichten und Tafeln kommen fertig aus dem Modell.',
     'fkt.6t': 'Vom Handy und aus dem Terminal', 'fkt.6': 'Unterwegs im Browser bedienen. Oder aus Claude Code, Codex und Gemini CLI steuern.',
-    'preis.titel': 'Zwei Pläne', 'preis.einheit': 'im Monat zzgl. MwSt.',
+    'preis.titel': 'Drei Pläne', 'frei.name': 'Forma Frei', 'frei.einheit': 'für immer, ohne Karte', 'frei.l1': 'Das ganze Programm auf deinem Mac: Modellieren, Pläne, Export', 'frei.l2': '60 KI-Sätze im Monat inklusive, unbegrenzt mit eigenem KI-Schlüssel (Gemini kostenlos, Ollama lokal)', 'frei.l3': 'Forma Render unbegrenzt, auf deinem Mac', 'frei.l4': 'Handy als Fernbedienung im eigenen Netz', 'frei.knopf': 'Forma laden', 'preis.einheit': 'im Monat zzgl. MwSt.',
     'preis.l1': 'KI für das Modell, unbegrenzt', 'preis.l2': '60 KI-Renderings im Monat',
     'preis.l3': 'Blender-Rendering unbegrenzt, auf deinem Mac', 'preis.l4': 'Alle Updates',
     'preis.knopf': 'Abo starten',
@@ -44,7 +44,7 @@ const TEXTE = {
     'studio.l2': 'Persönliche Beratung: Architekt am Telefon oder per Video, wenn du sie brauchst',
     'studio.l3': 'Modellierungshilfe: Wir bauen oder richten dein Projekt mit dir ein',
     'studio.l4': 'Wünsche an Forma kommen zuerst dran', 'studio.knopf': 'Studio anfragen',
-    'preis.garantie': 'Nach drei Monaten nicht zufrieden? Du bekommst alles zurück. Gilt für beide Pläne.',
+    'preis.garantie': 'Nach drei Monaten nicht zufrieden? Du bekommst alles zurück. Gilt für Pro und Studio.',
     'faq.titel': 'Fragen',
     'faq.1f': 'Was brauche ich?', 'faq.1': 'Einen Mac mit macOS 13 oder neuer und Internet für die KI. Für Renderings installiert Forma Blender von blender.org, ein Klick genügt.',
     'faq.2f': 'Gibt es Forma für Windows?', 'faq.2': 'Noch nicht. Forma läuft auf dem Mac. Schreib uns, wenn du eine Windows-Version willst, wir zählen mit.',
@@ -63,7 +63,7 @@ const TEXTE = {
     'held.klein': 'A program for the Mac, macOS 13 or newer. The download is free. On first launch Forma asks for the key, which comes with the subscription from €45 a month. From your phone you control Forma in the browser while your Mac is running. Not happy after three months? Full refund.', 'held.kaufen': 'Buy a key',
     'bild.band': 'FIVE CLEARINGS from the air. Design, model and image from Forma.',
     'modell.titel': 'Talk to the model', 'modell.text': 'This is what Forma feels like: you say what you want to see. Two real projects, straight from the app. Rotate with one finger, zoom with two. In the app the AI also rebuilds.',
-    'modell.frage': 'Tell the model what you want to see …', 'modell.reiterM': 'Villa from 1913', 'modell.fehler': 'The model could not be loaded.',
+    'modell.frage': 'Tell the model what you want to see …', 'modell.reiterM': 'Villa from 1913', 'modell.diktat': 'Dictate', 'modell.fehler': 'The model could not be loaded.',
     'chip.m1': 'Cut open the ground floor', 'chip.m2': 'How did it look in 1913?', 'chip.m3': 'Take the neighbours away', 'chip.m4': 'First floor from above, axonometric', 'chip.m5': 'Show me the garden', 'chip.zurueck': 'Everything back',
     'chip.v1': 'Only the structure', 'chip.v2': 'Cut at 60 metres', 'chip.v3': 'Without the city', 'chip.v4': 'Down to the podium', 'chip.v5': 'From above, axonometric',
     'bild.app': 'This is Forma: building elements and layers on the left, the model in the middle, the chat on the right. Here FIVE CLEARINGS with 69,510 elements.',
@@ -83,7 +83,7 @@ const TEXTE = {
     'fkt.4t': 'Rendering on your Mac', 'fkt.4': 'Blender Cycles runs locally, as often as you like. Plus AI renderings for mood and vegetation.',
     'fkt.5t': 'Drawings as PDF', 'fkt.5': 'Plans, sections, elevations and boards come straight from the model.',
     'fkt.6t': 'From your phone and the terminal', 'fkt.6': 'Use it in the browser on the go. Or drive it from Claude Code, Codex and Gemini CLI.',
-    'preis.titel': 'Two plans', 'preis.einheit': 'per month plus VAT',
+    'preis.titel': 'Three plans', 'frei.name': 'Forma Free', 'frei.einheit': 'forever, no card', 'frei.l1': 'The whole app on your Mac: modelling, drawings, export', 'frei.l2': '60 AI sentences per month included, unlimited with your own AI key (Gemini free, Ollama local)', 'frei.l3': 'Unlimited Forma Render, on your Mac', 'frei.l4': 'Phone as a remote on your own network', 'frei.knopf': 'Download Forma', 'preis.einheit': 'per month plus VAT',
     'preis.l1': 'AI for the model, unlimited', 'preis.l2': '60 AI renderings per month',
     'preis.l3': 'Unlimited Blender rendering, on your Mac', 'preis.l4': 'All updates',
     'preis.knopf': 'Start subscription',
@@ -91,7 +91,7 @@ const TEXTE = {
     'studio.l2': 'Personal advice: an architect by phone or video whenever you need one',
     'studio.l3': 'Modelling help: we build or set up your project with you',
     'studio.l4': 'Your requests for Forma come first', 'studio.knopf': 'Ask for Studio',
-    'preis.garantie': 'Not happy after three months? You get everything back. Applies to both plans.',
+    'preis.garantie': 'Not happy after three months? You get everything back. Applies to Pro and Studio.',
     'faq.titel': 'Questions',
     'faq.1f': 'What do I need?', 'faq.1': 'A Mac with macOS 13 or newer and internet for the AI. For renderings Forma installs Blender from blender.org, one click is enough.',
     'faq.2f': 'Is there a Windows version?', 'faq.2': 'Not yet. Forma runs on the Mac. Let us know if you want a Windows version, we are keeping count.',
@@ -110,7 +110,7 @@ const TEXTE = {
     'held.klein': 'Un programa para Mac, macOS 13 o posterior. La descarga es gratis. Al abrirlo por primera vez, Forma pide la clave, que llega con la suscripción desde 45 € al mes. Desde el móvil manejas Forma en el navegador mientras tu Mac está encendido. ¿No te convence tras tres meses? Te devolvemos todo.', 'held.kaufen': 'Comprar clave',
     'bild.band': 'FIVE CLEARINGS desde el aire. Diseño, modelo e imagen hechos en Forma.',
     'modell.titel': 'Habla con el modelo', 'modell.text': 'Así se siente Forma: dices lo que quieres ver. Dos proyectos reales, directos del programa. Gira con un dedo, acerca con dos. En la app la IA también reconstruye.',
-    'modell.frage': 'Dile al modelo qué quieres ver …', 'modell.reiterM': 'Villa de 1913', 'modell.fehler': 'No se pudo cargar el modelo.',
+    'modell.frage': 'Dile al modelo qué quieres ver …', 'modell.reiterM': 'Villa de 1913', 'modell.diktat': 'Dictar', 'modell.fehler': 'No se pudo cargar el modelo.',
     'chip.m1': 'Abre la planta baja', 'chip.m2': '¿Cómo era en 1913?', 'chip.m3': 'Quita los vecinos', 'chip.m4': 'Primera planta desde arriba, axonometría', 'chip.m5': 'Enséñame el jardín', 'chip.zurueck': 'Todo como al principio',
     'chip.v1': 'Solo la estructura', 'chip.v2': 'Corta a 60 metros', 'chip.v3': 'Sin la ciudad', 'chip.v4': 'Baja al podio', 'chip.v5': 'Desde arriba, axonometría',
     'bild.app': 'Así es Forma: elementos y capas a la izquierda, el modelo en el centro, el chat a la derecha. Aquí FIVE CLEARINGS con 69 510 elementos.',
@@ -130,7 +130,7 @@ const TEXTE = {
     'fkt.4t': 'Render en tu Mac', 'fkt.4': 'Blender Cycles funciona en local, tantas veces como quieras. Además, renders con IA para ambiente y vegetación.',
     'fkt.5t': 'Planos en PDF', 'fkt.5': 'Plantas, secciones, alzados y paneles salen listos del modelo.',
     'fkt.6t': 'Desde el móvil y la terminal', 'fkt.6': 'Úsalo en el navegador donde estés. O contrólalo desde Claude Code, Codex y Gemini CLI.',
-    'preis.titel': 'Dos planes', 'preis.einheit': 'al mes más IVA',
+    'preis.titel': 'Tres planes', 'frei.name': 'Forma Gratis', 'frei.einheit': 'para siempre, sin tarjeta', 'frei.l1': 'Todo el programa en tu Mac: modelar, planos, exportar', 'frei.l2': '60 frases de IA al mes incluidas, sin límite con tu propia clave de IA (Gemini gratis, Ollama local)', 'frei.l3': 'Forma Render sin límite, en tu Mac', 'frei.l4': 'El móvil como mando en tu propia red', 'frei.knopf': 'Descargar Forma', 'preis.einheit': 'al mes más IVA',
     'preis.l1': 'IA para el modelo, sin límite', 'preis.l2': '60 renders con IA al mes',
     'preis.l3': 'Render con Blender sin límite, en tu Mac', 'preis.l4': 'Todas las actualizaciones',
     'preis.knopf': 'Empezar suscripción',
@@ -138,7 +138,7 @@ const TEXTE = {
     'studio.l2': 'Asesoría personal: un arquitecto por teléfono o vídeo cuando lo necesites',
     'studio.l3': 'Ayuda de modelado: construimos o preparamos tu proyecto contigo',
     'studio.l4': 'Tus peticiones para Forma van primero', 'studio.knopf': 'Solicitar Studio',
-    'preis.garantie': '¿No te convence tras tres meses? Te devolvemos todo. Vale para los dos planes.',
+    'preis.garantie': '¿No te convence tras tres meses? Te devolvemos todo. Vale para Pro y Studio.',
     'faq.titel': 'Preguntas',
     'faq.1f': '¿Qué necesito?', 'faq.1': 'Un Mac con macOS 13 o posterior e internet para la IA. Para renders, Forma instala Blender desde blender.org con un clic.',
     'faq.2f': '¿Hay versión para Windows?', 'faq.2': 'Todavía no. Forma funciona en el Mac. Escríbenos si quieres Windows, llevamos la cuenta.',
@@ -169,6 +169,7 @@ function anwenden(lang, merken) {
   }
   for (const el of document.querySelectorAll('[data-i18n-alt]')) { const s = t[el.dataset.i18nAlt]; if (s) el.alt = s; }
   for (const el of document.querySelectorAll('[data-i18n-ph]')) { const s = t[el.dataset.i18nPh]; if (s) el.placeholder = s; }
+  for (const el of document.querySelectorAll('[data-i18n-aria]')) { const s = t[el.dataset.i18nAria]; if (s) { el.setAttribute('aria-label', s); el.title = s; } }
   for (const el of document.querySelectorAll('[data-sprache]')) el.classList.toggle('on', el.dataset.sprache === lang);   // ganze Textblöcke (Impressum, Datenschutz)
   for (const b of document.querySelectorAll('.sprachen button')) b.classList.toggle('on', b.dataset.lang === lang);
   if (merken) try { sessionStorage.setItem('forma.lang', lang); } catch {}
@@ -184,4 +185,13 @@ alle('[data-jahr]', el => el.textContent = new Date().getFullYear());
 for (const lang of Object.keys(TEXTE)) for (const k of Object.keys(TEXTE[lang])) TEXTE[lang][k] = TEXTE[lang][k].replaceAll('Forma', PRODUKT);
 
 anwenden(spracheWaehlen(), false);
+
+// Besucherstatistik (2.11., Tassilo: Analytics an): ein Aufruf je Seite und je Ereignis an die Forma Cloud, ohne Cookie, ohne Kennung; der Worker speichert
+// nur Tag, Seite, Sprache, Land, Gerät und den Host des Verweises. window.formaZaehl('laden') zählt ein Ereignis (auch aus betrachter.js).
+const STATISTIK = 'https://cloud.portantica.net/besuch';
+window.formaZaehl = art => { try { const q = (document.referrer && new URL(document.referrer).host !== location.host) ? new URL(document.referrer).host : '';
+  const d = JSON.stringify({ art, seite: location.pathname, sprache: document.documentElement.lang, quelle: q });
+  if (!(navigator.sendBeacon && navigator.sendBeacon(STATISTIK, new Blob([d], { type: 'text/plain' })))) fetch(STATISTIK, { method: 'POST', body: d, keepalive: true }).catch(() => {}); } catch {} };
+if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') window.formaZaehl('seite');
+document.addEventListener('click', e => { const a = e.target.closest('a[data-download],a[data-checkout]'); if (a) window.formaZaehl(a.dataset.download ? 'laden' : 'kaufen:' + a.dataset.checkout); });
 document.querySelector('.sprachen')?.addEventListener('click', e => { const b = e.target.closest('button[data-lang]'); if (b) anwenden(b.dataset.lang, true); });

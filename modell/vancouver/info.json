@@ -40,7 +40,8 @@
  "baumvorlagen": {
   "anzahl": 823,
   "dreiecke": 85182,
-  "kb": 787.6,
+  "kb": 790.1,
   "dreieckeGesamt": 2474110
- }
+ },
+ "ohneFarbe": []
 }

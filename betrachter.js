@@ -34,9 +34,9 @@ const MODELLE = {
 
 // Antworten je Sprache: was die Seite nach einer Aktion sagt
 const SAGT = {
-  de: { schnitt: { kein: 'Schnitt zu.', ug: 'Untergeschoss aufgeschnitten.', eg: 'Erdgeschoss aufgeschnitten.', og: 'Obergeschoss aufgeschnitten.', dg: 'Dachgeschoss aufgeschnitten.', laengs: 'Längsschnitt.', quer: 'Querschnitt.' }, zustand: { 1913: 'So war es 1913.', 2026: 'Der Umbau 2026.' }, kamera: { axo: 'Axonometrie.', persp: 'Perspektive.' }, blick: { strasse: 'Blick von der Straße.', garten: 'Blick aus dem Garten.', oben: 'Von oben.', block: 'Der ganze Block.', turm: 'Der Turm.', sockel: 'Der Sockel.' }, an: 'eingeblendet', aus: 'ausgeblendet', gruppen: { bestand: 'Bestand', vorschlag: 'Umbau', einrichtung: 'Einrichtung', umgebung: 'Nachbarn', baeume: 'Bäume', tragwerk: 'Tragwerk', gebaeude: 'Gebäude', stadt: 'Stadt', pflanzen: 'Bäume' }, modell: { muenchen: 'Die Villa von 1913.', vancouver: 'FIVE CLEARINGS.' }, schnitt60: 'Bei 60 Metern geschnitten.', alles: 'Alles zurück.', unklar: 'Das habe ich nicht verstanden. Versuch zum Beispiel: „Schneide das Erdgeschoss auf“ oder „ohne Bäume“.', denkt: 'Moment …' },
-  en: { schnitt: { kein: 'Cut closed.', ug: 'Basement cut open.', eg: 'Ground floor cut open.', og: 'First floor cut open.', dg: 'Attic cut open.', laengs: 'Lengthwise section.', quer: 'Cross section.' }, zustand: { 1913: 'As it was in 1913.', 2026: 'The 2026 proposal.' }, kamera: { axo: 'Axonometric.', persp: 'Perspective.' }, blick: { strasse: 'View from the street.', garten: 'View from the garden.', oben: 'From above.', block: 'The whole block.', turm: 'The tower.', sockel: 'The podium.' }, an: 'shown', aus: 'hidden', gruppen: { bestand: 'As built', vorschlag: 'Proposal', einrichtung: 'Furniture', umgebung: 'Neighbours', baeume: 'Trees', tragwerk: 'Structure', gebaeude: 'Building', stadt: 'City', pflanzen: 'Trees' }, modell: { muenchen: 'The villa from 1913.', vancouver: 'FIVE CLEARINGS.' }, schnitt60: 'Cut at 60 metres.', alles: 'Everything back.', unklar: 'I did not get that. Try “cut open the ground floor” or “without trees”.', denkt: 'One moment …' },
-  es: { schnitt: { kein: 'Corte cerrado.', ug: 'Sótano abierto.', eg: 'Planta baja abierta.', og: 'Primera planta abierta.', dg: 'Ático abierto.', laengs: 'Sección longitudinal.', quer: 'Sección transversal.' }, zustand: { 1913: 'Así era en 1913.', 2026: 'La propuesta de 2026.' }, kamera: { axo: 'Axonometría.', persp: 'Perspectiva.' }, blick: { strasse: 'Vista desde la calle.', garten: 'Vista desde el jardín.', oben: 'Desde arriba.', block: 'Toda la manzana.', turm: 'La torre.', sockel: 'El podio.' }, an: 'visible', aus: 'oculto', gruppen: { bestand: 'Estado original', vorschlag: 'Propuesta', einrichtung: 'Mobiliario', umgebung: 'Vecinos', baeume: 'Árboles', tragwerk: 'Estructura', gebaeude: 'Edificio', stadt: 'Ciudad', pflanzen: 'Árboles' }, modell: { muenchen: 'La villa de 1913.', vancouver: 'FIVE CLEARINGS.' }, schnitt60: 'Cortado a 60 metros.', alles: 'Todo como al principio.', unklar: 'No lo he entendido. Prueba «abre la planta baja» o «sin árboles».', denkt: 'Un momento …' },
+  de: { schnitt: { kein: 'Schnitt zu.', ug: 'Untergeschoss aufgeschnitten.', eg: 'Erdgeschoss aufgeschnitten.', og: 'Obergeschoss aufgeschnitten.', dg: 'Dachgeschoss aufgeschnitten.', laengs: 'Längsschnitt.', quer: 'Querschnitt.' }, zustand: { 1913: 'So war es 1913.', 2026: 'Der Umbau 2026.' }, kamera: { axo: 'Axonometrie.', persp: 'Perspektive.' }, blick: { strasse: 'Blick von der Straße.', garten: 'Blick aus dem Garten.', oben: 'Von oben.', block: 'Der ganze Block.', turm: 'Der Turm.', sockel: 'Der Sockel.' }, an: 'eingeblendet', aus: 'ausgeblendet', gruppen: { bestand: 'Bestand', vorschlag: 'Umbau', einrichtung: 'Einrichtung', umgebung: 'Nachbarn', baeume: 'Bäume', tragwerk: 'Tragwerk', gebaeude: 'Gebäude', stadt: 'Stadt', pflanzen: 'Bäume' }, modell: { muenchen: 'Die Villa von 1913.', vancouver: 'FIVE CLEARINGS.' }, schnitt60: 'Bei 60 Metern geschnitten.', alles: 'Alles zurück.', unklar: 'Das habe ich nicht verstanden. Versuch zum Beispiel: „Schneide das Erdgeschoss auf“ oder „ohne Bäume“.', denkt: 'Moment …', hoert: 'Ich höre zu … sprich, dann kurz still.' },
+  en: { schnitt: { kein: 'Cut closed.', ug: 'Basement cut open.', eg: 'Ground floor cut open.', og: 'First floor cut open.', dg: 'Attic cut open.', laengs: 'Lengthwise section.', quer: 'Cross section.' }, zustand: { 1913: 'As it was in 1913.', 2026: 'The 2026 proposal.' }, kamera: { axo: 'Axonometric.', persp: 'Perspective.' }, blick: { strasse: 'View from the street.', garten: 'View from the garden.', oben: 'From above.', block: 'The whole block.', turm: 'The tower.', sockel: 'The podium.' }, an: 'shown', aus: 'hidden', gruppen: { bestand: 'As built', vorschlag: 'Proposal', einrichtung: 'Furniture', umgebung: 'Neighbours', baeume: 'Trees', tragwerk: 'Structure', gebaeude: 'Building', stadt: 'City', pflanzen: 'Trees' }, modell: { muenchen: 'The villa from 1913.', vancouver: 'FIVE CLEARINGS.' }, schnitt60: 'Cut at 60 metres.', alles: 'Everything back.', unklar: 'I did not get that. Try “cut open the ground floor” or “without trees”.', denkt: 'One moment …', hoert: 'Listening … speak, then pause.' },
+  es: { schnitt: { kein: 'Corte cerrado.', ug: 'Sótano abierto.', eg: 'Planta baja abierta.', og: 'Primera planta abierta.', dg: 'Ático abierto.', laengs: 'Sección longitudinal.', quer: 'Sección transversal.' }, zustand: { 1913: 'Así era en 1913.', 2026: 'La propuesta de 2026.' }, kamera: { axo: 'Axonometría.', persp: 'Perspectiva.' }, blick: { strasse: 'Vista desde la calle.', garten: 'Vista desde el jardín.', oben: 'Desde arriba.', block: 'Toda la manzana.', turm: 'La torre.', sockel: 'El podio.' }, an: 'visible', aus: 'oculto', gruppen: { bestand: 'Estado original', vorschlag: 'Propuesta', einrichtung: 'Mobiliario', umgebung: 'Vecinos', baeume: 'Árboles', tragwerk: 'Estructura', gebaeude: 'Edificio', stadt: 'Ciudad', pflanzen: 'Árboles' }, modell: { muenchen: 'La villa de 1913.', vancouver: 'FIVE CLEARINGS.' }, schnitt60: 'Cortado a 60 metros.', alles: 'Todo como al principio.', unklar: 'No lo he entendido. Prueba «abre la planta baja» o «sin árboles».', denkt: 'Un momento …', hoert: 'Te escucho … habla y luego calla un momento.' },
 };
 const sprache = () => SAGT[document.documentElement.lang] ? document.documentElement.lang : 'en';
 
@@ -46,7 +46,7 @@ const SCHNITT = new THREE.MeshBasicMaterial({ color: 0x1c1c1c, side: THREE.BackS
 const leisten = () => wrap.querySelectorAll('[data-leiste]');
 
 function start() {
-  if (gestartet) return; gestartet = true;
+  if (gestartet) return; gestartet = true; window.formaZaehl?.('modell');
   renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); renderer.outputColorSpace = THREE.SRGBColorSpace;
   scene = new THREE.Scene(); scene.background = new THREE.Color(0xffffff);
@@ -198,6 +198,7 @@ function deuten(text) {
 // Freier Text: erst hier deuten, sonst Forma Cloud fragen
 async function sagen(text) {
   text = (text || '').trim(); if (!text) return;
+  window.formaZaehl?.('satz');   // Statistik: nur dass ein Satz kam, nie der Text
   const T = SAGT[sprache()]; let a = deuten(text);
   if (!a) {
     melde(T.denkt);
@@ -218,6 +219,25 @@ wrap.addEventListener('click', e => {
 });
 frage?.addEventListener('submit', e => { e.preventDefault(); if (!gestartet) start(); const i = frage.querySelector('input'); sagen(i.value); i.value = ''; });
 
+// Diktat (2.11., Tassilo): Spracherkennung des Browsers (Chrome, Safari, Edge; Firefox kann es nicht, dort bleibt der Knopf verborgen).
+// Ein Tipp startet, der Text läuft ins Feld, nach der ersten Pause endet die Aufnahme und der Satz geht wie getippt an sagen(); ein zweiter Tipp bricht ab.
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition, mikro = frage?.querySelector('.mikro');
+if (SR && mikro) {
+  mikro.hidden = false; let rec = null;
+  const LAND = { de: 'de-DE', en: 'en-US', es: 'es-ES' };
+  mikro.addEventListener('click', () => {
+    if (rec) { rec.stop(); return; }
+    if (!gestartet) start();
+    const i = frage.querySelector('input'); let fest = '';
+    rec = new SR(); rec.lang = LAND[sprache()] || 'en-US'; rec.interimResults = true; rec.maxAlternatives = 1;
+    mikro.classList.add('an'); melde(SAGT[sprache()].hoert); i.value = ''; window.formaZaehl?.('diktat');
+    rec.onresult = e => { let lose = ''; for (const r of e.results) { if (r.isFinal) fest += r[0].transcript; else lose += r[0].transcript; } i.value = (fest + lose).trim().slice(0, 200); };
+    rec.onerror = e => { if (e.error !== 'aborted' && e.error !== 'no-speech') console.warn('Diktat', e.error); };
+    rec.onend = () => { rec = null; mikro.classList.remove('an'); const t = i.value.trim(); if (t) { sagen(t); i.value = ''; } else melde(''); };
+    try { rec.start(); } catch (e) { rec = null; mikro.classList.remove('an'); console.warn('Diktat', e); }
+  });
+}
+
 // Erst laden, wenn der Abschnitt ins Bild kommt; nur rendern, solange er sichtbar ist
 new IntersectionObserver(es => { for (const e of es) { sichtbar = e.isIntersecting; if (sichtbar) start(); } }, { rootMargin: '200px' }).observe(wrap);
 
@@ -225,7 +245,7 @@ new IntersectionObserver(es => { for (const e of es) { sichtbar = e.isIntersecti
 // Satellitenstadt von innen nach außen aus der Fläche, am Ende sinkt sie wieder ab, damit die Schleife schließt. window.formaFilm.setze(t) rechnet
 // und zeichnet ein Bild zur Zeit t in Sekunden; die Aufnahme liest das Bild aus der Leinwand.
 if (new URLSearchParams(location.search).get('film')) {
-  const F = { dauer: 12, bereit: false, kacheln: [], scheibe: null };
+  const F = { dauer: 14, bereit: false, kacheln: [], scheibe: null };
   window.formaFilm = F;
   F.start = async () => {
     canvas.style.width = '1024px'; canvas.style.height = '1024px'; wrap.querySelector('.m-buehne').style.width = '1024px';
@@ -236,22 +256,24 @@ if (new URLSearchParams(location.search).get('film')) {
     const K = ['tragwerk', 'gebaeude', 'pflanzen', 'stadt', 'kacheln']; for (const k of K) if (!m.gruppen[k]) lade(k);
     while (K.some(k => !m.gruppen[k]?.children.length) || !m.baumNetz?.children.length) await new Promise(r => setTimeout(r, 200));   // alles geladen, auch was aktiviere() schon angestoßen hat
     m.sichtbar.stadt = false; for (const k of Object.keys(m.dateien)) zeige(k);
-    // Bäume rundherum (Gehwege, Nachbarschaft) weg, die Stadt bringt ihre eigenen; nur die Bäume auf dem Grundstück bleiben
+    // Bäume rundherum (Gehwege, Nachbarschaft, Straßenbäume am Boden) weg, die Stadt bringt ihre eigenen; nur Turm und Dachgärten behalten ihre Bäume
     const M = new THREE.Matrix4(), P = new THREE.Vector3();
-    for (const I of m.baumNetz.children) { for (let i = 0; i < I.count; i++) { I.getMatrixAt(i, M); P.setFromMatrixPosition(M); if (Math.abs(P.x) > 118 || Math.abs(P.z) > 75) { M.makeScale(0.0001, 0.0001, 0.0001); I.setMatrixAt(i, M); } } I.instanceMatrix.needsUpdate = true; }
+    for (const I of m.baumNetz.children) { for (let i = 0; i < I.count; i++) { I.getMatrixAt(i, M); P.setFromMatrixPosition(M); if (Math.abs(P.x) > 118 || Math.abs(P.z) > 75 || P.y < 5) { M.makeScale(0.0001, 0.0001, 0.0001); I.setMatrixAt(i, M); } } I.instanceMatrix.needsUpdate = true; }
     m.gruppen.kacheln.traverse(o => { if (o.isMesh) { o.geometry.computeBoundingBox(); const b = o.geometry.boundingBox, c = new THREE.Vector3(); b.getCenter(c); F.kacheln.push({ o, y0: b.min.y, d: Math.hypot(c.x, c.z) }); } });
     const dmax = Math.max(...F.kacheln.map(k => k.d)); for (const k of F.kacheln) k.d /= dmax;
     F.bereit = true;
   };
   F.setze = t => {
     const m = aktiv, T = F.dauer, glatt = x => x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x);
-    // Kamera: Kreisbogen um den Turm, langsam näher
-    const a = (28 + 50 * t / T) * Math.PI / 180, r = 640 - 120 * glatt(t / T), hoehe = 400 - 70 * glatt(t / T);
-    camera.position.set(Math.sin(a) * r, hoehe, Math.cos(a) * r); controls.target.set(0, 125, 0); controls.update();
-    // Stadt: jede Kachel wächst nach ihrem Abstand (2 s bis 7 s), am Ende (ab 10,2 s) sinkt alles zurück
-    const sinkt = glatt((t - 10.2) / 1.6);
+    // Kamera (2.11., Tassilo: die ganze Stadt zeigen): Kreisbogen um den Turm; während die Stadt wächst, zieht sie sich zurück und steigt, bis die
+    // ganze Scheibe von 900 m im Bild ist (ab 8,5 s), und kommt beim Absinken wieder heran, damit die Schleife beim Turm allein schließt
+    const weit = glatt((t - 2) / 6.5) * (1 - glatt((t - T + 2.6) / 2.4));
+    const a = (28 + 46 * t / T) * Math.PI / 180, r = 560 + 1000 * weit, hoehe = 360 + 760 * weit, ziel = 125 - 95 * weit;
+    camera.position.set(Math.sin(a) * r, hoehe, Math.cos(a) * r); controls.target.set(0, ziel, 0); controls.update();
+    // Stadt: jede Kachel wächst nach ihrem Abstand (2 s bis 8 s), am Ende (letzte 2,4 s) sinkt alles zurück
+    const sinkt = glatt((t - T + 2.4) / 1.6);
     let irgend = false;
-    for (const k of F.kacheln) { const s0 = 2 + 5 * k.d ** 1.15, s = glatt((t - s0) / 1.4) * (1 - sinkt); k.o.scale.y = Math.max(s, 0.0001); k.o.position.y = k.y0 * (1 - k.o.scale.y); k.o.visible = s > 0.0005; irgend ||= s > 0.0005; }
+    for (const k of F.kacheln) { const s0 = 2 + 4.8 * k.d ** 1.15, s = glatt((t - s0) / 1.4) * (1 - sinkt); k.o.scale.y = Math.max(s, 0.0001); k.o.position.y = k.y0 * (1 - k.o.scale.y); k.o.visible = s > 0.0005; irgend ||= s > 0.0005; }
     m.gruppen.kacheln.visible = irgend; m.gruppen.stadt.visible = glatt((t - 2.4) / 1) * (1 - sinkt) > 0.5;
     const sch = 1 - glatt((t - 2.2) / 1.6) * (1 - sinkt); F.scheibe.scale.set(Math.max(sch, 0.001), Math.max(sch, 0.001), 1); F.scheibe.visible = sch > 0.002;
     renderer.render(scene, camera);
