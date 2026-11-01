@@ -1,109 +1,134 @@
-/* Forma · Website. Farben wie public/style.css, eine Schrift (Inter), Handy zuerst. */
+/* Forma · Website (1.11.2026): Helvetica, Schwarz auf Weiß, Akzent in blauem Türkis. Keine Webfonts, keine Rahmenkästen, viel Luft. */
 :root{
-  --bg:#ffffff; --panel:#fbfaf8; --ink:#1c1c1a; --muted:#7b7a75; --line:#dedcd6; --line2:#ecebe6;
-  --accent:#1f5f4a; --accent-dunkel:#17483a; --accent-hell:#e8f0ec; --accent-ink:#fff;
-  --r:8px; --font:"Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
-  --breit:1100px;
+  --ink:#000;--bg:#fff;--grau:#6b6b6b;--hell:#a3a3a3;--linie:#e3e3e3;
+  --akzent:#00b4c8;--akzent-dunkel:#0097a8;
+  --breit:1240px;--rand:24px;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;font-family:var(--font);font-size:18px;line-height:1.55;color:var(--ink);background:var(--bg)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%;height:auto}
-a{color:var(--accent)}
-h1,h2,h3{margin:0;line-height:1.15;font-weight:600;letter-spacing:-.01em}
-h2{font-size:clamp(28px,4vw,38px);margin-bottom:28px}
-h3{font-size:20px}
-p{margin:0}
-section{padding:56px 20px;max-width:var(--breit);margin:0 auto}
+a{color:inherit}
+h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.05}
+h2{font-size:clamp(30px,4.5vw,52px);margin-bottom:40px}
+h3{font-size:20px;line-height:1.25}
+main>section,.band{padding:72px var(--rand);max-width:var(--breit);margin:0 auto}
+::selection{background:var(--akzent);color:#fff}
 
 /* Kopf */
-.kopf{display:flex;align-items:center;gap:16px;padding:16px 20px;max-width:var(--breit);margin:0 auto}
-.logo{font-size:24px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-.02em}
-.menu{display:none;gap:24px;margin-left:24px}
-.menu a{color:var(--ink);text-decoration:none;font-size:16px}
-.menu a:hover{color:var(--accent)}
-.sprachen{margin-left:auto;display:flex;border:1px solid var(--line);border-radius:999px;padding:2px}
-.sprachen button{border:0;background:none;font:inherit;font-size:13px;font-weight:600;color:var(--muted);padding:5px 10px;border-radius:999px;cursor:pointer}
-.sprachen button.on{background:var(--accent);color:var(--accent-ink)}
+.kopf{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--linie)}
+.kopf{display:flex;align-items:center;gap:28px;padding:14px var(--rand);max-width:none}
+.kopf>*{flex:none}
+.logo{font-weight:700;font-size:24px;letter-spacing:-.03em;text-decoration:none}
+.menu{display:none;gap:24px;margin-left:auto}
+.menu a{text-decoration:none;font-size:16px;color:var(--grau)}
+.menu a:hover{color:var(--ink)}
+.sprachen{display:flex;gap:4px;margin-left:auto}
+.menu+.sprachen{margin-left:0}
+.sprachen button{font:inherit;font-size:14px;font-weight:700;letter-spacing:.04em;background:none;border:0;padding:6px 8px;cursor:pointer;color:var(--hell);border-bottom:2px solid transparent}
+.sprachen button.on{color:var(--ink);border-bottom-color:var(--akzent)}
 
 /* Held */
-.held{text-align:center;padding-top:40px;padding-bottom:40px}
-.held h1{font-size:clamp(32px,7vw,68px);max-width:22ch;margin:0 auto 20px}
-.held h1 span{display:block}
-.held-text{font-size:clamp(18px,2.2vw,22px);color:var(--muted);max-width:40ch;margin:0 auto 32px}
-.knoepfe{display:flex;flex-direction:column;gap:12px;align-items:center}
-.knopf{display:inline-block;padding:14px 24px;border-radius:var(--r);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:600;font-size:17px;background:var(--bg);min-width:280px;text-align:center}
-.knopf:hover{border-color:var(--ink)}
-.knopf.primaer{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.knopf.primaer:hover{background:var(--accent-dunkel);border-color:var(--accent-dunkel)}
-.knopf.gross{font-size:19px;padding:16px 32px}
-.klein{font-size:15px;color:var(--muted);margin-top:18px}
+.held{padding-top:96px;padding-bottom:40px}
+.held h1{font-size:clamp(44px,8.5vw,118px);letter-spacing:-.04em;line-height:.98;max-width:14ch}
+.held h1 em{font-style:normal;color:var(--akzent)}
+.held-text{font-size:clamp(19px,2.2vw,26px);color:var(--grau);max-width:34ch;margin:32px 0 36px;line-height:1.35}
+.knoepfe{display:flex;flex-direction:column;gap:12px;max-width:420px}
+.knopf{display:inline-block;text-align:center;text-decoration:none;font-weight:700;font-size:17px;padding:16px 26px;border:2px solid var(--ink);background:var(--bg);color:var(--ink);transition:background .15s,color .15s,border-color .15s}
+.knopf:hover{background:var(--ink);color:#fff}
+.knopf.primaer{background:var(--ink);color:#fff}
+.knopf.primaer:hover{background:var(--akzent);border-color:var(--akzent)}
+.knopf.akzent{background:var(--akzent);border-color:var(--akzent);color:#fff}
+.knopf.akzent:hover{background:var(--akzent-dunkel);border-color:var(--akzent-dunkel)}
+.klein{font-size:15px;color:var(--hell);margin-top:22px}
 
-/* Kacheln */
-.kacheln{display:grid;gap:20px;padding-top:0}
-.kacheln figure{margin:0}
-.kacheln img{border-radius:var(--r);border:1px solid var(--line2);aspect-ratio:4/3;object-fit:cover;width:100%}
-.kacheln figcaption{font-size:15px;color:var(--muted);margin-top:10px}
+/* Bildband */
+.band{padding-top:24px;padding-bottom:0}
+.band img{width:100%}
+.band figcaption,.galerie figcaption,.app figcaption{font-size:14px;color:var(--hell);margin-top:10px}
 
 /* Schritte */
-.schritte ol{list-style:none;margin:0;padding:0;display:grid;gap:28px}
-.schritte li{display:grid;grid-template-columns:44px 1fr;grid-template-rows:auto auto;column-gap:16px}
-.schritte .nr{grid-row:1/3;width:44px;height:44px;border-radius:50%;background:var(--accent-hell);color:var(--accent);font-weight:700;display:flex;align-items:center;justify-content:center}
-.schritte h3{align-self:center}
-.schritte p{color:var(--muted);font-size:17px}
+.schritte ol{list-style:none;display:grid;gap:36px}
+.schritte li{display:grid;grid-template-columns:52px 1fr;column-gap:4px;row-gap:6px;align-items:baseline}
+.schritte .nr{grid-row:1/3;font-size:44px;font-weight:700;color:var(--akzent);letter-spacing:-.04em;line-height:1}
+.schritte p{color:var(--grau);font-size:17px}
+
+/* Projekte */
+.projekte{border-top:1px solid var(--linie)}
+.projekt{margin-bottom:72px}
+.projekt:last-child{margin-bottom:0}
+.projekt header{display:grid;gap:10px;margin-bottom:28px;max-width:70ch}
+.projekt header p{color:var(--grau);font-size:17px}
+.galerie{display:grid;gap:18px}
+.galerie figure img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.galerie .hoch img{aspect-ratio:3/4}
+.galerie .schnitt img{object-position:center 62%}
 
 /* Funktionen */
-.funktionen{background:var(--panel);max-width:none}
-.funktionen>*{max-width:var(--breit);margin-left:auto;margin-right:auto}
-.karten{display:grid;gap:16px}
-.karten article{background:var(--bg);border:1px solid var(--line2);border-radius:var(--r);padding:22px}
-.karten h3{margin-bottom:8px}
-.karten p{color:var(--muted);font-size:16px}
+.funktionen{border-top:1px solid var(--linie)}
+.liste{list-style:none;display:grid;gap:30px}
+.liste li{padding-left:22px;position:relative}
+.liste li::before{content:"";position:absolute;left:0;top:7px;width:10px;height:10px;background:var(--akzent)}
+.liste p{color:var(--grau);font-size:17px;margin-top:6px}
+
+/* App */
+.app{padding-top:0}
+.app img{width:100%;border:1px solid var(--linie)}
 
 /* Preis */
-.preis{text-align:center}
-.plaene{display:grid;gap:20px;max-width:960px;margin:0 auto}
-.plan{border:1px solid var(--line);border-radius:12px;padding:32px 24px;max-width:460px;width:100%;margin:0 auto;text-align:left;display:flex;flex-direction:column}
-.plan ul{flex:1}
-.plan.hervor{border:2px solid var(--accent)}
-.plan h3{font-size:22px;color:var(--accent)}
-.betrag{margin:10px 0 20px}
-.zahl{font-size:48px;font-weight:700;letter-spacing:-.02em}
-.einheit{color:var(--muted);font-size:16px;display:block}
-.plan ul{list-style:none;margin:0 0 28px;padding:0;display:grid;gap:10px}
-.plan li{padding-left:28px;position:relative}
-.plan li::before{content:"";position:absolute;left:0;top:7px;width:14px;height:8px;border-left:3px solid var(--accent);border-bottom:3px solid var(--accent);transform:rotate(-45deg)}
+.preis{border-top:1px solid var(--linie)}
+.plaene{display:grid;gap:48px}
+.plan{display:flex;flex-direction:column;border-top:4px solid var(--ink);padding-top:22px}
+.plan.hervor{border-top-color:var(--akzent)}
+.plan.hervor h3{color:var(--akzent)}
+.betrag{margin:12px 0 24px}
+.zahl{font-size:60px;font-weight:700;letter-spacing:-.04em;line-height:1;display:block}
+.einheit{color:var(--grau);font-size:16px;display:block;margin-top:8px}
+.plan ul{list-style:none;display:grid;gap:12px;margin-bottom:32px;flex:1}
+.plan li{padding-left:22px;position:relative;font-size:17px}
+.plan li::before{content:"";position:absolute;left:0;top:7px;width:10px;height:10px;background:var(--ink)}
+.plan.hervor li::before{background:var(--akzent)}
 .plan .knopf{display:block}
-.garantie{margin-top:18px;font-size:15px;color:var(--muted);text-align:center}
+.garantie{margin-top:36px;font-size:15px;color:var(--grau)}
 
 /* FAQ */
-.faq details{border-top:1px solid var(--line2);padding:16px 0}
-.faq details:last-of-type{border-bottom:1px solid var(--line2)}
-.faq summary{cursor:pointer;font-weight:600;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq{border-top:1px solid var(--linie)}
+.faq details{border-top:1px solid var(--linie);padding:18px 0}
+.faq details:last-of-type{border-bottom:1px solid var(--linie)}
+.faq summary{cursor:pointer;font-weight:700;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:16px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";color:var(--accent);font-weight:400;font-size:26px;line-height:1;flex:none}
+.faq summary::after{content:"+";color:var(--akzent);font-weight:400;font-size:28px;line-height:1;flex:none}
 .faq details[open] summary::after{content:"\2212"}
-.faq details p{margin-top:12px;color:var(--muted);font-size:17px}
+.faq details p{margin-top:12px;color:var(--grau);font-size:17px;max-width:70ch}
+
+/* Rechtstexte */
+.text{max-width:760px;padding-top:64px}
+.text h1{font-size:clamp(34px,5vw,56px);margin-bottom:36px}
+.text h2{font-size:22px;margin:36px 0 10px}
+.text p,.text li{color:var(--grau);font-size:17px;margin-bottom:12px}
+.text ul{padding-left:20px}
+.text .hinweis{border-left:4px solid var(--akzent);padding-left:14px;color:var(--ink)}
+[data-sprache]{display:none}
+[data-sprache].on{display:block}
 
 /* Fuß */
-.fuss{display:flex;flex-wrap:wrap;gap:20px;padding:32px 20px 48px;max-width:var(--breit);margin:0 auto;border-top:1px solid var(--line2);font-size:15px;color:var(--muted)}
-.fuss a{color:var(--muted);text-decoration:none}
-.fuss a:hover{color:var(--accent)}
+.fuss{display:flex;flex-wrap:wrap;gap:24px;padding:40px var(--rand) 56px;max-width:var(--breit);margin:0 auto;border-top:1px solid var(--linie);font-size:15px;color:var(--hell)}
+.fuss a{color:var(--hell);text-decoration:none}
+.fuss a:hover{color:var(--ink)}
 
 /* Breiter Bildschirm */
 @media (min-width:720px){
   .menu{display:flex}
-  .knoepfe{flex-direction:row;justify-content:center}
-  .kacheln{grid-template-columns:repeat(3,1fr)}
-  .schritte ol{grid-template-columns:repeat(2,1fr);gap:36px 40px}
-  .karten{grid-template-columns:repeat(2,1fr)}
-  .plaene{grid-template-columns:repeat(2,1fr);align-items:stretch}
-  .plan{padding:40px;max-width:none}
+  .knoepfe{flex-direction:row;max-width:none}
+  .schritte ol{grid-template-columns:repeat(3,1fr);gap:40px}
+  .galerie{grid-template-columns:repeat(2,1fr)}
+  .liste{grid-template-columns:repeat(2,1fr);gap:36px 48px}
+  .plaene{grid-template-columns:repeat(2,1fr);gap:64px}
 }
 @media (min-width:1000px){
-  .karten{grid-template-columns:repeat(3,1fr)}
-  .schritte ol{grid-template-columns:repeat(4,1fr)}
-  .schritte li{grid-template-columns:1fr;grid-template-rows:auto auto auto;row-gap:12px;align-content:start}
-  .schritte .nr{grid-row:auto}
-  section{padding:72px 20px}
+  .galerie{grid-template-columns:repeat(3,1fr)}
+  .galerie .hoch{grid-row:span 2;display:flex;flex-direction:column}
+  .galerie .hoch img{flex:1;min-height:0;height:auto;aspect-ratio:auto}
+  .liste{grid-template-columns:repeat(3,1fr)}
+  .held{padding-top:128px}
 }

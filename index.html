@@ -5,16 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Forma</title>
 <meta name="description" data-i18n="meta" content="Beschreib dein Haus. Forma baut es. Modellieren mit Sprache für Architekten, auf dem Mac.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="kopf">
-  <a class="logo" href="#" data-produkt>Forma</a>
+  <a class="logo" href="./" data-produkt>Forma</a>
   <nav class="menu">
+    <a href="#projekte" data-i18n="nav.projekte">Projekte</a>
     <a href="#funktionen" data-i18n="nav.funktionen">Funktionen</a>
     <a href="#preis" data-i18n="nav.preis">Preis</a>
     <a href="#faq" data-i18n="nav.faq">Fragen</a>
@@ -29,7 +27,7 @@
 <main>
 
 <section class="held">
-  <h1><span data-i18n="held.titel1">Beschreib dein Haus.</span> <span data-i18n="held.titel2">Forma baut es.</span></h1>
+  <h1><span data-i18n="held.titel1">Beschreib dein Haus.</span><br><em data-i18n="held.titel2">Forma baut es.</em></h1>
   <p class="held-text" data-i18n="held.text">Du schreibst, was du willst. Forma setzt echte Bauteile, rendert auf deinem Mac und schreibt die Pläne als PDF.</p>
   <div class="knoepfe">
     <a class="knopf primaer" data-download="arm" href="#"><span data-i18n="held.ladenArm">Laden für Mac (Apple Silicon)</span></a>
@@ -38,68 +36,100 @@
   <p class="klein" data-i18n="held.klein">macOS 13 oder neuer. Ab 45 € im Monat. Nach drei Monaten nicht zufrieden? Alles zurück.</p>
 </section>
 
-<section class="kacheln" aria-label="Bilder">
-  <figure>
-    <img src="bilder/einstellungen.jpg" alt="" loading="lazy" width="1600" height="1200" data-i18n-alt="bild.app">
-    <figcaption data-i18n="bild.app">Die App: Chat links, Modell rechts, Einstellungen in der App.</figcaption>
-  </figure>
-  <figure>
-    <img src="bilder/rendering.jpg" alt="" loading="lazy" width="1600" height="999" data-i18n-alt="bild.render">
-    <figcaption data-i18n="bild.render">Rendering mit Blender Cycles, berechnet auf dem eigenen Mac.</figcaption>
-  </figure>
-  <figure>
-    <img src="bilder/tafel.jpg" alt="" loading="lazy" width="1200" height="800" data-i18n-alt="bild.tafel">
-    <figcaption data-i18n="bild.tafel">Wettbewerbsbild aus Forma, Projekt FIVE CLEARINGS, Vancouver.</figcaption>
-  </figure>
-</section>
+<figure class="band">
+  <img src="bilder/vancouver_drohne.jpg" alt="" width="1600" height="1106" data-i18n-alt="bild.band">
+  <figcaption><span data-i18n="bild.band">FIVE CLEARINGS, Vancouver. Entwurf, Modell und Bild aus Forma.</span></figcaption>
+</figure>
 
 <section class="schritte" id="sogehts">
-  <h2 data-i18n="schritte.titel">So geht es</h2>
+  <h2 data-i18n="schritte.titel">In drei Schritten</h2>
   <ol>
-    <li><span class="nr">1</span><h3 data-i18n="schritte.1t">Laden</h3><p data-i18n="schritte.1">Die App laden, in den Programme-Ordner ziehen, öffnen.</p></li>
-    <li><span class="nr">2</span><h3 data-i18n="schritte.2t">Lizenz eintragen</h3><p data-i18n="schritte.2">Den Schlüssel aus deiner Bestätigungsmail in die Einstellungen kopieren.</p></li>
-    <li><span class="nr">3</span><h3 data-i18n="schritte.3t">Beschreiben</h3><p data-i18n="schritte.3">Im Chat schreiben: „Zwei Geschosse, Flachdach, Fenster nach Süden.“ Forma baut die Bauteile.</p></li>
-    <li><span class="nr">4</span><h3 data-i18n="schritte.4t">Rendern</h3><p data-i18n="schritte.4">Blick wählen, Stimmung wählen, rendern. Pläne als PDF, Modell als 3dm oder IFC.</p></li>
+    <li><span class="nr">1</span><h3 data-i18n="schritte.1t">Laden</h3><p data-i18n="schritte.1">App laden, in den Ordner Programme ziehen, mit Rechtsklick öffnen.</p></li>
+    <li><span class="nr">2</span><h3 data-i18n="schritte.2t">Schlüssel eintragen</h3><p data-i18n="schritte.2">Beim ersten Start fragt Forma nach dem Lizenzschlüssel aus deiner Mail. Einfügen, fertig.</p></li>
+    <li><span class="nr">3</span><h3 data-i18n="schritte.3t">Beschreiben</h3><p data-i18n="schritte.3">„Zwei Geschosse, Satteldach, Terrasse nach Süden.“ Forma baut, du änderst, dann rendern und Pläne als PDF.</p></li>
   </ol>
+</section>
+
+<section class="projekte" id="projekte">
+  <h2 data-i18n="proj.titel">Gebaut mit Forma</h2>
+
+  <article class="projekt">
+    <header>
+      <h3>FIVE CLEARINGS, Vancouver</h3>
+      <p data-i18n="proj.vanc">Hochhaus mit fünf öffentlichen Lichtungen, Wettbewerb 2026. Modell, Renderings, Pläne und Tafeln aus Forma.</p>
+    </header>
+    <div class="galerie">
+      <figure><img src="bilder/vancouver_lichtung.jpg" alt="" loading="lazy" width="1600" height="1106"><figcaption data-i18n="vanc.1">Lichtung 1, innen</figcaption></figure>
+      <figure><img src="bilder/vancouver_regenraum.jpg" alt="" loading="lazy" width="1600" height="1106"><figcaption data-i18n="vanc.2">Regenraum am Bahnhof</figcaption></figure>
+      <figure class="hoch"><img src="bilder/vancouver_lichthof.jpg" alt="" loading="lazy" width="1089" height="1600"><figcaption data-i18n="vanc.3">Lichthof vom Platz</figcaption></figure>
+      <figure><img src="bilder/vancouver_axo.jpg" alt="" loading="lazy" width="1800" height="1244"><figcaption data-i18n="vanc.4">Axonometrie</figcaption></figure>
+      <figure><img src="bilder/vancouver_grundriss.jpg" alt="" loading="lazy" width="1800" height="1244"><figcaption data-i18n="vanc.5">Erdgeschoss, gerendert</figcaption></figure>
+      <figure class="schnitt"><img src="bilder/vancouver_schnitt.jpg" alt="" loading="lazy" width="1800" height="1560"><figcaption data-i18n="vanc.6">Schnitt durch den Turm</figcaption></figure>
+      <figure><img src="bilder/vancouver_dachgaerten.jpg" alt="" loading="lazy" width="1600" height="1106"><figcaption data-i18n="vanc.7">Dachgärten auf dem Sockel</figcaption></figure>
+      <figure><img src="bilder/vancouver_highstreet.jpg" alt="" loading="lazy" width="1600" height="1106"><figcaption data-i18n="vanc.8">High Street mit Altbauzeile</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="projekt">
+    <header>
+      <h3>Walhallastraße 8, München</h3>
+      <p data-i18n="proj.muc">Umbau einer Villa von 1913 mit Anbau, 2026. Bestand, Entwurf, Innenräume und Grundrisse in Forma, Abstimmung mit dem Bauherrn an den Bildern.</p>
+    </header>
+    <div class="galerie">
+      <figure><img src="bilder/muenchen_ecke.jpg" alt="" loading="lazy" width="1600" height="1066"><figcaption data-i18n="muc.1">Ecke Frickastraße</figcaption></figure>
+      <figure><img src="bilder/muenchen_vogel.jpg" alt="" loading="lazy" width="1600" height="1066"><figcaption data-i18n="muc.2">Vogelperspektive mit Anbau</figcaption></figure>
+      <figure><img src="bilder/muenchen_iso.jpg" alt="" loading="lazy" width="1600" height="1200"><figcaption data-i18n="muc.3">Isometrie mit Nachbarn</figcaption></figure>
+      <figure><img src="bilder/muenchen_terrasse.jpg" alt="" loading="lazy" width="1600" height="1066"><figcaption data-i18n="muc.4">Dachterrasse</figcaption></figure>
+      <figure><img src="bilder/muenchen_salon.jpg" alt="" loading="lazy" width="1600" height="1066"><figcaption data-i18n="muc.5">Salon mit Kaminofen</figcaption></figure>
+      <figure><img src="bilder/muenchen_grundriss.jpg" alt="" loading="lazy" width="1600" height="1066"><figcaption data-i18n="muc.6">Erdgeschoss mit Möbeln</figcaption></figure>
+    </div>
+  </article>
 </section>
 
 <section class="funktionen" id="funktionen">
   <h2 data-i18n="fkt.titel">Was Forma kann</h2>
-  <div class="karten">
-    <article><h3 data-i18n="fkt.1t">Echte Bauteile</h3><p data-i18n="fkt.1">Wände, Decken, Stützen, Fenster, Treppen. Mit Maßen, Schichten und Mengen, nicht nur Flächen.</p></article>
-    <article><h3 data-i18n="fkt.2t">Rhino-Befehle</h3><p data-i18n="fkt.2">Wer Rhino kennt, tippt die bekannten Befehle. Der Chat versteht beides.</p></article>
-    <article><h3 data-i18n="fkt.3t">Export 3dm und IFC</h3><p data-i18n="fkt.3">Das Modell geht weiter nach Rhino, Revit, ArchiCAD oder zum Tragwerksplaner.</p></article>
-    <article><h3 data-i18n="fkt.4t">Rendering auf deinem Mac</h3><p data-i18n="fkt.4">Blender Cycles läuft lokal, so oft du willst. Dazu KI-Renderings für Stimmung und Vegetation.</p></article>
-    <article><h3 data-i18n="fkt.5t">Pläne als PDF</h3><p data-i18n="fkt.5">Grundrisse, Schnitte, Ansichten und Tafeln kommen fertig aus dem Modell.</p></article>
-    <article><h3 data-i18n="fkt.6t">Vom Handy und aus dem Terminal</h3><p data-i18n="fkt.6">Unterwegs im Browser bedienen. Oder aus Claude Code, Codex und Gemini CLI steuern.</p></article>
-  </div>
+  <ul class="liste">
+    <li><h3 data-i18n="fkt.1t">Echte Bauteile</h3><p data-i18n="fkt.1">Wände, Decken, Stützen, Fenster, Treppen. Mit Maßen, Schichten und Mengen, nicht nur Flächen.</p></li>
+    <li><h3 data-i18n="fkt.2t">Rhino-Befehle</h3><p data-i18n="fkt.2">Wer Rhino kennt, tippt die bekannten Befehle. Der Chat versteht beides.</p></li>
+    <li><h3 data-i18n="fkt.3t">Export 3dm und IFC</h3><p data-i18n="fkt.3">Das Modell geht weiter nach Rhino, Revit, ArchiCAD oder zum Tragwerksplaner.</p></li>
+    <li><h3 data-i18n="fkt.4t">Rendering auf deinem Mac</h3><p data-i18n="fkt.4">Blender Cycles läuft lokal, so oft du willst. Dazu KI-Renderings für Stimmung und Vegetation.</p></li>
+    <li><h3 data-i18n="fkt.5t">Pläne als PDF</h3><p data-i18n="fkt.5">Grundrisse, Schnitte, Ansichten und Tafeln kommen fertig aus dem Modell.</p></li>
+    <li><h3 data-i18n="fkt.6t">Vom Handy und aus dem Terminal</h3><p data-i18n="fkt.6">Unterwegs im Browser bedienen. Oder aus Claude Code, Codex und Gemini CLI steuern.</p></li>
+  </ul>
+</section>
+
+<section class="app">
+  <figure>
+    <img src="bilder/app.jpg" alt="" loading="lazy" width="1600" height="1000" data-i18n-alt="bild.app">
+    <figcaption data-i18n="bild.app">Die App: Objekte und Ebenen links, Modell in der Mitte, Chat rechts. Hier FIVE CLEARINGS mit 69 510 Bauteilen.</figcaption>
+  </figure>
 </section>
 
 <section class="preis" id="preis">
   <h2 data-i18n="preis.titel">Zwei Pläne</h2>
   <div class="plaene">
-  <div class="plan">
-    <h3>Forma Pro</h3>
-    <p class="betrag"><span class="zahl">45 €</span> <span class="einheit" data-i18n="preis.einheit">im Monat zzgl. MwSt.</span></p>
-    <ul>
-      <li data-i18n="preis.l1">KI für das Modell, unbegrenzt</li>
-      <li data-i18n="preis.l2">60 KI-Renderings im Monat</li>
-      <li data-i18n="preis.l3">Blender-Rendering unbegrenzt, auf deinem Mac</li>
-      <li data-i18n="preis.l4">Alle Updates</li>
-    </ul>
-    <a class="knopf primaer gross" data-checkout="pro" href="#" data-i18n="preis.knopf">Abo starten</a>
-  </div>
-  <div class="plan hervor">
-    <h3>Forma Studio</h3>
-    <p class="betrag"><span class="zahl">450 €</span> <span class="einheit" data-i18n="preis.einheit">im Monat zzgl. MwSt.</span></p>
-    <ul>
-      <li data-i18n="studio.l1">Alles aus Pro, ohne Grenzen: KI, KI-Renderings, Websuche</li>
-      <li data-i18n="studio.l2">Persönliche Beratung: Architekt am Telefon oder per Video, wenn du sie brauchst</li>
-      <li data-i18n="studio.l3">Modellierungshilfe: Wir bauen oder richten dein Projekt mit dir ein</li>
-      <li data-i18n="studio.l4">Wünsche an Forma kommen zuerst dran</li>
-    </ul>
-    <a class="knopf primaer gross" data-checkout="studio" href="#" data-i18n="studio.knopf">Studio anfragen</a>
-  </div>
+    <div class="plan">
+      <h3>Forma Pro</h3>
+      <p class="betrag"><span class="zahl">45 €</span><span class="einheit" data-i18n="preis.einheit">im Monat zzgl. MwSt.</span></p>
+      <ul>
+        <li data-i18n="preis.l1">KI für das Modell, unbegrenzt</li>
+        <li data-i18n="preis.l2">60 KI-Renderings im Monat</li>
+        <li data-i18n="preis.l3">Blender-Rendering unbegrenzt, auf deinem Mac</li>
+        <li data-i18n="preis.l4">Alle Updates</li>
+      </ul>
+      <a class="knopf primaer" data-checkout="pro" href="#" data-i18n="preis.knopf">Abo starten</a>
+    </div>
+    <div class="plan hervor">
+      <h3>Forma Studio</h3>
+      <p class="betrag"><span class="zahl">450 €</span><span class="einheit" data-i18n="preis.einheit">im Monat zzgl. MwSt.</span></p>
+      <ul>
+        <li data-i18n="studio.l1">Alles aus Pro, ohne Grenzen: KI, KI-Renderings, Websuche</li>
+        <li data-i18n="studio.l2">Persönliche Beratung: Architekt am Telefon oder per Video, wenn du sie brauchst</li>
+        <li data-i18n="studio.l3">Modellierungshilfe: Wir bauen oder richten dein Projekt mit dir ein</li>
+        <li data-i18n="studio.l4">Wünsche an Forma kommen zuerst dran</li>
+      </ul>
+      <a class="knopf akzent" data-checkout="studio" href="#" data-i18n="studio.knopf">Studio anfragen</a>
+    </div>
   </div>
   <p class="garantie" data-i18n="preis.garantie">Nach drei Monaten nicht zufrieden? Du bekommst alles zurück. Gilt für beide Pläne.</p>
 </section>
@@ -111,15 +141,16 @@
   <details><summary data-i18n="faq.3f">Wo liegen meine Daten?</summary><p data-i18n="faq.3">Auf deinem Mac. Projekte, Modelle und Renderings bleiben lokal. An die KI gehen nur die Texte deines Chats und, wenn du es willst, das Bild für ein KI-Rendering.</p></details>
   <details><summary data-i18n="faq.4f">Brauche ich einen eigenen KI-Schlüssel?</summary><p data-i18n="faq.4">Nein. Im Abo ist die KI enthalten. Wer eigene Schlüssel hat (OpenAI, Gemini, Groq, OpenRouter, Ollama), kann sie in den Einstellungen eintragen.</p></details>
   <details><summary data-i18n="faq.5f">Muss ich Blender kennen?</summary><p data-i18n="faq.5">Nein. Forma stellt Kamera, Licht und Materialien selbst ein und startet Blender im Hintergrund. Du siehst nur das Bild.</p></details>
-  <details><summary data-i18n="faq.6f">Wie kündige ich?</summary><p data-i18n="faq.6">Jederzeit mit einem Klick im Kundenkonto. Das Abo läuft bis zum Monatsende, danach ist Schluss. Deine Dateien bleiben bei dir.</p></details>
+  <details><summary data-i18n="faq.6f">Wie kündige ich?</summary><p data-i18n="faq.6">Jederzeit mit einer Mail. Das Abo läuft bis zum Monatsende, danach ist Schluss. Deine Dateien bleiben bei dir.</p></details>
 </section>
 
 </main>
 
 <footer class="fuss">
   <span>© <span data-jahr>2026</span> <span data-produkt>Forma</span></span>
-  <a href="#" data-i18n="fuss.impressum">Impressum</a>
-  <a href="#" data-i18n="fuss.datenschutz">Datenschutz</a>
+  <a href="impressum.html" data-i18n="fuss.impressum">Impressum</a>
+  <a href="datenschutz.html" data-i18n="fuss.datenschutz">Datenschutz</a>
+  <a href="mailto:tassilodlts@gmail.com" data-i18n="fuss.kontakt">Kontakt</a>
 </footer>
 
 <script src="app.js"></script>
