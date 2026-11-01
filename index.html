@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Forma</title>
 <meta name="description" data-i18n="meta" content="Beschreib dein Haus. Forma baut es. Modellieren mit Sprache für Architekten, auf dem Mac.">
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,6 +35,28 @@
     <a class="knopf" data-download="x64" href="#"><span data-i18n="held.ladenX64">Laden für Mac (Intel)</span></a>
   </div>
   <p class="klein" data-i18n="held.klein">macOS 13 oder neuer. Ab 45 € im Monat. Nach drei Monaten nicht zufrieden? Alles zurück.</p>
+</section>
+
+<section class="modell" id="modell">
+  <div class="m-kopf">
+    <h2 data-i18n="modell.titel">Das Modell zum Anfassen</h2>
+    <p data-i18n="modell.text">FIVE CLEARINGS, direkt aus Forma. Drehen mit einem Finger oder der Maus, zoomen und verschieben mit zwei Fingern oder dem Rad.</p>
+  </div>
+  <div class="m-leiste">
+    <div class="m-gruppen">
+      <button type="button" class="on" data-gruppe="tragwerk" data-i18n="modell.tragwerk">Tragwerk</button>
+      <button type="button" class="on" data-gruppe="gebaeude" data-i18n="modell.gebaeude">Gebäude</button>
+      <button type="button" class="on" data-gruppe="stadt" data-i18n="modell.stadt">Stadt</button>
+      <button type="button" class="on" data-gruppe="pflanzen" data-i18n="modell.pflanzen">Bäume</button>
+    </div>
+    <div class="m-ansichten">
+      <button type="button" data-ansicht="stadt" data-i18n="modell.a1">Block</button>
+      <button type="button" data-ansicht="turm" data-i18n="modell.a2">Turm</button>
+      <button type="button" data-ansicht="sockel" data-i18n="modell.a3">Sockel</button>
+      <button type="button" data-ansicht="oben" data-i18n="modell.a4">Von oben</button>
+    </div>
+  </div>
+  <div class="m-buehne"><canvas></canvas><span class="m-status"></span></div>
 </section>
 
 <figure class="band">
@@ -148,11 +171,11 @@
 
 <footer class="fuss">
   <span>© <span data-jahr>2026</span> <span data-produkt>Forma</span></span>
-  <a href="impressum.html" data-i18n="fuss.impressum">Impressum</a>
-  <a href="datenschutz.html" data-i18n="fuss.datenschutz">Datenschutz</a>
   <a href="mailto:tassilodlts@gmail.com" data-i18n="fuss.kontakt">Kontakt</a>
 </footer>
 
 <script src="app.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+<script type="module" src="modell.js"></script>
 </body>
 </html>
