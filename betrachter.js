@@ -282,41 +282,49 @@ if (SR && mikro && eingabe) {
 // Erst laden, wenn der Abschnitt ins Bild kommt; nur rendern, solange er sichtbar ist
 new IntersectionObserver(es => { for (const e of es) { sichtbar = e.isIntersecting; if (sichtbar) start(); } }, { rootMargin: '200px' }).observe(wrap);
 
-// Film (?film=1, nur für die Aufnahme mit out/film_tmp.mjs): der Turm allein auf weißer Scheibe wie im Forma-Fenster, dann wächst die
-// Satellitenstadt von innen nach außen aus der Fläche, am Ende sinkt sie wieder ab, damit die Schleife schließt. window.formaFilm.setze(t) rechnet
-// und zeichnet ein Bild zur Zeit t in Sekunden; die Aufnahme liest das Bild aus der Leinwand.
+// Film (?film=1, nur für die Aufnahme mit out/film_tmp.mjs). Endlosschleife (2.11., Tassilo: „fängt an, wo es aufhört“, die ganze Stadt soll
+// auftreten, keine gepunktete Linie): Die Kamera fährt in F.dauer Sekunden genau einmal um den Turm. Am Anfang und am Ende steht der Turm allein
+// auf weißer Scheibe wie im Fenster der App. Dazwischen wächst die Stadt von innen nach außen, erst die Fotokacheln, dann die ganze gebaute
+// Stadt bis zu den Bergen (site/film/stadt.glb aus tools/film_stadt.mjs, in Ringen), und sinkt wieder zurück. Alle Größen hängen nur von
+// cos(2π t/T) ab, darum ist das letzte Bild wieder das erste. window.formaFilm.setze(t) zeichnet das Bild zur Zeit t in Sekunden.
 if (new URLSearchParams(location.search).get('film')) {
-  const F = { dauer: 14, bereit: false, kacheln: [], scheibe: null };
-  window.formaFilm = F; F.innen = () => ({ m: aktiv, scene, THREE });   // nur für Prüfungen der Aufnahme
+  const F = { dauer: 24, bereit: false, kacheln: [], ringe: [], scheibe: null };
+  window.formaFilm = F; F.innen = () => ({ m: aktiv, scene, THREE, renderer });   // nur für Prüfungen der Aufnahme
   F.start = async () => {
     canvas.style.width = '1024px'; canvas.style.height = '1024px'; wrap.querySelector('.m-buehne').style.width = '1024px';
     start(); renderer.setPixelRatio(1); aktiviere('vancouver'); groesse();
-    scene.background = new THREE.Color(0x6f8793);
+    const himmel = new THREE.Color(0x8fa3ad); scene.background = himmel; scene.fog = new THREE.Fog(himmel, 1e6, 2e6);
     const m = aktiv; m.wurzel.children.find(o => o.geometry?.type === 'CircleGeometry').visible = false;
-    F.scheibe = new THREE.Mesh(new THREE.CircleGeometry(270, 96), new THREE.MeshBasicMaterial({ color: 0xffffff })); F.scheibe.rotation.x = -Math.PI / 2; F.scheibe.position.y = -0.4; m.wurzel.add(F.scheibe);
+    F.scheibe = new THREE.Mesh(new THREE.CircleGeometry(270, 96), new THREE.MeshBasicMaterial({ color: 0xffffff, fog: false })); F.scheibe.rotation.x = -Math.PI / 2; F.scheibe.position.y = -0.4; m.wurzel.add(F.scheibe);
     const K = ['tragwerk', 'gebaeude', 'pflanzen', 'stadt', 'kacheln']; for (const k of K) if (!m.gruppen[k]) lade(k);
-    while (K.some(k => !m.gruppen[k]?.children.length) || !m.baumNetz?.children.length) await new Promise(r => setTimeout(r, 200));   // alles geladen, auch was aktiviere() schon angestoßen hat
+    const fern = await loader.loadAsync('film/stadt.glb'), ringe = [];
+    fern.scene.traverse(o => { if (o.isMesh) { o.material = new THREE.MeshLambertMaterial({ vertexColors: true, flatShading: true, side: THREE.DoubleSide }); o.frustumCulled = false; ringe.push(o); } });
+    m.wurzel.add(fern.scene);
+    while (K.some(k => !m.gruppen[k]?.children.length) || !m.baumNetz?.children.length) await new Promise(r => setTimeout(r, 200));   // alles geladen
     m.sichtbar.stadt = false; for (const k of Object.keys(m.dateien)) zeige(k);
     // Bäume rundherum (Gehwege, Nachbarschaft, Straßenbäume am Boden) weg, die Stadt bringt ihre eigenen; nur Turm und Dachgärten behalten ihre Bäume
     const M = new THREE.Matrix4(), P = new THREE.Vector3();
     for (const I of m.baumNetz.children) { for (let i = 0; i < I.count; i++) { I.getMatrixAt(i, M); P.setFromMatrixPosition(M); if (Math.abs(P.x) > 118 || Math.abs(P.z) > 75 || P.y < 5) { M.makeScale(0.0001, 0.0001, 0.0001); I.setMatrixAt(i, M); } } I.instanceMatrix.needsUpdate = true; }
     m.gruppen.kacheln.traverse(o => { if (o.isMesh) { o.geometry.computeBoundingBox(); const b = o.geometry.boundingBox, c = new THREE.Vector3(); b.getCenter(c); F.kacheln.push({ o, y0: b.min.y, d: Math.hypot(c.x, c.z) }); } });
     const dmax = Math.max(...F.kacheln.map(k => k.d)); for (const k of F.kacheln) k.d /= dmax;
+    ringe.sort((a, b) => +a.name.slice(1) - +b.name.slice(1) || 0);
+    F.ringe = ringe.map((o, i) => { o.geometry.computeBoundingBox(); return { o, y0: o.geometry.boundingBox.min.y, e: i / Math.max(1, ringe.length - 1) }; });
+    camera.far = 80000; camera.updateProjectionMatrix();
     F.bereit = true;
   };
   F.setze = t => {
-    const m = aktiv, T = F.dauer, glatt = x => x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x);
-    // Kamera (2.11., Tassilo: die ganze Stadt zeigen): Kreisbogen um den Turm; während die Stadt wächst, zieht sie sich zurück und steigt, bis die
-    // ganze Scheibe von 900 m im Bild ist (ab 8,5 s), und kommt beim Absinken wieder heran, damit die Schleife beim Turm allein schließt
-    const weit = glatt((t - 2) / 6.5) * (1 - glatt((t - T + 2.6) / 2.4));
-    const a = (28 + 46 * t / T) * Math.PI / 180, r = 560 + 1000 * weit, hoehe = 360 + 760 * weit, ziel = 125 - 95 * weit;
+    const m = aktiv, T = F.dauer, u = ((t % T) + T) % T / T, glatt = x => x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x);
+    const welle = (1 - Math.cos(2 * Math.PI * u)) / 2, weit = glatt(welle * 1.18);   // 0 am Anfang und Ende, oben ein kurzes Plateau
+    const G = weit * 2;                                                                  // Wachstum: 0 bis 0,9 Fotokacheln, 0,9 bis 1,95 ganze Stadt
+    // Kamera: eine volle Runde, steigt und zieht zurück, bis Stadt, Hafen und Nordufer im Bild sind
+    const a = (28 + 360 * u) * Math.PI / 180, w2 = weit ** 1.5, r = 560 + 5600 * w2, hoehe = 360 + 2900 * w2, ziel = 125 - 105 * weit;
     camera.position.set(Math.sin(a) * r, hoehe, Math.cos(a) * r); controls.target.set(0, ziel, 0); controls.update();
-    // Stadt: jede Kachel wächst nach ihrem Abstand (2 s bis 8 s), am Ende (letzte 2,4 s) sinkt alles zurück
-    const sinkt = glatt((t - T + 2.4) / 1.6);
+    const ab = Math.hypot(r, hoehe); scene.fog.near = Math.max(2500, ab * 1.3); scene.fog.far = scene.fog.near + Math.max(4000, ab * 2.2);
     let irgend = false;
-    for (const k of F.kacheln) { const s0 = 2 + 4.8 * k.d ** 1.15, s = glatt((t - s0) / 1.4) * (1 - sinkt); k.o.scale.y = Math.max(s, 0.0001); k.o.position.y = k.y0 * (1 - k.o.scale.y); k.o.visible = s > 0.0005; irgend ||= s > 0.0005; }
-    m.gruppen.kacheln.visible = irgend; m.gruppen.stadt.visible = glatt((t - 2.4) / 1) * (1 - sinkt) > 0.5;
-    const sch = 1 - glatt((t - 2.2) / 1.6) * (1 - sinkt); F.scheibe.scale.set(Math.max(sch, 0.001), Math.max(sch, 0.001), 1); F.scheibe.visible = sch > 0.002;
+    for (const k of F.kacheln) { const s = glatt((G - 0.9 * k.d) / 0.18); k.o.scale.y = Math.max(s, 0.0001); k.o.position.y = k.y0 * (1 - k.o.scale.y); k.o.visible = s > 0.0005; irgend ||= s > 0.0005; }
+    m.gruppen.kacheln.visible = irgend; m.gruppen.stadt.visible = G > 0.25;
+    for (const R of F.ringe) { const s = glatt((G - 0.9 - 1.0 * R.e) / 0.22); R.o.scale.y = Math.max(s, 0.0001); R.o.position.y = R.y0 * (1 - R.o.scale.y); R.o.visible = s > 0.0005; }
+    const sch = 1 - glatt(G / 0.35); F.scheibe.scale.set(Math.max(sch, 0.001), Math.max(sch, 0.001), 1); F.scheibe.visible = sch > 0.002;
     renderer.render(scene, camera);
   };
 }
