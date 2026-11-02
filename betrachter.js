@@ -11,7 +11,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 const wrap = document.querySelector('#modell'); if (!wrap) throw new Error('kein #modell');
 const canvas = wrap.querySelector('canvas'), status = wrap.querySelector('.m-status'), fehler = wrap.querySelector('.m-fehler'), frage = wrap.querySelector('.m-frage');
 const DRACO = 'https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/libs/draco/';
-const CLOUD = 'https://cloud.portantica.net/demo/modell';
+const CLOUD = 'https://cloud.amphion3d.com/demo/modell';
 const FOV = 38;
 
 // Koordinaten: X nach Osten, Y nach oben, Z nach Süden (Norden ist -Z). Schnittebene [nx, ny, nz, c]: sichtbar bleibt, was n·p + c >= 0 erfüllt.

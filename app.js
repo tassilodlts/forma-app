@@ -188,7 +188,7 @@ anwenden(spracheWaehlen(), false);
 
 // Besucherstatistik (2.11., Tassilo: Analytics an): ein Aufruf je Seite und je Ereignis an die Amphion Cloud, ohne Cookie, ohne Kennung; der Worker speichert
 // nur Tag, Seite, Sprache, Land, Gerät und den Host des Verweises. window.formaZaehl('laden') zählt ein Ereignis (auch aus betrachter.js).
-const STATISTIK = 'https://cloud.portantica.net/besuch';
+const STATISTIK = 'https://cloud.amphion3d.com/besuch';
 window.formaZaehl = art => { try { const q = (document.referrer && new URL(document.referrer).host !== location.host) ? new URL(document.referrer).host : '';
   const d = JSON.stringify({ art, seite: location.pathname, sprache: document.documentElement.lang, quelle: q });
   if (!(navigator.sendBeacon && navigator.sendBeacon(STATISTIK, new Blob([d], { type: 'text/plain' })))) fetch(STATISTIK, { method: 'POST', body: d, keepalive: true }).catch(() => {}); } catch {} };
