@@ -4,7 +4,7 @@
 const PRODUKT = 'Amphion';          // Name, später austauschbar
 const DOWNLOAD_ARM = 'https://github.com/tassilodlts/forma-app/releases/latest/download/Amphion-Apple-Silicon.dmg';         // Mac, Apple Silicon (.dmg)
 const DOWNLOAD_X64 = 'https://github.com/tassilodlts/forma-app/releases/latest/download/Amphion-Intel.dmg';         // Mac, Intel (.dmg)
-const CHECKOUT = { pro: 'mailto:tassilodlts@gmail.com?subject=Amphion%20Pro', studio: 'mailto:tassilodlts@gmail.com?subject=Amphion%20Studio' };   // Abo starten je Plan (später Paddle)
+const CHECKOUT = { pro: 'mailto:hello@amphion3d.com?subject=Amphion%20Pro', studio: 'mailto:hello@amphion3d.com?subject=Amphion%20Studio' };   // Abo starten je Plan (später Paddle)
 
 const TEXTE = {
   de: {
