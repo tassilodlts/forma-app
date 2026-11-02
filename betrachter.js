@@ -353,11 +353,12 @@ new IntersectionObserver(es => { for (const e of es) { sichtbar = e.isIntersecti
 // Stadt bis zu den Bergen (site/film/stadt.glb aus tools/film_stadt.mjs, in Ringen), und sinkt wieder zurück. Alle Größen hängen nur von
 // cos(2π t/T) ab, darum ist das letzte Bild wieder das erste. window.formaFilm.setze(t) zeichnet das Bild zur Zeit t in Sekunden.
 if (new URLSearchParams(location.search).get('film')) {
-  const F = { dauer: 24, bereit: false, kacheln: [], ringe: [], scheibe: null };
+  const F = { dauer: 24, bereit: false, kacheln: [], ringe: [], scheibe: null, hoch: 1, weite: 30, zurueck: 0.12, tiefer: 90, turm: [78, -15] };   // turm: Mitte des Turms im Grundriss (x, z), gemessen an den Punkten über 100 m   // weite: waagrechte Bildweite im Hochformat (Grad)
   window.formaFilm = F; F.innen = () => ({ m: aktiv, scene, THREE, renderer });   // nur für Prüfungen der Aufnahme
   F.start = async () => {
     const px = +(new URLSearchParams(location.search).get('px')) || 1024;   // Kantenlänge der Aufnahme (2.11., Tassilo: mehr Pixel)
-    canvas.style.width = px + 'px'; canvas.style.height = px + 'px'; wrap.querySelector('.m-buehne').style.width = px + 'px';
+    const py = +(new URLSearchParams(location.search).get('py')) || px;     // Höhe (2.11., Reel im Hochformat 1080 × 1920); ohne py quadratisch wie bisher
+    F.hoch = py / px; canvas.style.width = px + 'px'; canvas.style.height = py + 'px'; wrap.querySelector('.m-buehne').style.width = px + 'px';
     start(); renderer.setPixelRatio(1); aktiviere('vancouver'); groesse();
     const himmel = new THREE.Color(0xa9b9c2); scene.background = himmel; scene.fog = new THREE.Fog(himmel, 1e6, 2e6);
     const m = aktiv; m.wurzel.children.find(o => o.geometry?.type === 'CircleGeometry').visible = false;
@@ -383,13 +384,73 @@ if (new URLSearchParams(location.search).get('film')) {
     // Kamera: eine volle Runde, steigt und zieht zurück, bis Stadt, Hafen und Nordufer im Bild sind
     // 2.11. (Tassilo: näher an den Gebäuden, tiefer, die Berge sehen): flacher Blick, Abstand höchstens rund 2,1 km
     const a = (28 + 360 * u) * Math.PI / 180, w2 = weit ** 1.4, r = 560 + 1550 * w2, hoehe = 360 + 230 * w2, ziel = 125 - 45 * weit;
-    camera.position.set(Math.sin(a) * r, hoehe, Math.cos(a) * r); controls.target.set(0, ziel, 0); controls.update();
+    // Hochformat: Bildweite senkrecht größer, damit die Breite ungefähr bleibt; etwas weiter weg und tiefer gezielt, so steht der Turm oben und die Stadt füllt unten
+    const hk = Math.max(1, F.hoch || 1), fov = hk > 1 ? 2 * Math.atan(Math.tan(F.weite / 2 * Math.PI / 180) * hk) * 180 / Math.PI : FOV;
+    if (camera.fov !== fov) { camera.fov = fov; camera.updateProjectionMatrix(); }
+    const rr = r * (1 + F.zurueck * (hk - 1)), zz = ziel - F.tiefer * (hk - 1) * (1 - 0.6 * weit);
+    const mx = hk > 1 ? F.turm[0] * (1 - 0.5 * weit) : 0, mz = hk > 1 ? F.turm[1] * (1 - 0.5 * weit) : 0;   // Hochformat: Kreis um den Turm statt um die Blockmitte, sonst steht er am Rand
+    camera.position.set(mx + Math.sin(a) * rr, hoehe, mz + Math.cos(a) * rr); controls.target.set(mx, zz, mz); controls.update();
     scene.fog.near = 7000; scene.fog.far = 42000;   // Berge bleiben sichtbar, der Rand der Daten verblasst
     let irgend = false;
     for (const k of F.kacheln) { const s = glatt((G - 0.9 * k.d) / 0.18); k.o.scale.y = Math.max(s, 0.0001); k.o.position.y = k.y0 * (1 - k.o.scale.y); k.o.visible = s > 0.0005; irgend ||= s > 0.0005; }
     m.gruppen.kacheln.visible = irgend; m.gruppen.stadt.visible = G > 0.25;
     for (const R of F.ringe) { const s = glatt((G - 0.9 - 1.0 * R.e) / 0.22); R.o.scale.y = Math.max(s, 0.0001); R.o.position.y = R.y0 * (1 - R.o.scale.y); R.o.visible = s > 0.0005; }
     const sch = 1 - glatt(G / 0.35); F.scheibe.scale.set(Math.max(sch, 0.001), Math.max(sch, 0.001), 1); F.scheibe.visible = sch > 0.002;
+    renderer.render(scene, camera);
+  };
+}
+
+// Baufilm (?baufilm=1, nur für die Aufnahme mit tools/bauplatz_aufnahme.mjs; 2.11., Reel): der Bauplatz in mehreren Zuständen nacheinander, wie
+// die Cloud sie geliefert hat (Listen aus /demo/bauen). Die Kamera kreist langsam um das Haus, alle F.takt Sekunden kommt der nächste Zustand.
+// Neue und in der Form geänderte Teile wachsen in F.wachs Sekunden von ihrer Unterkante (Maßstab y), die alte Form sinkt zugleich weg;
+// ändert sich nur die Farbe, blendet sie über. window.formaBauFilm.setze(t) zeichnet das Bild zur Zeit t in Sekunden.
+if (new URLSearchParams(location.search).get('baufilm')) {
+  const F = { takt: 4, wachs: 0.6, dauer: 0, bereit: false, gruppen: [], weite: 30 };   // weite: waagrechte Bildweite (Grad)
+  window.formaBauFilm = F;
+  const ohneFarbe = t => JSON.stringify({ ...t, farbe: undefined });
+  F.start = listen => {
+    const q = new URLSearchParams(location.search), px = +q.get('px') || 1080, py = +q.get('py') || px;
+    F.hoch = py / px; canvas.style.width = px + 'px'; canvas.style.height = py + 'px'; wrap.querySelector('.m-buehne').style.width = px + 'px';
+    start(); renderer.setPixelRatio(1); aktiviere('bauplatz'); groesse();
+    const m = aktiv; m.bauGruppe.visible = false;
+    // Boden bis zum Horizont, der Rand verschwindet im weißen Dunst
+    m.wurzel.children.find(o => o.geometry?.type === 'CircleGeometry')?.scale.setScalar(8);
+    scene.background = new THREE.Color(0xffffff); scene.fog = new THREE.Fog(0xffffff, 90, 320);
+    F.gruppen = []; listen.forEach((teile, i) => {
+      const g = baue(teile, UMGEBUNG), vor = new Map((listen[i - 1] || []).map(t => [t.id, t])), jetzt = new Set(teile.map(t => t.id));
+      g.visible = false; m.wurzel.add(g);
+      g.children.forEach((o, k) => {
+        const t = teile.find(x => x.id === o.userData.teil) || teile[k], a = vor.get(t.id);
+        o.userData.neu = o.material.color.clone();
+        if (!i || (a && JSON.stringify(a) === JSON.stringify(t))) o.userData.art = 'gleich';
+        else if (a && ohneFarbe(a) === ohneFarbe(t)) { o.userData.art = 'farbe'; o.userData.alt = new THREE.Color(/^#[0-9a-f]{6}$/i.test(a.farbe || '') ? a.farbe : '#d8d4cc'); }
+        else o.userData.art = 'neu';
+      });
+      // Teile des vorigen Zustands, die verschwinden oder ihre Form ändern, sinken beim Wechsel weg
+      if (i) for (const o of F.gruppen[i - 1].children) { const t = teile.find(x => x.id === o.userData.teil); o.userData.geht = !jetzt.has(o.userData.teil) || (t && ohneFarbe(t) !== ohneFarbe(vor.get(t.id))); }
+      F.gruppen.push(g);
+    });
+    F.dauer = listen.length * F.takt; F.bereit = true;
+  };
+  F.setze = t => {
+    const n = F.gruppen.length, i = Math.max(0, Math.min(n - 1, Math.floor(t / F.takt))), s = t - i * F.takt;
+    const glatt = x => x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x), k = glatt(s / F.wachs);
+    F.gruppen.forEach((g, j) => { g.visible = j === i || (j === i - 1 && k < 1); });
+    // Neue Teile wachsen von unten nach oben: wer höher ansetzt, beginnt später (Turmdach erst, wenn der Schaft steht)
+    const neue = F.gruppen[i].children.filter(o => o.userData.art === 'neu'), oben = Math.max(1, ...neue.map(o => o.position.y));
+    for (const o of F.gruppen[i].children) {
+      const art = o.userData.art; o.visible = true;
+      const ko = art === 'neu' ? glatt((s - 0.9 * Math.max(0, o.position.y) / oben) / F.wachs) : k;
+      o.scale.y = art === 'neu' ? Math.max(ko, 0.0001) : 1; if (art === 'neu') o.visible = ko > 0.001;
+      if (art === 'farbe') o.material.color.copy(o.userData.alt).lerp(o.userData.neu, k);
+    }
+    if (i > 0) for (const o of F.gruppen[i - 1].children) { o.visible = !!o.userData.geht; o.scale.y = Math.max(1 - k, 0.0001); }
+    // Kamera: langsamer Bogen um das Haus, leicht steigend; im Hochformat größere Bildweite senkrecht, damit die Breite bleibt
+    const hk = Math.max(1, F.hoch || 1), fov = 2 * Math.atan(Math.tan(F.weite / 2 * Math.PI / 180) * hk) * 180 / Math.PI;
+    if (camera.fov !== fov) { camera.fov = fov; camera.updateProjectionMatrix(); }
+    // Bogen von Südwest nach Süden: Haustür und Turm (Südostecke) bleiben im Bild, Abstand wächst leicht mit dem Gebäude
+    const u = t / Math.max(F.dauer, 1), a = (-25 + 55 * u) * Math.PI / 180, r = 40 + 4 * u, hoehe = 10 + 4 * u;
+    camera.position.set(Math.sin(a) * r, hoehe, Math.cos(a) * r); controls.target.set(0, 7, 0); controls.update();
     renderer.render(scene, camera);
   };
 }
