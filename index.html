@@ -9,6 +9,9 @@
 <link rel="alternate" hreflang="de" href="https://amphion3d.com/?lang=de">
 <link rel="alternate" hreflang="en" href="https://amphion3d.com/?lang=en">
 <link rel="alternate" hreflang="es" href="https://amphion3d.com/?lang=es">
+<link rel="alternate" hreflang="fr" href="https://amphion3d.com/?lang=fr">
+<link rel="alternate" hreflang="it" href="https://amphion3d.com/?lang=it">
+<link rel="alternate" hreflang="pt" href="https://amphion3d.com/?lang=pt">
 <link rel="alternate" hreflang="x-default" href="https://amphion3d.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Amphion 3D">
@@ -17,7 +20,7 @@
 <meta property="og:description" content="Beschreib dein Haus. Amphion baut es. Modellieren mit Sprache für Architekten, auf dem Mac.">
 <meta property="og:image" content="https://amphion3d.com/bilder/vancouver_turm.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://amphion3d.com/#firma", "name": "Amphion 3D", "url": "https://amphion3d.com/", "logo": "https://amphion3d.com/bilder/app.jpg", "founder": {"@type": "Person", "name": "Tassilo de la Torre", "jobTitle": "Architekt"}}, {"@type": "SoftwareApplication", "name": "Amphion", "alternateName": "Amphion 3D", "url": "https://amphion3d.com/", "applicationCategory": "DesignApplication", "operatingSystem": "macOS", "inLanguage": ["de", "en", "es"], "image": "https://amphion3d.com/bilder/vancouver_turm.jpg", "description": "Architektur-Software für den Mac: Du beschreibst ein Gebäude in Worten, Amphion baut ein echtes, bearbeitbares 3D-Modell mit Plänen, Schnitten und Renderings.", "publisher": {"@id": "https://amphion3d.com/#firma"}, "offers": [{"@type": "Offer", "name": "Amphion Probe", "price": "0", "priceCurrency": "EUR", "description": "drei Monate kostenlos"}, {"@type": "Offer", "name": "Amphion Pro", "price": "45", "priceCurrency": "EUR", "description": "im Monat"}, {"@type": "Offer", "name": "Amphion Studio", "price": "450", "priceCurrency": "EUR", "description": "im Monat"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://amphion3d.com/#firma", "name": "Amphion 3D", "url": "https://amphion3d.com/", "logo": "https://amphion3d.com/bilder/app.jpg", "founder": {"@type": "Person", "name": "Tassilo de la Torre", "jobTitle": "Architekt"}}, {"@type": "SoftwareApplication", "name": "Amphion", "alternateName": "Amphion 3D", "url": "https://amphion3d.com/", "applicationCategory": "DesignApplication", "operatingSystem": "macOS", "inLanguage": ["de", "en", "es", "fr", "it", "pt"], "image": "https://amphion3d.com/bilder/vancouver_turm.jpg", "description": "Architektur-Software für den Mac: Du beschreibst ein Gebäude in Worten, Amphion baut ein echtes, bearbeitbares 3D-Modell mit Plänen, Schnitten und Renderings.", "publisher": {"@id": "https://amphion3d.com/#firma"}, "offers": [{"@type": "Offer", "name": "Amphion Probe", "price": "0", "priceCurrency": "EUR", "description": "drei Monate kostenlos"}, {"@type": "Offer", "name": "Amphion Pro", "price": "45", "priceCurrency": "EUR", "description": "im Monat"}, {"@type": "Offer", "name": "Amphion Studio", "price": "450", "priceCurrency": "EUR", "description": "im Monat"}]}]}</script>
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -31,10 +34,7 @@
     <a href="#preis" data-i18n="nav.preis">Preis</a>
     <a href="#faq" data-i18n="nav.faq">Fragen</a>
   </nav>
-  <div class="sprachen" role="group" aria-label="Sprache">
-    <button type="button" data-lang="de" lang="de">DE</button>
-    <button type="button" data-lang="en" lang="en">EN</button>
-    <button type="button" data-lang="es" lang="es">ES</button>
+  <div class="sprachen">
     <a class="kaufen" href="#preis" data-i18n="nav.kaufen">Kaufen</a>
   </div>
 </header>
@@ -72,7 +72,7 @@
     <button type="button" data-modell="vancouver">FIVE CLEARINGS</button>
   </div>
   <form class="m-frage" autocomplete="off">
-    <input type="text" name="text" maxlength="200" data-i18n-ph="modell.frage" placeholder="Sag dem Modell, was du sehen willst …">
+    <textarea name="text" rows="1" maxlength="2000" enterkeyhint="send" data-i18n-ph="modell.frage" placeholder="Sag dem Modell, was du sehen willst …"></textarea>
     <button type="button" class="mikro" hidden aria-label="Diktieren" data-i18n-aria="modell.diktat"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 15a4 4 0 0 0 4-4V5a4 4 0 0 0-8 0v6a4 4 0 0 0 4 4zm6-4a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.94V22h2v-3.06A8 8 0 0 0 20 11h-2z"/></svg></button>
     <button type="submit" aria-label="Senden">→</button>
   </form>
@@ -149,8 +149,8 @@
   <h2 data-i18n="fkt.titel">Was Amphion kann</h2>
   <ul class="liste">
     <li><h3 data-i18n="fkt.1t">Echte Bauteile</h3><p data-i18n="fkt.1">Wände, Decken, Stützen, Fenster, Treppen. Mit Maßen, Schichten und Mengen, nicht nur Flächen.</p></li>
-    <li><h3 data-i18n="fkt.2t">Rhino-Befehle</h3><p data-i18n="fkt.2">Wer Rhino kennt, tippt die bekannten Befehle. Der Chat versteht beides.</p></li>
-    <li><h3 data-i18n="fkt.3t">Export 3dm und IFC</h3><p data-i18n="fkt.3">Das Modell geht weiter nach Rhino, Revit, ArchiCAD oder zum Tragwerksplaner.</p></li>
+    <li><h3 data-i18n="fkt.2t">Sprechen statt klicken</h3><p data-i18n="fkt.2">Du sagst oder schreibst, was du willst, in ganzen Sätzen. Amphion versteht dich in deiner Sprache.</p></li>
+    <li><h3 data-i18n="fkt.3t">Export für CAD und BIM</h3><p data-i18n="fkt.3">Das Modell geht weiter in die gängigen CAD- und BIM-Programme oder zum Tragwerksplaner.</p></li>
     <li><h3 data-i18n="fkt.4t">Rendering auf deinem Mac</h3><p data-i18n="fkt.4">Blender Cycles läuft lokal, so oft du willst. Dazu KI-Renderings für Stimmung und Vegetation.</p></li>
     <li><h3 data-i18n="fkt.5t">Pläne als PDF</h3><p data-i18n="fkt.5">Grundrisse, Schnitte, Ansichten und Tafeln kommen fertig aus dem Modell.</p></li>
     <li><h3 data-i18n="fkt.6t">Vom Handy und aus dem Terminal</h3><p data-i18n="fkt.6">Unterwegs im Browser bedienen. Oder aus Claude Code, Codex und Gemini CLI steuern.</p></li>

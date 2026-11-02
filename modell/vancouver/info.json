@@ -1,27 +1,27 @@
 {
  "projekt": "FIVE CLEARINGS",
  "mitte": [
-  400.625,
+  404.9778747558594,
   0,
-  -114.92500305175781
+  -128.24071884155273
  ],
  "gebaeude": {
-  "breite": 223.8499755859375,
-  "tiefe": 136.85000610351562,
+  "breite": 215.14422607421875,
+  "tiefe": 110.21857452392578,
   "hoehe": 320.54998779296875
  },
  "gruppen": {
   "tragwerk": {
    "datei": "tragwerk.glb",
-   "mb": 2.22,
+   "mb": 2.21,
    "dreiecke": 1646046,
    "objekte": 4391
   },
   "gebaeude": {
    "datei": "gebaeude.glb",
-   "mb": 3.19,
-   "dreiecke": 2177291,
-   "objekte": 10226
+   "mb": 3.17,
+   "dreiecke": 2170951,
+   "objekte": 9851
   },
   "pflanzen": {
    "datei": "pflanzen.glb",

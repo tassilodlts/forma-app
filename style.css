@@ -52,12 +52,12 @@ main>section,.band{padding:72px var(--rand);max-width:var(--breit);margin:0 auto
 .m-reiter{display:flex;gap:4px;border-bottom:1px solid var(--linie);margin-bottom:14px}
 .m-reiter button{font:inherit;font-size:16px;font-weight:700;background:none;border:0;border-bottom:3px solid transparent;padding:10px 4px;margin-right:20px;margin-bottom:-1px;color:var(--hell);cursor:pointer;letter-spacing:-.01em}
 .m-reiter button.on{color:var(--ink);border-bottom-color:var(--akzent)}
-.m-frage{display:flex;gap:0;margin-bottom:10px;max-width:720px}
-.m-frage input{flex:1;min-width:0;font:inherit;font-size:17px;padding:13px 16px;border:2px solid var(--ink);border-right:0;background:var(--bg);color:var(--ink);outline:none}
-.m-frage input:focus{border-color:var(--akzent)}
+.m-frage{display:flex;gap:0;margin-bottom:10px;max-width:720px;align-items:stretch}
+.m-frage textarea{flex:1;min-width:0;font:inherit;font-size:17px;line-height:1.45;padding:13px 16px;border:2px solid var(--ink);border-right:0;background:var(--bg);color:var(--ink);outline:none;resize:none;overflow-y:hidden;max-height:45vh;display:block}   /* wächst mit dem Text nach unten (2.11.) */
+.m-frage textarea:focus{border-color:var(--akzent)}
 .m-frage button{font:inherit;font-size:22px;line-height:1;padding:0 20px;border:2px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer}
 .m-frage button:hover{background:var(--akzent);border-color:var(--akzent)}
-.m-frage input:focus+button{border-color:var(--akzent)}
+.m-frage textarea:focus+button{border-color:var(--akzent)}
 .m-frage .mikro{background:var(--bg);color:var(--ink);border-right:0;padding:0 14px;display:flex;align-items:center}
 .m-frage .mikro[hidden]{display:none}
 .m-frage .mikro:hover{background:var(--bg);color:var(--akzent);border-color:var(--ink)}

@@ -37,6 +37,9 @@ const SAGT = {
   de: { schnitt: { kein: 'Schnitt zu.', ug: 'Untergeschoss aufgeschnitten.', eg: 'Erdgeschoss aufgeschnitten.', og: 'Obergeschoss aufgeschnitten.', dg: 'Dachgeschoss aufgeschnitten.', laengs: 'Längsschnitt.', quer: 'Querschnitt.' }, zustand: { 1913: 'So war es 1913.', 2026: 'Der Umbau 2026.' }, kamera: { axo: 'Axonometrie.', persp: 'Perspektive.' }, blick: { strasse: 'Blick von der Straße.', garten: 'Blick aus dem Garten.', oben: 'Von oben.', block: 'Der ganze Block.', turm: 'Der Turm.', sockel: 'Der Sockel.' }, an: 'eingeblendet', aus: 'ausgeblendet', gruppen: { bestand: 'Bestand', vorschlag: 'Umbau', einrichtung: 'Einrichtung', umgebung: 'Nachbarn', baeume: 'Bäume', tragwerk: 'Tragwerk', gebaeude: 'Gebäude', stadt: 'Stadt', pflanzen: 'Bäume' }, modell: { muenchen: 'Die Villa von 1913.', vancouver: 'FIVE CLEARINGS.' }, schnitt60: 'Bei 60 Metern geschnitten.', alles: 'Alles zurück.', unklar: 'Das habe ich nicht verstanden. Versuch zum Beispiel: „Schneide das Erdgeschoss auf“ oder „ohne Bäume“.', denkt: 'Moment …', hoert: 'Ich höre zu … sprich, dann kurz still.', mikroAus: 'Das Mikrofon ist gesperrt. Erlaube es in den Einstellungen des Browsers oder tippe den Satz.' },
   en: { schnitt: { kein: 'Cut closed.', ug: 'Basement cut open.', eg: 'Ground floor cut open.', og: 'First floor cut open.', dg: 'Attic cut open.', laengs: 'Lengthwise section.', quer: 'Cross section.' }, zustand: { 1913: 'As it was in 1913.', 2026: 'The 2026 proposal.' }, kamera: { axo: 'Axonometric.', persp: 'Perspective.' }, blick: { strasse: 'View from the street.', garten: 'View from the garden.', oben: 'From above.', block: 'The whole block.', turm: 'The tower.', sockel: 'The podium.' }, an: 'shown', aus: 'hidden', gruppen: { bestand: 'As built', vorschlag: 'Proposal', einrichtung: 'Furniture', umgebung: 'Neighbours', baeume: 'Trees', tragwerk: 'Structure', gebaeude: 'Building', stadt: 'City', pflanzen: 'Trees' }, modell: { muenchen: 'The villa from 1913.', vancouver: 'FIVE CLEARINGS.' }, schnitt60: 'Cut at 60 metres.', alles: 'Everything back.', unklar: 'I did not get that. Try “cut open the ground floor” or “without trees”.', denkt: 'One moment …', hoert: 'Listening … speak, then pause.', mikroAus: 'The microphone is blocked. Allow it in your browser settings or type the sentence.' },
   es: { schnitt: { kein: 'Corte cerrado.', ug: 'Sótano abierto.', eg: 'Planta baja abierta.', og: 'Primera planta abierta.', dg: 'Ático abierto.', laengs: 'Sección longitudinal.', quer: 'Sección transversal.' }, zustand: { 1913: 'Así era en 1913.', 2026: 'La propuesta de 2026.' }, kamera: { axo: 'Axonometría.', persp: 'Perspectiva.' }, blick: { strasse: 'Vista desde la calle.', garten: 'Vista desde el jardín.', oben: 'Desde arriba.', block: 'Toda la manzana.', turm: 'La torre.', sockel: 'El podio.' }, an: 'visible', aus: 'oculto', gruppen: { bestand: 'Estado original', vorschlag: 'Propuesta', einrichtung: 'Mobiliario', umgebung: 'Vecinos', baeume: 'Árboles', tragwerk: 'Estructura', gebaeude: 'Edificio', stadt: 'Ciudad', pflanzen: 'Árboles' }, modell: { muenchen: 'La villa de 1913.', vancouver: 'FIVE CLEARINGS.' }, schnitt60: 'Cortado a 60 metros.', alles: 'Todo como al principio.', unklar: 'No lo he entendido. Prueba «abre la planta baja» o «sin árboles».', denkt: 'Un momento …', hoert: 'Te escucho … habla y luego calla un momento.', mikroAus: 'El micrófono está bloqueado. Permítelo en los ajustes del navegador o escribe la frase.' },
+  fr: {"schnitt": {"kein": "Coupe refermée.", "ug": "Sous-sol ouvert.", "eg": "Rez-de-chaussée ouvert.", "og": "Premier étage ouvert.", "dg": "Combles ouverts.", "laengs": "Coupe longitudinale.", "quer": "Coupe transversale."}, "zustand": {"1913": "Comme en 1913.", "2026": "Le projet de 2026."}, "kamera": {"axo": "Axonométrie.", "persp": "Perspective."}, "blick": {"strasse": "Vue depuis la rue.", "garten": "Vue depuis le jardin.", "oben": "Vu d’en haut.", "block": "Tout l’îlot.", "turm": "La tour.", "sockel": "Le socle."}, "an": "affiché", "aus": "masqué", "gruppen": {"bestand": "Existant", "vorschlag": "Projet", "einrichtung": "Mobilier", "umgebung": "Voisins", "baeume": "Arbres", "tragwerk": "Structure", "gebaeude": "Bâtiment", "stadt": "Ville", "pflanzen": "Arbres"}, "modell": {"muenchen": "La villa de 1913.", "vancouver": "FIVE CLEARINGS."}, "schnitt60": "Coupé à 60 mètres.", "alles": "Tout comme au début.", "unklar": "Je n’ai pas compris. Essaie par exemple « ouvre le rez-de-chaussée » ou « sans arbres ».", "denkt": "Un instant …", "hoert": "Je t’écoute … parle, puis fais une pause.", "mikroAus": "Le micro est bloqué. Autorise-le dans les réglages du navigateur ou écris la phrase."},
+  it: {"schnitt": {"kein": "Sezione chiusa.", "ug": "Seminterrato aperto.", "eg": "Piano terra aperto.", "og": "Primo piano aperto.", "dg": "Sottotetto aperto.", "laengs": "Sezione longitudinale.", "quer": "Sezione trasversale."}, "zustand": {"1913": "Com’era nel 1913.", "2026": "Il progetto del 2026."}, "kamera": {"axo": "Assonometria.", "persp": "Prospettiva."}, "blick": {"strasse": "Vista dalla strada.", "garten": "Vista dal giardino.", "oben": "Dall’alto.", "block": "Tutto l’isolato.", "turm": "La torre.", "sockel": "Il basamento."}, "an": "visibile", "aus": "nascosto", "gruppen": {"bestand": "Stato di fatto", "vorschlag": "Progetto", "einrichtung": "Arredi", "umgebung": "Vicini", "baeume": "Alberi", "tragwerk": "Struttura", "gebaeude": "Edificio", "stadt": "Città", "pflanzen": "Alberi"}, "modell": {"muenchen": "La villa del 1913.", "vancouver": "FIVE CLEARINGS."}, "schnitt60": "Tagliato a 60 metri.", "alles": "Tutto come all’inizio.", "unklar": "Non ho capito. Prova per esempio «apri il piano terra» o «senza alberi».", "denkt": "Un momento …", "hoert": "Ti ascolto … parla, poi fai una pausa.", "mikroAus": "Il microfono è bloccato. Consentilo nelle impostazioni del browser o scrivi la frase."},
+  pt: {"schnitt": {"kein": "Corte fechado.", "ug": "Cave aberta.", "eg": "Piso térreo aberto.", "og": "Primeiro andar aberto.", "dg": "Sótão aberto.", "laengs": "Corte longitudinal.", "quer": "Corte transversal."}, "zustand": {"1913": "Assim era em 1913.", "2026": "A proposta de 2026."}, "kamera": {"axo": "Axonometria.", "persp": "Perspetiva."}, "blick": {"strasse": "Vista da rua.", "garten": "Vista do jardim.", "oben": "Visto de cima.", "block": "O quarteirão inteiro.", "turm": "A torre.", "sockel": "O embasamento."}, "an": "visível", "aus": "oculto", "gruppen": {"bestand": "Existente", "vorschlag": "Proposta", "einrichtung": "Mobiliário", "umgebung": "Vizinhos", "baeume": "Árvores", "tragwerk": "Estrutura", "gebaeude": "Edifício", "stadt": "Cidade", "pflanzen": "Árvores"}, "modell": {"muenchen": "A villa de 1913.", "vancouver": "FIVE CLEARINGS."}, "schnitt60": "Cortado a 60 metros.", "alles": "Tudo como no início.", "unklar": "Não percebi. Experimenta por exemplo «abre o piso térreo» ou «sem árvores».", "denkt": "Um momento …", "hoert": "Estou a ouvir … fala e depois faz uma pausa.", "mikroAus": "O microfone está bloqueado. Permite-o nas definições do navegador ou escreve a frase."},
 };
 const sprache = () => SAGT[document.documentElement.lang] ? document.documentElement.lang : 'en';
 
@@ -178,6 +181,19 @@ const W = {
   zustand: [['1913', /1913|bestand|alt\b|früher|damals|as built|original|antes|before|antiguo/i], ['2026', /2026|umbau|vorschlag|proposal|neu|new|propuesta|nuevo|jetzt|now|ahora/i]],
   alles: /\b(alles zur[üu]ck|zur[üu]cksetzen|reset|von vorn|everything back|start over|todo como|reiniciar)\b/i,
 };
+// Weitere Sprachen (2.11., Tassilo: Sprache automatisch, mehr Sprachen): Stichwörter für fr, it, pt werden an die Muster oben angehängt.
+// Jedes Wort zählt als Wortanfang, kurze Wörter (bis 3 Zeichen) nur als ganzes Wort, damit „que“, „rue“ oder „via“ nicht in anderen Wörtern treffen.
+const WOERTER = {"fr": {"neg": ["sans", "enlève", "enleve", "retire", "cache", "masque", "supprime", "pas de", "aucun"], "nur": ["seulement", "uniquement", "juste", "que"], "umgebung": ["voisin", "environ", "alentour"], "baeume": ["arbre", "végét", "veget", "plante"], "einrichtung": ["meubl", "mobilier", "cuisine", "aménag"], "bestand": ["existant", "état actuel", "original", "ancien", "1913"], "vorschlag": ["projet", "propos", "extension", "transformation", "nouveau", "2026"], "tragwerk": ["structure", "ossature", "acier", "porteur"], "gebaeude": ["bâtiment", "batiment", "édifice", "immeuble", "façade", "facade"], "stadt": ["ville", "contexte", "quartier"], "schnittWort": ["coupe", "coupé", "couper", "section", "ouvre", "ouvrir", "tranche"], "schnittZu": ["ferme", "fermer", "referme", "entier", "aucune", "sans coupe"], "ug": ["sous-sol", "cave", "souterrain"], "eg": ["rez-de-chaussée", "rez de chaussée", "rdc", "rez"], "og": ["premier étage", "1er étage", "étage"], "dg": ["comble", "toit", "grenier", "attique"], "laengs": ["longitudinal", "en long"], "quer": ["transversal", "en travers"], "axo": ["axono", "isométr", "isometr", "parallèle"], "persp": ["perspectiv"], "oben": ["en haut", "dessus", "vue aérienne", "aérien", "aerien", "oiseau", "ciel"], "garten": ["jardin"], "strasse": ["rue", "entrée", "entree"], "turm": ["tour", "gratte-ciel", "plus près", "rapproch"], "sockel": ["socle", "podium", "basement"], "block": ["îlot", "ilot", "tout", "ensemble", "loin"], "alles": ["tout comme au début", "réinitialis", "reinitialis", "recommence", "tout remettre", "remets tout"]}, "it": {"neg": ["senza", "togli", "rimuovi", "nascondi", "elimina", "leva", "niente", "nessun", "non"], "nur": ["solo", "soltanto", "solamente"], "umgebung": ["vicin", "intorno", "contesto circostante"], "baeume": ["alber", "vegetaz", "piant", "verde"], "einrichtung": ["arred", "mobil", "cucina"], "bestand": ["stato di fatto", "esistente", "originale", "antico", "1913"], "vorschlag": ["progetto", "propost", "ampliament", "ristruttur", "nuovo", "2026"], "tragwerk": ["struttur", "acciaio", "portant", "telaio"], "gebaeude": ["edifici", "fabbricat", "facciat", "prospett"], "stadt": ["città", "citta", "contesto", "quartiere"], "schnittWort": ["sezion", "taglia", "taglio", "apri", "aperto"], "schnittZu": ["chiudi", "chiusa", "intero", "nessuna", "senza sezione"], "ug": ["seminterrato", "interrato", "cantina", "sotterran"], "eg": ["piano terra", "pianterreno", "piano terreno"], "og": ["primo piano", "1° piano", "piano superiore"], "dg": ["sottotetto", "tetto", "soffitta", "mansard", "attico"], "laengs": ["longitudinal"], "quer": ["trasversal"], "axo": ["assonometr", "isometr", "parallel"], "persp": ["prospettiv"], "oben": ["dall’alto", "dall'alto", "sopra", "volo d", "aere"], "garten": ["giardin"], "strasse": ["strada", "via", "ingresso"], "turm": ["torre", "grattacielo", "più vicino", "avvicina"], "sockel": ["basamento", "podio", "zoccolo"], "block": ["isolato", "tutto", "insieme", "lontano"], "alles": ["tutto come all", "ripristina", "reimposta", "ricomincia", "resetta"]}, "pt": {"neg": ["sem", "tira", "retira", "esconde", "oculta", "remove", "apaga", "nenhum", "não"], "nur": ["só", "apenas", "somente"], "umgebung": ["vizinh", "entorno", "envolvente", "arredor"], "baeume": ["árvore", "arvore", "vegeta", "planta"], "einrichtung": ["mobil", "móve", "move", "cozinha"], "bestand": ["existente", "original", "antigo", "antes", "1913"], "vorschlag": ["proposta", "projeto", "ampliaç", "ampliac", "reabilita", "novo", "2026"], "tragwerk": ["estrutura", "aço", "aco", "pilar"], "gebaeude": ["edifício", "edificio", "prédio", "predio", "fachada"], "stadt": ["cidade", "contexto", "bairro"], "schnittWort": ["corte", "corta", "secção", "seção", "secao", "abre", "aberto"], "schnittZu": ["fecha", "fechado", "inteiro", "nenhum corte", "sem corte"], "ug": ["cave", "subsolo", "porão", "porao", "garagem"], "eg": ["piso térreo", "térreo", "terreo", "rés-do-chão", "res-do-chao"], "og": ["primeiro andar", "1º andar", "primeiro piso", "andar de cima"], "dg": ["sótão", "sotao", "cobertura", "telhado", "águas-furtadas"], "laengs": ["longitudinal"], "quer": ["transversal"], "axo": ["axonometr", "isometr", "paralel"], "persp": ["perspetiv", "perspectiv"], "oben": ["de cima", "cima", "aére", "aere", "pássaro", "passaro"], "garten": ["jardim"], "strasse": ["rua", "entrada"], "turm": ["torre", "arranha-céu", "mais perto", "aproxima"], "sockel": ["embasamento", "pódio", "podio", "base"], "block": ["quarteirão", "quarteirao", "tudo", "conjunto", "longe"], "alles": ["tudo como no início", "tudo como no inicio", "repor", "reiniciar", "recomeçar", "recomecar", "repõe tudo"]}};
+{
+  const esc = w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), muster = ws => ws.map(w => w.length <= 3 ? `(?<!\\p{L})${esc(w)}(?!\\p{L})` : `(?<!\\p{L})${esc(w)}`).join('|');   // Wortgrenze, die auch á, é, ç kennt
+  const dazu = (re, ws) => ws?.length ? new RegExp(`${re.source}|${muster(ws)}`, 'iu') : re;
+  for (const L of Object.values(WOERTER)) {
+    W.neg = dazu(W.neg, L.neg); W.nur = dazu(W.nur, L.nur); W.schnittWort = dazu(W.schnittWort, L.schnittWort); W.schnittZu = dazu(W.schnittZu, L.schnittZu); W.alles = dazu(W.alles, L.alles);
+    for (const k of ['umgebung', 'baeume', 'einrichtung', 'bestand', 'vorschlag', 'tragwerk', 'gebaeude', 'stadt']) W.gruppen[k] = dazu(W.gruppen[k], L[k]);
+    W.gruppen.pflanzen = dazu(W.gruppen.pflanzen, L.baeume);
+    for (const e of W.schnitt) e[1] = dazu(e[1], L[e[0]]); for (const e of W.kamera) e[1] = dazu(e[1], L[e[0]]); for (const e of W.blick) e[1] = dazu(e[1], L[e[0]]);
+  }
+}
 function deuten(text) {
   const t = text.toLowerCase(); const a = {}; let traf = false;
   if (W.alles.test(t)) return { alles: true };
@@ -217,46 +233,50 @@ wrap.addEventListener('click', e => {
   if (b.dataset.modell) { aktiviere(b.dataset.modell); melde(''); }
   else if (b.dataset.aktion) { try { melde(tun(JSON.parse(b.dataset.aktion))); } catch (err) { console.error(err); } }
 });
-frage?.addEventListener('submit', e => { e.preventDefault(); if (!gestartet) start(); const i = frage.querySelector('input'); sagen(i.value); i.value = ''; });
+const eingabe = frage?.querySelector('[name=text]');
+// Das Feld wächst mit dem Text nach unten (bis 45 % der Fensterhöhe, dann blättert es); Enter sendet, Umschalt+Enter macht eine neue Zeile
+const wachse = () => { if (!eingabe) return; eingabe.style.height = 'auto'; eingabe.style.height = eingabe.scrollHeight + 4 + 'px'; eingabe.style.overflowY = eingabe.scrollHeight > innerHeight * 0.45 ? 'auto' : 'hidden'; };
+eingabe?.addEventListener('input', wachse);
+eingabe?.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); frage.requestSubmit(); } });
+frage?.addEventListener('submit', e => { e.preventDefault(); if (!gestartet) start(); const t = eingabe.value; eingabe.value = ''; wachse(); sagen(t); });
 
-// Diktat (2.11., Tassilo): Spracherkennung des Browsers (Chrome, Safari, Edge; Firefox kann es nicht, dort bleibt der Knopf verborgen).
-// Ein Tipp startet, der Text läuft ins Feld, nach der ersten Pause endet die Aufnahme und der Satz geht wie getippt an sagen(); ein zweiter Tipp sendet sofort.
-// Prüfregel tools/pruefe_satzfeld.mjs: Safari endet oft nicht von selbst und liefert spät noch Ergebnisse. Deshalb beenden wir selbst
-// (Pause nach fertigem Satz, Höchstdauer), koppeln jede alte Erkennung ab, setzen den Text bei jedem Ergebnis neu zusammen statt anzuhängen,
-// und Tippen oder Absenden beendet ein laufendes Diktat, damit es nichts überschreibt.
+// Diktat (2.11., Tassilo: „es soll schreiben, was du sagst, so lange du willst“): Spracherkennung des Browsers (Chrome, Safari, Edge; Firefox kann es
+// nicht, dort bleibt der Knopf verborgen). Ein Tipp startet, der Text läuft ins Feld und hängt sich an, was schon dort steht. Endet der Browser die
+// Erkennung von selbst (Pause, Safari nach einer Minute), startet sie neu, bis du den Knopf noch einmal tippst. Gesendet wird erst mit Senden oder Enter.
+// Prüfregel tools/pruefe_satzfeld.mjs: alte Erkennungen werden abgekoppelt (Safari liefert spät noch Ergebnisse), der Text eines Abschnitts wird bei
+// jedem Ergebnis neu zusammengesetzt statt angehängt, Tippen oder Absenden beendet das Diktat.
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition, mikro = frage?.querySelector('.mikro');
-if (SR && mikro) {
-  mikro.hidden = false; let rec = null, uhr = 0;
-  const LAND = { de: 'de-DE', en: 'en-US', es: 'es-ES' }, feld = frage.querySelector('input');
-  const beende = senden => {
-    const r = rec; if (!r) return; rec = null; clearTimeout(uhr);
-    r.onresult = r.onend = r.onerror = null; try { r.abort(); } catch { /* schon beendet */ }
-    mikro.classList.remove('an');
-    if (!senden) return;
-    const t = feld.value.trim(); if (t) { feld.value = ''; sagen(t); } else melde('');
-  };
-  mikro.addEventListener('click', () => {
-    if (rec) { beende(true); return; }
-    if (!gestartet) start();
-    const r = rec = new SR(); r.lang = LAND[sprache()] || 'en-US'; r.interimResults = true; r.maxAlternatives = 1; r.continuous = false;
-    mikro.classList.add('an'); melde(SAGT[sprache()].hoert); feld.value = ''; window.formaZaehl?.('diktat');
+if (SR && mikro && eingabe) {
+  mikro.hidden = false; let rec = null, will = false, basis = '', neustarts = 0, stille = 0;
+  const LAND = { de: 'de-DE', en: 'en-US', es: 'es-ES', fr: 'fr-FR', it: 'it-IT', pt: 'pt-PT' };
+  const abkoppeln = () => { const r = rec; rec = null; if (!r) return; r.onresult = r.onend = r.onerror = null; try { r.abort(); } catch { /* schon beendet */ } };
+  const stopp = () => { will = false; clearTimeout(stille); abkoppeln(); mikro.classList.remove('an'); if (status?.textContent === SAGT[sprache()].hoert) melde(''); };
+  const lauf = () => {
+    abkoppeln(); if (!will) return;
+    basis = eingabe.value.replace(/\s+$/, '');
+    const r = rec = new SR(); r.lang = LAND[sprache()] || 'en-US'; r.interimResults = true; r.continuous = true; r.maxAlternatives = 1;
     r.onresult = e => {
       if (rec !== r) return;
-      let fest = '', lose = ''; for (const x of e.results) { if (x.isFinal) fest += x[0].transcript; else lose += x[0].transcript; }
-      feld.value = (fest + lose).replace(/\s+/g, ' ').trim().slice(0, 200);
-      clearTimeout(uhr); uhr = setTimeout(() => beende(true), fest && !lose ? 1200 : 4000);
+      let t = ''; for (const x of e.results) t += x[0].transcript;
+      t = t.replace(/\s+/g, ' ').trim(); eingabe.value = basis && t ? basis + ' ' + t : basis || t; wachse(); eingabe.scrollTop = eingabe.scrollHeight;
+      neustarts = 0; clearTimeout(stille); stille = setTimeout(stopp, 120000);   // zwei Minuten ohne Wort: aus
     };
     r.onerror = e => {
       if (rec !== r) return;
-      if (e.error === 'not-allowed' || e.error === 'service-not-allowed') { beende(false); melde(SAGT[sprache()].mikroAus); }
+      if (e.error === 'not-allowed' || e.error === 'service-not-allowed' || e.error === 'audio-capture') { stopp(); melde(SAGT[sprache()].mikroAus); }
       else if (e.error !== 'aborted' && e.error !== 'no-speech') console.warn('Diktat', e.error);
     };
-    r.onend = () => { if (rec === r) beende(true); };
-    uhr = setTimeout(() => beende(true), 12000);   // Höchstdauer, falls der Browser weder Ergebnis noch Ende meldet
-    try { r.start(); } catch (err) { rec = null; clearTimeout(uhr); mikro.classList.remove('an'); melde(''); console.warn('Diktat', err); }
+    r.onend = () => { if (rec !== r) return; rec = null; if (will && ++neustarts < 8) setTimeout(lauf, 150); else stopp(); };   // weiter hören, bis du stoppst
+    try { r.start(); } catch (err) { rec = null; stopp(); console.warn('Diktat', err); }
+  };
+  mikro.addEventListener('click', () => {
+    if (will) { stopp(); eingabe.focus(); return; }
+    if (!gestartet) start();
+    will = true; neustarts = 0; mikro.classList.add('an'); melde(SAGT[sprache()].hoert); window.formaZaehl?.('diktat');
+    clearTimeout(stille); stille = setTimeout(stopp, 120000); lauf();
   });
-  feld.addEventListener('input', () => beende(false));          // wer tippt, übernimmt das Feld
-  frage.addEventListener('submit', () => beende(false), true);   // vor dem Absenden (Erfassungsphase), damit nichts nachschreibt
+  eingabe.addEventListener('input', e => { if (will && e.isTrusted !== false) stopp(); });   // wer tippt, übernimmt das Feld
+  frage.addEventListener('submit', () => { if (will) stopp(); }, true);                     // vor dem Absenden (Erfassungsphase)
 }
 
 // Erst laden, wenn der Abschnitt ins Bild kommt; nur rendern, solange er sichtbar ist
@@ -267,7 +287,7 @@ new IntersectionObserver(es => { for (const e of es) { sichtbar = e.isIntersecti
 // und zeichnet ein Bild zur Zeit t in Sekunden; die Aufnahme liest das Bild aus der Leinwand.
 if (new URLSearchParams(location.search).get('film')) {
   const F = { dauer: 14, bereit: false, kacheln: [], scheibe: null };
-  window.formaFilm = F;
+  window.formaFilm = F; F.innen = () => ({ m: aktiv, scene, THREE });   // nur für Prüfungen der Aufnahme
   F.start = async () => {
     canvas.style.width = '1024px'; canvas.style.height = '1024px'; wrap.querySelector('.m-buehne').style.width = '1024px';
     start(); renderer.setPixelRatio(1); aktiviere('vancouver'); groesse();
