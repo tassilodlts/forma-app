@@ -69,6 +69,7 @@ main>section,.band{padding:72px var(--rand);max-width:var(--breit);margin:0 auto
 .m-chips button:hover{border-color:var(--akzent);color:var(--akzent)}
 .m-status{font-weight:700;color:var(--ink)}
 .m-buehne{position:relative;border:1px solid var(--linie);background:#fff}
+.m-leicht{position:absolute;inset:auto 12px 12px 12px;padding:14px 16px;font:inherit;font-size:15px;background:var(--ink);color:#fff;border:0;cursor:pointer;z-index:3}   /* nach verlorener 3D-Ansicht */
 .m-steuerung{font-size:13px;opacity:.6;margin:8px 0 0}   /* Bedienung unter dem Modell (2.11.) */
 .m-buehne canvas{display:block;width:100%;height:min(72vh,720px);touch-action:none}
 .m-status{position:absolute;left:14px;bottom:12px;font-size:14px;color:var(--hell)}
