@@ -34,9 +34,9 @@ const MODELLE = {
 
 // Antworten je Sprache: was die Seite nach einer Aktion sagt
 const SAGT = {
-  de: { schnitt: { kein: 'Schnitt zu.', ug: 'Untergeschoss aufgeschnitten.', eg: 'Erdgeschoss aufgeschnitten.', og: 'Obergeschoss aufgeschnitten.', dg: 'Dachgeschoss aufgeschnitten.', laengs: 'Längsschnitt.', quer: 'Querschnitt.' }, zustand: { 1913: 'So war es 1913.', 2026: 'Der Umbau 2026.' }, kamera: { axo: 'Axonometrie.', persp: 'Perspektive.' }, blick: { strasse: 'Blick von der Straße.', garten: 'Blick aus dem Garten.', oben: 'Von oben.', block: 'Der ganze Block.', turm: 'Der Turm.', sockel: 'Der Sockel.' }, an: 'eingeblendet', aus: 'ausgeblendet', gruppen: { bestand: 'Bestand', vorschlag: 'Umbau', einrichtung: 'Einrichtung', umgebung: 'Nachbarn', baeume: 'Bäume', tragwerk: 'Tragwerk', gebaeude: 'Gebäude', stadt: 'Stadt', pflanzen: 'Bäume' }, modell: { muenchen: 'Die Villa von 1913.', vancouver: 'FIVE CLEARINGS.' }, schnitt60: 'Bei 60 Metern geschnitten.', alles: 'Alles zurück.', unklar: 'Das habe ich nicht verstanden. Versuch zum Beispiel: „Schneide das Erdgeschoss auf“ oder „ohne Bäume“.', denkt: 'Moment …', hoert: 'Ich höre zu … sprich, dann kurz still.' },
-  en: { schnitt: { kein: 'Cut closed.', ug: 'Basement cut open.', eg: 'Ground floor cut open.', og: 'First floor cut open.', dg: 'Attic cut open.', laengs: 'Lengthwise section.', quer: 'Cross section.' }, zustand: { 1913: 'As it was in 1913.', 2026: 'The 2026 proposal.' }, kamera: { axo: 'Axonometric.', persp: 'Perspective.' }, blick: { strasse: 'View from the street.', garten: 'View from the garden.', oben: 'From above.', block: 'The whole block.', turm: 'The tower.', sockel: 'The podium.' }, an: 'shown', aus: 'hidden', gruppen: { bestand: 'As built', vorschlag: 'Proposal', einrichtung: 'Furniture', umgebung: 'Neighbours', baeume: 'Trees', tragwerk: 'Structure', gebaeude: 'Building', stadt: 'City', pflanzen: 'Trees' }, modell: { muenchen: 'The villa from 1913.', vancouver: 'FIVE CLEARINGS.' }, schnitt60: 'Cut at 60 metres.', alles: 'Everything back.', unklar: 'I did not get that. Try “cut open the ground floor” or “without trees”.', denkt: 'One moment …', hoert: 'Listening … speak, then pause.' },
-  es: { schnitt: { kein: 'Corte cerrado.', ug: 'Sótano abierto.', eg: 'Planta baja abierta.', og: 'Primera planta abierta.', dg: 'Ático abierto.', laengs: 'Sección longitudinal.', quer: 'Sección transversal.' }, zustand: { 1913: 'Así era en 1913.', 2026: 'La propuesta de 2026.' }, kamera: { axo: 'Axonometría.', persp: 'Perspectiva.' }, blick: { strasse: 'Vista desde la calle.', garten: 'Vista desde el jardín.', oben: 'Desde arriba.', block: 'Toda la manzana.', turm: 'La torre.', sockel: 'El podio.' }, an: 'visible', aus: 'oculto', gruppen: { bestand: 'Estado original', vorschlag: 'Propuesta', einrichtung: 'Mobiliario', umgebung: 'Vecinos', baeume: 'Árboles', tragwerk: 'Estructura', gebaeude: 'Edificio', stadt: 'Ciudad', pflanzen: 'Árboles' }, modell: { muenchen: 'La villa de 1913.', vancouver: 'FIVE CLEARINGS.' }, schnitt60: 'Cortado a 60 metros.', alles: 'Todo como al principio.', unklar: 'No lo he entendido. Prueba «abre la planta baja» o «sin árboles».', denkt: 'Un momento …', hoert: 'Te escucho … habla y luego calla un momento.' },
+  de: { schnitt: { kein: 'Schnitt zu.', ug: 'Untergeschoss aufgeschnitten.', eg: 'Erdgeschoss aufgeschnitten.', og: 'Obergeschoss aufgeschnitten.', dg: 'Dachgeschoss aufgeschnitten.', laengs: 'Längsschnitt.', quer: 'Querschnitt.' }, zustand: { 1913: 'So war es 1913.', 2026: 'Der Umbau 2026.' }, kamera: { axo: 'Axonometrie.', persp: 'Perspektive.' }, blick: { strasse: 'Blick von der Straße.', garten: 'Blick aus dem Garten.', oben: 'Von oben.', block: 'Der ganze Block.', turm: 'Der Turm.', sockel: 'Der Sockel.' }, an: 'eingeblendet', aus: 'ausgeblendet', gruppen: { bestand: 'Bestand', vorschlag: 'Umbau', einrichtung: 'Einrichtung', umgebung: 'Nachbarn', baeume: 'Bäume', tragwerk: 'Tragwerk', gebaeude: 'Gebäude', stadt: 'Stadt', pflanzen: 'Bäume' }, modell: { muenchen: 'Die Villa von 1913.', vancouver: 'FIVE CLEARINGS.' }, schnitt60: 'Bei 60 Metern geschnitten.', alles: 'Alles zurück.', unklar: 'Das habe ich nicht verstanden. Versuch zum Beispiel: „Schneide das Erdgeschoss auf“ oder „ohne Bäume“.', denkt: 'Moment …', hoert: 'Ich höre zu … sprich, dann kurz still.', mikroAus: 'Das Mikrofon ist gesperrt. Erlaube es in den Einstellungen des Browsers oder tippe den Satz.' },
+  en: { schnitt: { kein: 'Cut closed.', ug: 'Basement cut open.', eg: 'Ground floor cut open.', og: 'First floor cut open.', dg: 'Attic cut open.', laengs: 'Lengthwise section.', quer: 'Cross section.' }, zustand: { 1913: 'As it was in 1913.', 2026: 'The 2026 proposal.' }, kamera: { axo: 'Axonometric.', persp: 'Perspective.' }, blick: { strasse: 'View from the street.', garten: 'View from the garden.', oben: 'From above.', block: 'The whole block.', turm: 'The tower.', sockel: 'The podium.' }, an: 'shown', aus: 'hidden', gruppen: { bestand: 'As built', vorschlag: 'Proposal', einrichtung: 'Furniture', umgebung: 'Neighbours', baeume: 'Trees', tragwerk: 'Structure', gebaeude: 'Building', stadt: 'City', pflanzen: 'Trees' }, modell: { muenchen: 'The villa from 1913.', vancouver: 'FIVE CLEARINGS.' }, schnitt60: 'Cut at 60 metres.', alles: 'Everything back.', unklar: 'I did not get that. Try “cut open the ground floor” or “without trees”.', denkt: 'One moment …', hoert: 'Listening … speak, then pause.', mikroAus: 'The microphone is blocked. Allow it in your browser settings or type the sentence.' },
+  es: { schnitt: { kein: 'Corte cerrado.', ug: 'Sótano abierto.', eg: 'Planta baja abierta.', og: 'Primera planta abierta.', dg: 'Ático abierto.', laengs: 'Sección longitudinal.', quer: 'Sección transversal.' }, zustand: { 1913: 'Así era en 1913.', 2026: 'La propuesta de 2026.' }, kamera: { axo: 'Axonometría.', persp: 'Perspectiva.' }, blick: { strasse: 'Vista desde la calle.', garten: 'Vista desde el jardín.', oben: 'Desde arriba.', block: 'Toda la manzana.', turm: 'La torre.', sockel: 'El podio.' }, an: 'visible', aus: 'oculto', gruppen: { bestand: 'Estado original', vorschlag: 'Propuesta', einrichtung: 'Mobiliario', umgebung: 'Vecinos', baeume: 'Árboles', tragwerk: 'Estructura', gebaeude: 'Edificio', stadt: 'Ciudad', pflanzen: 'Árboles' }, modell: { muenchen: 'La villa de 1913.', vancouver: 'FIVE CLEARINGS.' }, schnitt60: 'Cortado a 60 metros.', alles: 'Todo como al principio.', unklar: 'No lo he entendido. Prueba «abre la planta baja» o «sin árboles».', denkt: 'Un momento …', hoert: 'Te escucho … habla y luego calla un momento.', mikroAus: 'El micrófono está bloqueado. Permítelo en los ajustes del navegador o escribe la frase.' },
 };
 const sprache = () => SAGT[document.documentElement.lang] ? document.documentElement.lang : 'en';
 
@@ -220,22 +220,43 @@ wrap.addEventListener('click', e => {
 frage?.addEventListener('submit', e => { e.preventDefault(); if (!gestartet) start(); const i = frage.querySelector('input'); sagen(i.value); i.value = ''; });
 
 // Diktat (2.11., Tassilo): Spracherkennung des Browsers (Chrome, Safari, Edge; Firefox kann es nicht, dort bleibt der Knopf verborgen).
-// Ein Tipp startet, der Text läuft ins Feld, nach der ersten Pause endet die Aufnahme und der Satz geht wie getippt an sagen(); ein zweiter Tipp bricht ab.
+// Ein Tipp startet, der Text läuft ins Feld, nach der ersten Pause endet die Aufnahme und der Satz geht wie getippt an sagen(); ein zweiter Tipp sendet sofort.
+// Prüfregel tools/pruefe_satzfeld.mjs: Safari endet oft nicht von selbst und liefert spät noch Ergebnisse. Deshalb beenden wir selbst
+// (Pause nach fertigem Satz, Höchstdauer), koppeln jede alte Erkennung ab, setzen den Text bei jedem Ergebnis neu zusammen statt anzuhängen,
+// und Tippen oder Absenden beendet ein laufendes Diktat, damit es nichts überschreibt.
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition, mikro = frage?.querySelector('.mikro');
 if (SR && mikro) {
-  mikro.hidden = false; let rec = null;
-  const LAND = { de: 'de-DE', en: 'en-US', es: 'es-ES' };
+  mikro.hidden = false; let rec = null, uhr = 0;
+  const LAND = { de: 'de-DE', en: 'en-US', es: 'es-ES' }, feld = frage.querySelector('input');
+  const beende = senden => {
+    const r = rec; if (!r) return; rec = null; clearTimeout(uhr);
+    r.onresult = r.onend = r.onerror = null; try { r.abort(); } catch { /* schon beendet */ }
+    mikro.classList.remove('an');
+    if (!senden) return;
+    const t = feld.value.trim(); if (t) { feld.value = ''; sagen(t); } else melde('');
+  };
   mikro.addEventListener('click', () => {
-    if (rec) { rec.stop(); return; }
+    if (rec) { beende(true); return; }
     if (!gestartet) start();
-    const i = frage.querySelector('input'); let fest = '';
-    rec = new SR(); rec.lang = LAND[sprache()] || 'en-US'; rec.interimResults = true; rec.maxAlternatives = 1;
-    mikro.classList.add('an'); melde(SAGT[sprache()].hoert); i.value = ''; window.formaZaehl?.('diktat');
-    rec.onresult = e => { let lose = ''; for (const r of e.results) { if (r.isFinal) fest += r[0].transcript; else lose += r[0].transcript; } i.value = (fest + lose).trim().slice(0, 200); };
-    rec.onerror = e => { if (e.error !== 'aborted' && e.error !== 'no-speech') console.warn('Diktat', e.error); };
-    rec.onend = () => { rec = null; mikro.classList.remove('an'); const t = i.value.trim(); if (t) { sagen(t); i.value = ''; } else melde(''); };
-    try { rec.start(); } catch (e) { rec = null; mikro.classList.remove('an'); console.warn('Diktat', e); }
+    const r = rec = new SR(); r.lang = LAND[sprache()] || 'en-US'; r.interimResults = true; r.maxAlternatives = 1; r.continuous = false;
+    mikro.classList.add('an'); melde(SAGT[sprache()].hoert); feld.value = ''; window.formaZaehl?.('diktat');
+    r.onresult = e => {
+      if (rec !== r) return;
+      let fest = '', lose = ''; for (const x of e.results) { if (x.isFinal) fest += x[0].transcript; else lose += x[0].transcript; }
+      feld.value = (fest + lose).replace(/\s+/g, ' ').trim().slice(0, 200);
+      clearTimeout(uhr); uhr = setTimeout(() => beende(true), fest && !lose ? 1200 : 4000);
+    };
+    r.onerror = e => {
+      if (rec !== r) return;
+      if (e.error === 'not-allowed' || e.error === 'service-not-allowed') { beende(false); melde(SAGT[sprache()].mikroAus); }
+      else if (e.error !== 'aborted' && e.error !== 'no-speech') console.warn('Diktat', e.error);
+    };
+    r.onend = () => { if (rec === r) beende(true); };
+    uhr = setTimeout(() => beende(true), 12000);   // Höchstdauer, falls der Browser weder Ergebnis noch Ende meldet
+    try { r.start(); } catch (err) { rec = null; clearTimeout(uhr); mikro.classList.remove('an'); melde(''); console.warn('Diktat', err); }
   });
+  feld.addEventListener('input', () => beende(false));          // wer tippt, übernimmt das Feld
+  frage.addEventListener('submit', () => beende(false), true);   // vor dem Absenden (Erfassungsphase), damit nichts nachschreibt
 }
 
 // Erst laden, wenn der Abschnitt ins Bild kommt; nur rendern, solange er sichtbar ist
