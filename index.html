@@ -56,7 +56,7 @@
   <figure>
     <div class="rahmen">
       <img src="bilder/app.jpg" alt="" loading="lazy" width="1600" height="1000" data-i18n-alt="bild.app">
-      <video src="bilder/amphion_stadt.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+      <video data-gross="bilder/amphion_stadt.mp4" data-klein="bilder/amphion_stadt_klein.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
     </div>
     <figcaption data-i18n="bild.app">Die App: Objekte und Ebenen links, Modell in der Mitte, Chat rechts. Hier FIVE CLEARINGS mit 69 510 Bauteilen.</figcaption>
   </figure>
@@ -65,18 +65,19 @@
 <section class="modell" id="modell">
   <div class="m-kopf">
     <h2 data-i18n="modell.titel">Sprich mit dem Modell</h2>
-    <p data-i18n="modell.text">Hier siehst du zwei fertige Projekte aus Amphion: die Villa, in rund 2 Stunden modelliert, und FIVE CLEARINGS, in rund 5 Stunden. Du kannst sie drehen, schneiden, ein- und ausblenden und mit ihnen sprechen. Verändern kannst du sie hier nicht: Bauen, Umbauen und Rendern geht in der App.</p>
+    <p data-i18n="modell.text">Hier siehst du zwei fertige Projekte aus Amphion: FIVE CLEARINGS mit der ganzen Stadt, in rund 5 Stunden modelliert, und die Villa von 1913, in rund 2 Stunden. Du kannst sie drehen, schneiden, ein- und ausblenden und mit ihnen sprechen, aber nicht verändern. Selbst bauen kannst du auf dem Bauplatz: Sag, was du willst, und Amphion baut es. Alles Weitere, vom Umbau bis zum Rendering, macht die App.</p>
   </div>
   <div class="m-reiter">
-    <button type="button" class="on" data-modell="muenchen" data-i18n="modell.reiterM">Villa von 1913</button>
-    <button type="button" data-modell="vancouver">FIVE CLEARINGS</button>
+    <button type="button" class="on" data-modell="vancouver">FIVE CLEARINGS</button>
+    <button type="button" data-modell="muenchen" data-i18n="modell.reiterM">Villa von 1913</button>
+    <button type="button" data-modell="bauplatz" data-i18n="modell.reiterB">Bauplatz: selbst bauen</button>
   </div>
   <form class="m-frage" autocomplete="off">
     <textarea name="text" rows="1" maxlength="2000" enterkeyhint="send" data-i18n-ph="modell.frage" placeholder="Sag dem Modell, was du sehen willst …"></textarea>
     <button type="button" class="mikro" hidden aria-label="Diktieren" data-i18n-aria="modell.diktat"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 15a4 4 0 0 0 4-4V5a4 4 0 0 0-8 0v6a4 4 0 0 0 4 4zm6-4a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.94V22h2v-3.06A8 8 0 0 0 20 11h-2z"/></svg></button>
     <button type="submit" aria-label="Senden">→</button>
   </form>
-  <div class="m-chips" data-leiste="muenchen">
+  <div class="m-chips" data-leiste="muenchen" hidden>
     <button type="button" data-aktion='{"schnitt":"eg"}' data-i18n="chip.m1">Schneide das Erdgeschoss auf</button>
     <button type="button" data-aktion='{"zustand":"1913"}' data-i18n="chip.m2">Wie sah es 1913 aus?</button>
     <button type="button" data-aktion='{"gruppen":{"umgebung":false,"baeume":false}}' data-i18n="chip.m3">Nimm die Nachbarn weg</button>
@@ -84,13 +85,22 @@
     <button type="button" data-aktion='{"blick":"garten","schnitt":"kein","kamera":"persp"}' data-i18n="chip.m5">Zeig mir den Garten</button>
     <button type="button" data-aktion='{"alles":true}' data-i18n="chip.zurueck">Alles zurück</button>
   </div>
-  <div class="m-chips" data-leiste="vancouver" hidden>
+  <div class="m-chips" data-leiste="vancouver">
     <button type="button" data-aktion='{"gruppen":{"tragwerk":true,"gebaeude":false,"stadt":false,"pflanzen":false}}' data-i18n="chip.v1">Nur das Tragwerk</button>
     <button type="button" data-aktion='{"schnitt":"og","blick":"sockel"}' data-i18n="chip.v2">Schneide bei 60 Metern</button>
     <button type="button" data-aktion='{"gruppen":{"stadt":false}}' data-i18n="chip.v3">Ohne die Stadt</button>
     <button type="button" data-aktion='{"blick":"sockel"}' data-i18n="chip.v4">Runter auf den Sockel</button>
     <button type="button" data-aktion='{"blick":"oben","kamera":"axo"}' data-i18n="chip.v5">Von oben, axonometrisch</button>
     <button type="button" data-aktion='{"alles":true}' data-i18n="chip.zurueck">Alles zurück</button>
+  </div>
+  <div class="m-chips" data-leiste="bauplatz" hidden>
+    <button type="button" data-bau data-i18n="chip.b1">Mach das Dach gelb</button>
+    <button type="button" data-bau data-i18n="chip.b2">Setz ein gotisches Dach drauf</button>
+    <button type="button" data-bau data-i18n="chip.b3">Noch ein Geschoss</button>
+    <button type="button" data-bau data-i18n="chip.b4">Ein Turm an der Ecke</button>
+    <button type="button" data-bau data-i18n="chip.b5">Große Fenster nach Süden</button>
+    <button type="button" data-aktion='{"rueck":true}' data-i18n="chip.b6">Rückgängig</button>
+    <button type="button" data-aktion='{"neu":true}' data-i18n="chip.b7">Neu anfangen</button>
   </div>
   <div class="m-buehne"><canvas></canvas><span class="m-status"></span><span class="m-fehler" hidden data-i18n="modell.fehler">Modell konnte nicht geladen werden.</span></div>
   <p class="m-steuerung" data-i18n="modell.steuerung">Ziehen dreht · rechte Maustaste oder zwei Finger verschieben · Mausrad oder zwei Finger zoomen, bis hinunter auf die Straße</p>
