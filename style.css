@@ -650,3 +650,13 @@ main.weiter{padding:120px var(--rand);font-size:16px}
 .kaufen::after{top:-7px;right:-8px;font-size:9px;padding:3px 5px}
 main>section.held.ruhig{max-width:1480px}
 @media (min-width:1000px){.held.ruhig .held-innen{grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);gap:40px}.held.ruhig h1{font-size:clamp(40px,4.6vw,72px)}}
+/* 10.11.2026 mittags: Zahlen direkt unter dem Demo-Video, wenig Weiß; am Handy das Startvideo gleich unter der Überschrift */
+main>section.demo{padding-bottom:0!important}
+main>section.zahlen{padding-top:28px;padding-bottom:40px}
+@media (max-width:999px){
+  .held.ruhig .held-links{display:contents}
+  .held.ruhig .held-innen{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .held.ruhig .held-neu{order:0}.held.ruhig h1{order:1}.held.ruhig .held-video{order:2;margin:18px 0 4px}
+  .held.ruhig .held-text{order:3;margin-top:16px}.held.ruhig .held-laden{order:4}.held.ruhig .beta-liste{order:5}.held.ruhig .held-vertrauen{order:6}
+  .held.ruhig .held-video figcaption{display:none}
+}
