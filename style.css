@@ -582,7 +582,8 @@ p,li{max-width:var(--spalte)}
 .kaufen{background:var(--akzent);font-weight:500}
 .kaufen:hover{background:var(--akzent-dunkel)}
 /* Held: eine Spalte, ruhig */
-main>section.held.ruhig{display:block;min-height:0;background:none;border:0;max-width:var(--breit);margin:0 auto;padding:120px var(--rand) 96px}
+main>section.held.ruhig{display:block;min-height:0;background:none;border:0;max-width:var(--breit);margin:0 auto;padding:8px var(--rand) 72px}
+.held.ruhig .held-innen{padding-top:16px}
 .held.ruhig .held-neu{display:block;font:500 14px/1.4 "Inter",sans-serif;letter-spacing:.01em;text-transform:none;color:var(--grau);border:0;margin:0 0 28px;padding:0}
 .held.ruhig h1{font-size:clamp(40px,6vw,84px);font-weight:500;letter-spacing:-.035em;line-height:1.02;max-width:none;color:var(--ink)}
 .held.ruhig h1 span{display:inline;color:var(--ink);font-style:normal}
@@ -622,3 +623,30 @@ main>section.held.ruhig{display:block;min-height:0;background:none;border:0;max-
 .preise h3 small{font-weight:400;color:var(--grau)}
 .fuss-marken{color:var(--hell)}
 main.weiter{padding:120px var(--rand);font-size:16px}
+
+/* Beta (10.11.2026): stark sichtbar über den Download-Knöpfen, mit Mail-Liste für die fertige Fassung */
+.beta{margin:20px 0 0;padding:12px 16px;border:2px solid #d98a00;border-radius:12px;background:#fff5dc;color:#1b1b1a;max-width:560px;box-shadow:0 8px 24px rgba(217,138,0,.18)}
+.beta-kopf{margin:0;font-size:19px;font-weight:700;color:#1b1b1a;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.beta-marke{display:inline-block;background:#d98a00;color:#fff;font:700 12px/1 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;padding:6px 9px;border-radius:5px}
+.beta-text{margin:8px 0 0;font-size:15px;color:#1b1b1a;line-height:1.45}
+.beta-text a{color:#8a4b00;font-weight:600}
+.beta-form{margin:14px 0 0}
+.beta-label{display:block;font-size:14px;font-weight:600;color:#1b1b1a;margin-bottom:6px}
+.beta-zeile{display:flex;gap:8px;flex-wrap:wrap}
+.beta-zeile input{flex:1 1 220px;min-width:0;font:inherit;font-size:16px;padding:11px 12px;border:1px solid var(--linie);border-radius:8px;background:#fff;color:#1b1b1a}
+.beta-zeile .knopf{padding:11px 18px;font-size:15px;background:#1b1b1a;border-color:#1b1b1a;color:#fff}
+.beta-ok{display:block;margin-top:8px;font-size:12.5px;color:#5c5a55;line-height:1.4}
+.beta-ok a{color:#5c5a55}
+.beta-meldung{margin:8px 0 0;font-size:14px;font-weight:600;color:#8a4b00}
+.beta-meldung:empty{display:none}
+.held.ruhig .held-laden{margin-top:24px}
+@media (max-width:640px){.held.ruhig .held-innen{padding-top:8px}.beta{padding:14px}}
+.beta-liste{margin-top:18px;border-width:1px;box-shadow:none}
+.beta-liste .beta-form{margin:0}
+.held.ruhig .held-laden{margin-top:18px}
+/* 10.11.2026 nachmittags: Beta nur als kleine Marke oben rechts am Knopf (Tassilo: „nur Beta, nichts mehr“), Video größer */
+.held-laden .knopf.akzent,.kaufen{position:relative}
+.held-laden .knopf.akzent::after,.kaufen::after{content:"Beta";position:absolute;top:-9px;right:-10px;background:#d98a00;color:#fff;font:700 10px/1 var(--mono,monospace);letter-spacing:.1em;text-transform:uppercase;padding:4px 6px;border-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.kaufen::after{top:-7px;right:-8px;font-size:9px;padding:3px 5px}
+main>section.held.ruhig{max-width:1480px}
+@media (min-width:1000px){.held.ruhig .held-innen{grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);gap:40px}.held.ruhig h1{font-size:clamp(40px,4.6vw,72px)}}
