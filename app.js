@@ -112,6 +112,7 @@ const TEXTE = {
     'beta.danke': "Danke! Wir schreiben dir, sobald die fertige Version da ist.",
     'beta.ungueltig': "Bitte eine gültige E-Mail-Adresse und das Häkchen.",
     'beta.fehler': "Das hat nicht geklappt. Schreib uns einfach an tassilo@amphion3d.com.",
+    'held.probe': '30 Tage alles gratis testen, ohne Kreditkarte.',
     'held.vertrauen': 'Projekte bleiben auf deinem Computer. Die Mac-Version ist von Apple notarisiert.',
     'held.video': "Das Beispielhaus von 1913 in Amphion, mit den Nachbarhäusern. Danach Ansicht und Rendering aus demselben Modell.",
     'held.videoAlt': "Das Beispielhaus von 1913 entsteht in Amphion, danach Ansichten und Renderings",
@@ -130,7 +131,7 @@ const TEXTE = {
     'mehr.l3': 'Weitergabe als IFC, DXF, 3dm, STEP und PDF',
     'mehr.text': 'Ein KI-Chat beschreibt dir ein Haus in Worten. Amphion baut es: ein Modell aus echten Bauteilen mit Maß und Material. Daraus zeichnet Amphion maßstäbliche Pläne, und deine Fachplaner arbeiten mit den Dateien weiter.',
     'mehr.titel': 'Mehr als ein Chat',
-    'meta': 'Software für Architekten auf Mac und Windows: ein 3D-Modell aus Grundriss oder Beschreibung, mit KI, dazu Pläne, Schnitte und Ansichten. Eine Archicad-Alternative für den Mac.',
+    'meta': 'Software für Architekten auf Mac und Windows: ein 3D-Modell aus Grundriss oder Beschreibung, mit KI, dazu Pläne, Schnitte und Ansichten. Für macOS 14 sowie Windows 10 und 11.',
     'modell.diktat': 'Diktieren',
     'modell.fehler': 'Modell konnte nicht geladen werden.',
     'modell.frage': 'Sag dem Modell, was du sehen willst …',
@@ -294,6 +295,7 @@ const TEXTE = {
     'beta.danke': "Thank you! We’ll write as soon as the finished version is out.",
     'beta.ungueltig': "Please enter a valid email address and tick the box.",
     'beta.fehler': "That didn’t work. Just write to tassilo@amphion3d.com.",
+    'held.probe': 'Try everything free for 30 days, no credit card.',
     'held.vertrauen': 'Projects stay on your computer. The Mac version is notarized by Apple.',
     'held.video': "The 1913 sample house in Amphion, with its neighbours. Then viewport and rendering from the same model.",
     'held.videoAlt': "The 1913 sample house takes shape in Amphion, then viewports and renderings",
@@ -312,7 +314,7 @@ const TEXTE = {
     'mehr.l3': 'Hand-off as IFC, DXF, 3dm, STEP and PDF',
     'mehr.text': 'An AI chat describes a house to you in words. Amphion builds it: a model of real building elements with dimensions and materials. From it Amphion draws scaled plans, and your consultants keep working with the files.',
     'mehr.titel': 'More than a chat',
-    'meta': 'Architecture software for Mac and Windows: a 3D model from a floor plan or a sentence, built with AI, then plans, sections and elevations. An Archicad alternative for Mac.',
+    'meta': 'Architecture software for Mac and Windows: a 3D model from a floor plan or a sentence, built with AI, then plans, sections and elevations. For macOS 14 and Windows 10 and 11.',
     'modell.diktat': 'Dictate',
     'modell.fehler': 'The model could not be loaded.',
     'modell.frage': 'Tell the model what you want to see …',
@@ -476,6 +478,7 @@ const TEXTE = {
     'beta.danke': "¡Gracias! Te escribiremos en cuanto salga la versión definitiva.",
     'beta.ungueltig': "Introduce un correo válido y marca la casilla.",
     'beta.fehler': "No ha funcionado. Escríbenos a tassilo@amphion3d.com.",
+    'held.probe': 'Pruébalo todo gratis 30 días, sin tarjeta.',
     'held.vertrauen': 'Los proyectos se quedan en tu ordenador. La versión para Mac está notarizada por Apple.',
     'held.video': "La casa de ejemplo de 1913 en Amphion, con las casas vecinas. Después vista y render del mismo modelo.",
     'held.videoAlt': "La casa de ejemplo de 1913 se construye en Amphion, después vistas y renders",
@@ -494,7 +497,7 @@ const TEXTE = {
     'mehr.l3': 'Entrega en IFC, DXF, 3dm, STEP y PDF',
     'mehr.text': 'Un chat de IA te describe una casa con palabras. Amphion la construye: un modelo de elementos constructivos reales, con medidas y materiales. De él dibuja planos a escala, y tus consultores siguen trabajando con los archivos.',
     'mehr.titel': 'Más que un chat',
-    'meta': 'Programa para arquitectos en Mac y Windows: un modelo 3D desde el plano o desde una frase, con IA, y de él plantas, secciones y alzados. Alternativa a Archicad para Mac.',
+    'meta': 'Programa para arquitectos en Mac y Windows: un modelo 3D desde el plano o desde una frase, con IA, y de él plantas, secciones y alzados. Para macOS 14 y Windows 10 y 11.',
     'modell.diktat': 'Dictar',
     'modell.fehler': 'No se pudo cargar el modelo.',
     'modell.frage': 'Dile al modelo qué quieres ver …',
@@ -658,6 +661,7 @@ const TEXTE = {
     'beta.danke': "Merci ! Nous t’écrirons dès que la version finale sera prête.",
     'beta.ungueltig': "Merci d’indiquer une adresse valide et de cocher la case.",
     'beta.fehler': "Cela n’a pas fonctionné. Écris-nous à tassilo@amphion3d.com.",
+    'held.probe': 'Tout essayer gratuitement pendant 30 jours, sans carte bancaire.',
     'held.vertrauen': 'Les projets restent sur ton ordinateur. La version Mac est notarisée par Apple.',
     'held.video': "La maison exemple de 1913 dans Amphion, avec ses voisines. Puis vue et rendu du même modèle.",
     'held.videoAlt': "La maison exemple de 1913 se construit dans Amphion, puis vues et rendus",
@@ -676,7 +680,7 @@ const TEXTE = {
     'mehr.l3': 'Transmission en IFC, DXF, 3dm, STEP et PDF',
     'mehr.text': 'Un chat d’IA te décrit une maison avec des mots. Amphion la construit : une maquette d’éléments réels, avec cotes et matériaux. Il en tire des plans à l’échelle, et tes bureaux d’études continuent avec les fichiers.',
     'mehr.titel': 'Plus qu’un chat',
-    'meta': 'Logiciel pour architectes sur Mac et Windows : une maquette 3D à partir d’un plan ou d’une phrase, avec l’IA, puis plans, coupes et façades. Une alternative à Archicad sur Mac.',
+    'meta': 'Logiciel pour architectes sur Mac et Windows : une maquette 3D à partir d’un plan ou d’une phrase, avec l’IA, puis plans, coupes et façades. Pour macOS 14 et Windows 10 et 11.',
     'modell.diktat': 'Dicter',
     'modell.fehler': 'Impossible de charger le modèle.',
     'modell.frage': 'Dis au modèle ce que tu veux voir …',
@@ -840,6 +844,7 @@ const TEXTE = {
     'beta.danke': "Grazie! Ti scriveremo appena esce la versione definitiva.",
     'beta.ungueltig': "Inserisci un indirizzo valido e spunta la casella.",
     'beta.fehler': "Non ha funzionato. Scrivici a tassilo@amphion3d.com.",
+    'held.probe': 'Prova tutto gratis per 30 giorni, senza carta di credito.',
     'held.vertrauen': 'I progetti restano sul tuo computer. La versione per Mac è notarizzata da Apple.',
     'held.video': "La casa di esempio del 1913 in Amphion, con le case vicine. Poi vista e rendering dallo stesso modello.",
     'held.videoAlt': "La casa di esempio del 1913 prende forma in Amphion, poi viste e rendering",
@@ -858,7 +863,7 @@ const TEXTE = {
     'mehr.l3': 'Consegna in IFC, DXF, 3dm, STEP e PDF',
     'mehr.text': 'Una chat di IA ti descrive una casa a parole. Amphion la costruisce: un modello di elementi costruttivi veri, con misure e materiali. Da lì disegna tavole in scala, e i tuoi consulenti lavorano con i file.',
     'mehr.titel': 'Più di una chat',
-    'meta': 'Software per architetti su Mac e Windows: un modello 3D da una pianta o da una frase, con l’IA, poi piante, sezioni e prospetti. Un’alternativa ad Archicad per Mac.',
+    'meta': 'Software per architetti su Mac e Windows: un modello 3D da una pianta o da una frase, con l’IA, poi piante, sezioni e prospetti. Per macOS 14 e Windows 10 e 11.',
     'modell.diktat': 'Detta',
     'modell.fehler': 'Impossibile caricare il modello.',
     'modell.frage': 'Di’ al modello cosa vuoi vedere …',
@@ -1022,6 +1027,7 @@ const TEXTE = {
     'beta.danke': "Obrigado! Escrevemos-te assim que sair a versão final.",
     'beta.ungueltig': "Indica um e-mail válido e marca a caixa.",
     'beta.fehler': "Não funcionou. Escreve-nos para tassilo@amphion3d.com.",
+    'held.probe': 'Experimenta tudo grátis durante 30 dias, sem cartão de crédito.',
     'held.vertrauen': 'Os projetos ficam no teu computador. A versão para Mac é notarizada pela Apple.',
     'held.video': "A casa de exemplo de 1913 no Amphion, com as casas vizinhas. Depois vista e render do mesmo modelo.",
     'held.videoAlt': "A casa de exemplo de 1913 nasce no Amphion, depois vistas e renders",
@@ -1040,7 +1046,7 @@ const TEXTE = {
     'mehr.l3': 'Entrega em IFC, DXF, 3dm, STEP e PDF',
     'mehr.text': 'Um chat de IA descreve-te uma casa em palavras. O Amphion constrói-a: um modelo de elementos construtivos reais, com medidas e materiais. Daí desenha plantas à escala, e os teus projetistas continuam com os ficheiros.',
     'mehr.titel': 'Mais do que um chat',
-    'meta': 'Programa para arquitetos em Mac e Windows: um modelo 3D a partir de uma planta ou de uma frase, com IA, e daí plantas, cortes e alçados. Uma alternativa ao Archicad para Mac.',
+    'meta': 'Programa para arquitetos em Mac e Windows: um modelo 3D a partir de uma planta ou de uma frase, com IA, e daí plantas, cortes e alçados. Para macOS 14 e Windows 10 e 11.',
     'modell.diktat': 'Ditar',
     'modell.fehler': 'Não foi possível carregar o modelo.',
     'modell.frage': 'Diz ao modelo o que queres ver …',
@@ -1106,7 +1112,7 @@ const TEXTE = {
 
 // Sprache: ?lang= in der Adresse, sonst die Wahl aus diesem Besuch, sonst die Sprache des Geräts (Browsersprachen der Reihe nach), sonst Englisch.
 // Die Wahl gilt nur für den Besuch (sessionStorage): beim nächsten Mal zählt wieder die Sprache des Geräts.
-// 10.11.2026 (Suchmaschinen): Startseite (Deutsch) und site/<lang>/ sind fertige Sprachseiten (tools/seite_sprachen.mjs, data-sprachseite);
+// 10.11.2026 (Suchmaschinen): Startseite (Englisch) und site/<lang>/ sind fertige Sprachseiten (tools/seite_sprachen.mjs, data-sprachseite);
 // dort gilt die Sprache der Seite, sie wird für den Besuch gemerkt (Rechtsseiten und fuss.js folgen ihr).
 const SPRACHSEITE = document.documentElement.hasAttribute('data-sprachseite'), WURZEL = document.documentElement.dataset.wurzel || '';
 function spracheWaehlen() {
@@ -1209,8 +1215,8 @@ anwenden(spracheWaehlen(), false);
 // Besucherstatistik (9.11.2026): in site/zaehlung.js, eingebunden über den gemeinsamen Fuß (tools/kopf_fuss.mjs) auf allen Seiten, einmal je Seite
 // Sprachwähler (5.11.2026, Tassilo: „Pon la opción de cambiar idiomas en la web“): Wahl gilt für den Besuch, Seite lädt neu, damit auch Betrachter,
 // Satzfeld und Preise die Sprache übernehmen; ein ?lang= in der Adresse fällt weg, sonst gewänne es gegen die Wahl
-// 10.11.2026 (Suchmaschinen): Wahl und Sprachlinks im Fuß führen auf die Sprachseite (/, /en/, /es/ …); ohne Sprachseiten wie bisher ohne ?lang= neu laden
-const sprachAdresse = l => SPRACHSEITE ? new URL(l === 'de' ? (WURZEL || './') : WURZEL + l + '/', location.href) : (u => { u.searchParams.delete('lang'); return u; })(new URL(location.href));
+// 10.11.2026 (Suchmaschinen): Wahl und Sprachlinks im Fuß führen auf die Sprachseite (/ Englisch, /de/, /es/ …); ohne Sprachseiten wie bisher ohne ?lang= neu laden
+const sprachAdresse = l => SPRACHSEITE ? new URL(l === 'en' ? (WURZEL || './') : WURZEL + l + '/', location.href) : (u => { u.searchParams.delete('lang'); return u; })(new URL(location.href));
 alle('.sprachwahl', el => { el.value = document.documentElement.lang; el.onchange = () => { try { sessionStorage.setItem('amphion.lang', el.value); } catch {} location.href = sprachAdresse(el.value).href; }; });
 alle('.fuss-sprachen a[hreflang]', a => a.addEventListener('click', () => { try { sessionStorage.setItem('amphion.lang', a.hreflang); } catch {} }));
 document.querySelector('.sprachen')?.addEventListener('click', e => { const b = e.target.closest('button[data-lang]'); if (b) anwenden(b.dataset.lang, true); });
