@@ -24,6 +24,8 @@ const TEXTE = {
     'aria.cta': 'Amphion laden oder kaufen',
     'aria.periode': 'Abrechnung',
     'aria.senden': 'Senden',
+    'aria.export': 'Exportformate',
+    'aria.zahlen': 'Amphion in Zahlen',
     'aria.zu': 'Schließen',
     'buero.einheitJahr': 'im Jahr für 3 Plätze zzgl. MwSt.',
     'buero.einheitMonat': 'im Monat für 3 Plätze zzgl. MwSt.',
@@ -127,7 +129,7 @@ const TEXTE = {
     'mehr.l3': 'Weitergabe als IFC, DXF, 3dm, STEP und PDF',
     'mehr.text': 'Ein KI-Chat beschreibt dir ein Haus in Worten. Amphion baut es: ein Modell aus echten Bauteilen mit Maß und Material. Daraus zeichnet Amphion maßstäbliche Pläne, und deine Fachplaner arbeiten mit den Dateien weiter.',
     'mehr.titel': 'Mehr als ein Chat',
-    'meta': 'Beschreib es. Amphion modelliert es. Aus einem Satz wird ein echtes 3D-Modell mit Wänden, Decken, Stützen, Fenstern und Treppen, daraus Grundrisse, Schnitte und Ansichten. Für Mac und Windows.',
+    'meta': 'Software für Architekten auf Mac und Windows: ein 3D-Modell aus Grundriss oder Beschreibung, mit KI, dazu Pläne, Schnitte und Ansichten. Eine Archicad-Alternative für den Mac.',
     'modell.diktat': 'Diktieren',
     'modell.fehler': 'Modell konnte nicht geladen werden.',
     'modell.frage': 'Sag dem Modell, was du sehen willst …',
@@ -145,7 +147,7 @@ const TEXTE = {
     'nav.faq': 'Fragen',
     'nav.funktionen': 'Funktionen',
     'nav.konto': 'Mein Konto',
-    'nav.preis': 'Preis',
+    'nav.preis': 'Preise',
     'nav.projekte': 'Projekte',
     'preis.einheitJahr': 'im Jahr zzgl. MwSt.',
     'preis.einheitMonat': 'im Monat zzgl. MwSt.',
@@ -171,7 +173,17 @@ const TEXTE = {
     'schritte.3': '„Zwei Geschosse, Satteldach, Terrasse nach Süden.“ Amphion baut, du änderst, dann Pläne als PDF.',
     'schritte.3t': 'Anfangen, wie du willst',
     'schritte.titel': 'So fängst du an',
-    'titel': 'Amphion · Bauen mit Sprache, für Architekturbüros',
+    'titel': 'Amphion · Software für Architekten: 3D-Modell, Pläne und Schnitte',
+    'fuss.guides': 'Anleitungen',   // 10.11.2026 (Suchmaschinen): Anleitungen im Fuß
+    'alt.muc.iso': 'Axonometrie der Villa von 1913 mit Anbau, Obergeschoss offen, aus dem 3D-Modell in Amphion',
+    'alt.muc.eg': 'Grundriss Erdgeschoss der Villa von 1913 nach dem Umbau, aus dem Modell gezeichnet',
+    'alt.muc.og': 'Grundriss Obergeschoss der Villa von 1913 nach dem Umbau, aus dem Modell gezeichnet',
+    'alt.muc.dg': 'Grundriss Dachgeschoss mit Dachterrasse, aus dem Modell gezeichnet',
+    'alt.muc.vogel': 'Vogelperspektive der Villa von 1913 mit dem neuen Anbau und dem Garten',
+    'alt.muc.1913': 'Die Villa im Zustand von 1913, aus dem Bestandsmodell',
+    'alt.vanc.turm': 'Hochhaus am Wasser: der Turm über der Stadt, aus dem Modell in Amphion',
+    'alt.vanc.tragwerk': 'Tragwerk des Hochhauses mit Kern, Stützen und Decken, direkt aus dem Modell',
+    'alt.vanc.sockel': 'Sockel des Hochhauses an der Straße, aus dem Modell in Amphion',
     'vanc.9': 'Das Tragwerk aus dem Modell',
     'vanc.1': 'Der Turm über der Stadt',
     'vanc.5': 'Ecke des Sockels',
@@ -193,6 +205,8 @@ const TEXTE = {
     'aria.cta': 'Download or buy Amphion',
     'aria.periode': 'Billing',
     'aria.senden': 'Send',
+    'aria.export': 'Export formats',
+    'aria.zahlen': 'Amphion in numbers',
     'aria.zu': 'Close',
     'buero.einheitJahr': 'a year for 3 seats plus VAT',
     'buero.einheitMonat': 'a month for 3 seats plus VAT',
@@ -296,7 +310,7 @@ const TEXTE = {
     'mehr.l3': 'Hand-off as IFC, DXF, 3dm, STEP and PDF',
     'mehr.text': 'An AI chat describes a house to you in words. Amphion builds it: a model of real building elements with dimensions and materials. From it Amphion draws scaled plans, and your consultants keep working with the files.',
     'mehr.titel': 'More than a chat',
-    'meta': 'Describe it. Amphion models it. One sentence becomes a real 3D model with walls, slabs, columns, windows and stairs, and from it plans, sections and elevations. For Mac and Windows.',
+    'meta': 'Architecture software for Mac and Windows: a 3D model from a floor plan or a sentence, built with AI, then plans, sections and elevations. An Archicad alternative for Mac.',
     'modell.diktat': 'Dictate',
     'modell.fehler': 'The model could not be loaded.',
     'modell.frage': 'Tell the model what you want to see …',
@@ -340,7 +354,17 @@ const TEXTE = {
     'schritte.3': '“Two storeys, pitched roof, terrace facing south.” Amphion builds, you adjust, then drawings as PDF.',
     'schritte.3t': 'Start any way you like',
     'schritte.titel': 'How you start',
-    'titel': 'Amphion · Build with language, for architecture practices',
+    'titel': 'Amphion · Architecture Software: 3D Model, Floor Plans and Sections',
+    'fuss.guides': 'Guides',   // 10.11.2026 (Suchmaschinen): Anleitungen im Fuß
+    'alt.muc.iso': 'Axonometric view of the 1913 villa with its extension, upper floor open, from the 3D model in Amphion',
+    'alt.muc.eg': 'Ground floor plan of the 1913 villa after the renovation, drawn from the model',
+    'alt.muc.og': 'First floor plan of the 1913 villa after the renovation, drawn from the model',
+    'alt.muc.dg': 'Attic floor plan with roof terrace, drawn from the model',
+    'alt.muc.vogel': 'Bird’s-eye view of the 1913 villa with the new extension and the garden',
+    'alt.muc.1913': 'The villa as it was in 1913, from the survey model',
+    'alt.vanc.turm': 'Tower by the water: the tower above the city, from the model in Amphion',
+    'alt.vanc.tragwerk': 'Structure of the tower with core, columns and slabs, straight from the model',
+    'alt.vanc.sockel': 'Podium of the tower at street level, from the model in Amphion',
     'vanc.9': 'The structure from the model',
     'vanc.1': 'The tower above the city',
     'vanc.5': 'Corner of the podium',
@@ -362,6 +386,8 @@ const TEXTE = {
     'aria.cta': 'Descargar o comprar Amphion',
     'aria.periode': 'Facturación',
     'aria.senden': 'Enviar',
+    'aria.export': 'Formatos de exportación',
+    'aria.zahlen': 'Amphion en cifras',
     'aria.zu': 'Cerrar',
     'buero.einheitJahr': 'al año por 3 puestos más IVA',
     'buero.einheitMonat': 'al mes por 3 puestos más IVA',
@@ -465,7 +491,7 @@ const TEXTE = {
     'mehr.l3': 'Entrega en IFC, DXF, 3dm, STEP y PDF',
     'mehr.text': 'Un chat de IA te describe una casa con palabras. Amphion la construye: un modelo de elementos constructivos reales, con medidas y materiales. De él dibuja planos a escala, y tus consultores siguen trabajando con los archivos.',
     'mehr.titel': 'Más que un chat',
-    'meta': 'Descríbelo. Amphion lo modela. Una frase se convierte en un modelo 3D real con muros, forjados, pilares, ventanas y escaleras, y de él salen plantas, secciones y alzados. Para Mac y Windows.',
+    'meta': 'Programa para arquitectos en Mac y Windows: un modelo 3D desde el plano o desde una frase, con IA, y de él plantas, secciones y alzados. Alternativa a Archicad para Mac.',
     'modell.diktat': 'Dictar',
     'modell.fehler': 'No se pudo cargar el modelo.',
     'modell.frage': 'Dile al modelo qué quieres ver …',
@@ -509,7 +535,17 @@ const TEXTE = {
     'schritte.3': '«Dos plantas, cubierta a dos aguas, terraza al sur.» Amphion construye, tú ajustas, y luego los planos en PDF.',
     'schritte.3t': 'Empieza como quieras',
     'schritte.titel': 'Cómo empiezas',
-    'titel': 'Amphion · Construir con la palabra, para estudios de arquitectura',
+    'titel': 'Amphion · Software de arquitectura: modelo 3D, plantas y secciones',
+    'fuss.guides': 'Guías',   // 10.11.2026 (Suchmaschinen): Anleitungen im Fuß
+    'alt.muc.iso': 'Axonometría de la villa de 1913 con su ampliación, planta alta abierta, desde el modelo 3D en Amphion',
+    'alt.muc.eg': 'Planta baja de la villa de 1913 tras la reforma, dibujada desde el modelo',
+    'alt.muc.og': 'Planta primera de la villa de 1913 tras la reforma, dibujada desde el modelo',
+    'alt.muc.dg': 'Planta bajo cubierta con terraza, dibujada desde el modelo',
+    'alt.muc.vogel': 'Vista aérea de la villa de 1913 con la nueva ampliación y el jardín',
+    'alt.muc.1913': 'La villa tal como era en 1913, desde el modelo del edificio existente',
+    'alt.vanc.turm': 'Torre junto al agua: la torre sobre la ciudad, desde el modelo en Amphion',
+    'alt.vanc.tragwerk': 'Estructura de la torre con núcleo, pilares y forjados, directamente del modelo',
+    'alt.vanc.sockel': 'Podio de la torre a pie de calle, desde el modelo en Amphion',
     'vanc.9': 'La estructura del modelo',
     'vanc.1': 'La torre sobre la ciudad',
     'vanc.5': 'Esquina del podio',
@@ -531,6 +567,8 @@ const TEXTE = {
     'aria.cta': 'Télécharger ou acheter Amphion',
     'aria.periode': 'Facturation',
     'aria.senden': 'Envoyer',
+    'aria.export': 'Formats d’export',
+    'aria.zahlen': 'Amphion en chiffres',
     'aria.zu': 'Fermer',
     'buero.einheitJahr': 'par an pour 3 postes HT',
     'buero.einheitMonat': 'par mois pour 3 postes HT',
@@ -634,7 +672,7 @@ const TEXTE = {
     'mehr.l3': 'Transmission en IFC, DXF, 3dm, STEP et PDF',
     'mehr.text': 'Un chat d’IA te décrit une maison avec des mots. Amphion la construit : une maquette d’éléments réels, avec cotes et matériaux. Il en tire des plans à l’échelle, et tes bureaux d’études continuent avec les fichiers.',
     'mehr.titel': 'Plus qu’un chat',
-    'meta': 'Décris-le. Amphion le modélise. Une phrase devient une vraie maquette 3D avec murs, dalles, poteaux, fenêtres et escaliers, et de là naissent plans, coupes et façades. Pour Mac et Windows.',
+    'meta': 'Logiciel pour architectes sur Mac et Windows : une maquette 3D à partir d’un plan ou d’une phrase, avec l’IA, puis plans, coupes et façades. Une alternative à Archicad sur Mac.',
     'modell.diktat': 'Dicter',
     'modell.fehler': 'Impossible de charger le modèle.',
     'modell.frage': 'Dis au modèle ce que tu veux voir …',
@@ -678,7 +716,17 @@ const TEXTE = {
     'schritte.3': '« Deux niveaux, toit à deux pans, terrasse au sud. » Amphion construit, tu ajustes, puis les plans en PDF.',
     'schritte.3t': 'Commence comme tu veux',
     'schritte.titel': 'Comment commencer',
-    'titel': 'Amphion · Construire avec la parole, pour les agences d’architecture',
+    'titel': 'Amphion · Logiciel d’architecture : maquette 3D, plans et coupes',
+    'fuss.guides': 'Guides',   // 10.11.2026 (Suchmaschinen): Anleitungen im Fuß
+    'alt.muc.iso': 'Axonométrie de la villa de 1913 avec son extension, étage ouvert, issue de la maquette 3D dans Amphion',
+    'alt.muc.eg': 'Plan du rez-de-chaussée de la villa de 1913 après rénovation, dessiné depuis la maquette',
+    'alt.muc.og': 'Plan de l’étage de la villa de 1913 après rénovation, dessiné depuis la maquette',
+    'alt.muc.dg': 'Plan des combles avec terrasse sur le toit, dessiné depuis la maquette',
+    'alt.muc.vogel': 'Vue aérienne de la villa de 1913 avec la nouvelle extension et le jardin',
+    'alt.muc.1913': 'La villa telle qu’elle était en 1913, issue de la maquette de l’existant',
+    'alt.vanc.turm': 'Tour au bord de l’eau : la tour au-dessus de la ville, issue de la maquette dans Amphion',
+    'alt.vanc.tragwerk': 'Structure de la tour avec noyau, poteaux et dalles, directement issue de la maquette',
+    'alt.vanc.sockel': 'Socle de la tour au niveau de la rue, issu de la maquette dans Amphion',
     'vanc.9': 'La structure issue de la maquette',
     'vanc.1': 'La tour au-dessus de la ville',
     'vanc.5': 'Angle du socle',
@@ -700,6 +748,8 @@ const TEXTE = {
     'aria.cta': 'Scarica o acquista Amphion',
     'aria.periode': 'Fatturazione',
     'aria.senden': 'Invia',
+    'aria.export': 'Formati di esportazione',
+    'aria.zahlen': 'Amphion in cifre',
     'aria.zu': 'Chiudi',
     'buero.einheitJahr': 'all’anno per 3 postazioni più IVA',
     'buero.einheitMonat': 'al mese per 3 postazioni più IVA',
@@ -803,7 +853,7 @@ const TEXTE = {
     'mehr.l3': 'Consegna in IFC, DXF, 3dm, STEP e PDF',
     'mehr.text': 'Una chat di IA ti descrive una casa a parole. Amphion la costruisce: un modello di elementi costruttivi veri, con misure e materiali. Da lì disegna tavole in scala, e i tuoi consulenti lavorano con i file.',
     'mehr.titel': 'Più di una chat',
-    'meta': 'Descrivilo. Amphion lo modella. Una frase diventa un vero modello 3D con muri, solai, pilastri, finestre e scale, e da lì piante, sezioni e prospetti. Per Mac e Windows.',
+    'meta': 'Software per architetti su Mac e Windows: un modello 3D da una pianta o da una frase, con l’IA, poi piante, sezioni e prospetti. Un’alternativa ad Archicad per Mac.',
     'modell.diktat': 'Detta',
     'modell.fehler': 'Impossibile caricare il modello.',
     'modell.frage': 'Di’ al modello cosa vuoi vedere …',
@@ -847,7 +897,17 @@ const TEXTE = {
     'schritte.3': '«Due piani, tetto a due falde, terrazza a sud.» Amphion costruisce, tu modifichi, poi le tavole in PDF.',
     'schritte.3t': 'Inizia come vuoi',
     'schritte.titel': 'Come inizi',
-    'titel': 'Amphion · Costruire con la parola, per studi di architettura',
+    'titel': 'Amphion · Software di architettura: modello 3D, piante e sezioni',
+    'fuss.guides': 'Guide',   // 10.11.2026 (Suchmaschinen): Anleitungen im Fuß
+    'alt.muc.iso': 'Assonometria della villa del 1913 con l’ampliamento, piano superiore aperto, dal modello 3D in Amphion',
+    'alt.muc.eg': 'Pianta del piano terra della villa del 1913 dopo la ristrutturazione, disegnata dal modello',
+    'alt.muc.og': 'Pianta del primo piano della villa del 1913 dopo la ristrutturazione, disegnata dal modello',
+    'alt.muc.dg': 'Pianta del sottotetto con terrazza, disegnata dal modello',
+    'alt.muc.vogel': 'Vista a volo d’uccello della villa del 1913 con il nuovo ampliamento e il giardino',
+    'alt.muc.1913': 'La villa com’era nel 1913, dal modello dello stato di fatto',
+    'alt.vanc.turm': 'Torre sull’acqua: la torre sopra la città, dal modello in Amphion',
+    'alt.vanc.tragwerk': 'Struttura della torre con nucleo, pilastri e solai, direttamente dal modello',
+    'alt.vanc.sockel': 'Basamento della torre sulla strada, dal modello in Amphion',
     'vanc.9': 'La struttura dal modello',
     'vanc.1': 'La torre sopra la città',
     'vanc.5': 'Angolo del basamento',
@@ -869,6 +929,8 @@ const TEXTE = {
     'aria.cta': 'Descarregar ou comprar Amphion',
     'aria.periode': 'Faturação',
     'aria.senden': 'Enviar',
+    'aria.export': 'Formatos de exportação',
+    'aria.zahlen': 'Amphion em números',
     'aria.zu': 'Fechar',
     'buero.einheitJahr': 'por ano para 3 postos mais IVA',
     'buero.einheitMonat': 'por mês para 3 postos mais IVA',
@@ -972,7 +1034,7 @@ const TEXTE = {
     'mehr.l3': 'Entrega em IFC, DXF, 3dm, STEP e PDF',
     'mehr.text': 'Um chat de IA descreve-te uma casa em palavras. O Amphion constrói-a: um modelo de elementos construtivos reais, com medidas e materiais. Daí desenha plantas à escala, e os teus projetistas continuam com os ficheiros.',
     'mehr.titel': 'Mais do que um chat',
-    'meta': 'Descreve-o. O Amphion modela-o. Uma frase torna-se um verdadeiro modelo 3D com paredes, lajes, pilares, janelas e escadas, e daí saem plantas, cortes e alçados. Para Mac e Windows.',
+    'meta': 'Programa para arquitetos em Mac e Windows: um modelo 3D a partir de uma planta ou de uma frase, com IA, e daí plantas, cortes e alçados. Uma alternativa ao Archicad para Mac.',
     'modell.diktat': 'Ditar',
     'modell.fehler': 'Não foi possível carregar o modelo.',
     'modell.frage': 'Diz ao modelo o que queres ver …',
@@ -1016,7 +1078,17 @@ const TEXTE = {
     'schritte.3': '«Dois pisos, cobertura de duas águas, terraço a sul.» O Amphion constrói, tu ajustas, e depois os desenhos em PDF.',
     'schritte.3t': 'Começa como quiseres',
     'schritte.titel': 'Como começas',
-    'titel': 'Amphion · Construir com a palavra, para ateliers de arquitetura',
+    'titel': 'Amphion · Software de arquitetura: modelo 3D, plantas e cortes',
+    'fuss.guides': 'Guias',   // 10.11.2026 (Suchmaschinen): Anleitungen im Fuß
+    'alt.muc.iso': 'Axonometria da moradia de 1913 com a ampliação, piso superior aberto, a partir do modelo 3D no Amphion',
+    'alt.muc.eg': 'Planta do rés-do-chão da moradia de 1913 depois da remodelação, desenhada a partir do modelo',
+    'alt.muc.og': 'Planta do primeiro piso da moradia de 1913 depois da remodelação, desenhada a partir do modelo',
+    'alt.muc.dg': 'Planta do sótão com terraço, desenhada a partir do modelo',
+    'alt.muc.vogel': 'Vista aérea da moradia de 1913 com a nova ampliação e o jardim',
+    'alt.muc.1913': 'A moradia como era em 1913, a partir do modelo do existente',
+    'alt.vanc.turm': 'Torre junto à água: a torre sobre a cidade, a partir do modelo no Amphion',
+    'alt.vanc.tragwerk': 'Estrutura da torre com núcleo, pilares e lajes, diretamente do modelo',
+    'alt.vanc.sockel': 'Embasamento da torre ao nível da rua, a partir do modelo no Amphion',
     'vanc.9': 'A estrutura a partir do modelo',
     'vanc.1': 'A torre sobre a cidade',
     'vanc.5': 'Esquina do embasamento',
@@ -1028,7 +1100,11 @@ const TEXTE = {
 
 // Sprache: ?lang= in der Adresse, sonst die Wahl aus diesem Besuch, sonst die Sprache des Geräts (Browsersprachen der Reihe nach), sonst Englisch.
 // Die Wahl gilt nur für den Besuch (sessionStorage): beim nächsten Mal zählt wieder die Sprache des Geräts.
+// 10.11.2026 (Suchmaschinen): Startseite (Deutsch) und site/<lang>/ sind fertige Sprachseiten (tools/seite_sprachen.mjs, data-sprachseite);
+// dort gilt die Sprache der Seite, sie wird für den Besuch gemerkt (Rechtsseiten und fuss.js folgen ihr).
+const SPRACHSEITE = document.documentElement.hasAttribute('data-sprachseite'), WURZEL = document.documentElement.dataset.wurzel || '';
 function spracheWaehlen() {
+  if (SPRACHSEITE && TEXTE[document.documentElement.lang]) { try { sessionStorage.setItem('amphion.lang', document.documentElement.lang); } catch {} return document.documentElement.lang; }
   const url = new URLSearchParams(location.search).get('lang');
   if (url && TEXTE[url]) return url;
   try { const g = sessionStorage.getItem('amphion.lang'); if (g && TEXTE[g]) return g; } catch {}
@@ -1127,7 +1203,10 @@ anwenden(spracheWaehlen(), false);
 // Besucherstatistik (9.11.2026): in site/zaehlung.js, eingebunden über den gemeinsamen Fuß (tools/kopf_fuss.mjs) auf allen Seiten, einmal je Seite
 // Sprachwähler (5.11.2026, Tassilo: „Pon la opción de cambiar idiomas en la web“): Wahl gilt für den Besuch, Seite lädt neu, damit auch Betrachter,
 // Satzfeld und Preise die Sprache übernehmen; ein ?lang= in der Adresse fällt weg, sonst gewänne es gegen die Wahl
-alle('.sprachwahl', el => { el.value = document.documentElement.lang; el.onchange = () => { try { sessionStorage.setItem('amphion.lang', el.value); } catch {} const u = new URL(location.href); u.searchParams.delete('lang'); location.replace(u.toString()); }; });
+// 10.11.2026 (Suchmaschinen): Wahl und Sprachlinks im Fuß führen auf die Sprachseite (/, /en/, /es/ …); ohne Sprachseiten wie bisher ohne ?lang= neu laden
+const sprachAdresse = l => SPRACHSEITE ? new URL(l === 'de' ? (WURZEL || './') : WURZEL + l + '/', location.href) : (u => { u.searchParams.delete('lang'); return u; })(new URL(location.href));
+alle('.sprachwahl', el => { el.value = document.documentElement.lang; el.onchange = () => { try { sessionStorage.setItem('amphion.lang', el.value); } catch {} location.href = sprachAdresse(el.value).href; }; });
+alle('.fuss-sprachen a[hreflang]', a => a.addEventListener('click', () => { try { sessionStorage.setItem('amphion.lang', a.hreflang); } catch {} }));
 document.querySelector('.sprachen')?.addEventListener('click', e => { const b = e.target.closest('button[data-lang]'); if (b) anwenden(b.dataset.lang, true); });
 // 10.11.2026 (Fokus, Gestaltung ernst): keine Einblendungen, kein Tippen, keine Zähler. Die Seite steht ruhig.
 
@@ -1148,6 +1227,10 @@ document.querySelector('.beta-form')?.addEventListener('submit', async e => {
 // verweigert der Browser das Abspielen (iPhone im Stromsparmodus), startet die erste Berührung der Seite alle sichtbaren Videos
 {
   const videos = [...document.querySelectorAll('video[data-selbst]')];
+  // 10.11.2026 (Ladezeit): Quellen mit data-src erst kurz vor dem Sichtbarwerden setzen (Demo-Video, 2 MB weniger beim ersten Aufruf)
+  const nah = new IntersectionObserver(es => { for (const e of es) if (e.isIntersecting) { nah.unobserve(e.target);
+    for (const s of e.target.querySelectorAll('source[data-src]')) { s.src = s.dataset.src; s.removeAttribute('data-src'); } e.target.load(); } }, { rootMargin: '800px 0px' });
+  for (const v of videos) if (v.querySelector('source[data-src]')) nah.observe(v);
   const spiel = v => { v.muted = true; const p = v.play(); if (p) p.catch(() => {}); };
   const sicht = new IntersectionObserver(es => { for (const e of es) e.isIntersecting ? spiel(e.target) : e.target.pause(); }, { threshold: 0.2 });
   for (const v of videos) sicht.observe(v);
